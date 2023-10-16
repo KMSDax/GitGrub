@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LogInController">
    <children>
-      <ImageView fitHeight="143.0" fitWidth="250.0" layoutX="25.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="45.0" fitWidth="39.0" layoutX="101.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/GitGrublogo.png" />
          </image>
+         <effect>
+            <ColorAdjust brightness="0.58" contrast="-0.66" hue="0.8" />
+         </effect>
       </ImageView>
       <TextField fx:id="userField" layoutX="25.0" layoutY="129.0" prefHeight="35.0" prefWidth="250.0" promptText="Username" />
       <PasswordField fx:id="passwordField" layoutX="25.0" layoutY="183.0" prefHeight="35.0" prefWidth="250.0" promptText="Password" />
-      <Button fx:id="loginButton" onAction="#login" layoutX="84.0" layoutY="246.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="132.0" text="Log In" />
+      <Button fx:id="loginButton" layoutX="85.0" layoutY="269.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="132.0" text="Log In" />
 
       <Label layoutX="93.0" layoutY="322.0" text="Click here to " />
-      <Hyperlink onAction="#goToSignUp" layoutX="158.0" layoutY="318.0" text="Sign up" />
+      <Hyperlink layoutX="158.0" layoutY="318.0" onAction="#goToSignUp" text="Sign up" />
+      <Label layoutX="17.0" layoutY="29.0" prefHeight="69.0" prefWidth="267.0" text="Git  Grub" textFill="#76897b">
+         <font>
+            <Font name="Castellar" size="45.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
