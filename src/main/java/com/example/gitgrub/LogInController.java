@@ -56,6 +56,7 @@ public class LogInController {
             stage.setScene(scene);
             stage.show();
             stage.centerOnScreen();
+
         } else {
             infoBox("Please enter correct Username and Password", null, "Failed");
         }

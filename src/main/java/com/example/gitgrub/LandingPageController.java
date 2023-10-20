@@ -65,8 +65,8 @@ public class LandingPageController extends MainApplication implements Initializa
 
                 Image recipeImage = new Image(imageUrl);
                 ImageView imageView = new ImageView(recipeImage);
-                imageView.setFitHeight(100);
-                imageView.setFitWidth(200);
+                imageView.setFitHeight(75);
+                imageView.setFitWidth(150);
 
                 // Create a container for each recipe
                 VBox recipeContainer = new VBox(10);
