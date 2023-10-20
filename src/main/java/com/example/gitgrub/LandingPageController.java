@@ -42,8 +42,9 @@ public class LandingPageController extends MainApplication implements Initializa
         cookbookPane.setVisible(true);
         newsPane.setVisible(false);
 
-        // Create a layout to display recipes
-        VBox recipeLayout = new VBox(20); // Adjust spacing as needed
+        // Create layouts for page1 and page2
+        VBox recipeLayoutPage1 = new VBox(20);
+        VBox recipeLayoutPage2 = new VBox(20);
 
         // Fetch and display recipes
         for (int i = 0; i < 4; i++) {
@@ -71,13 +72,21 @@ public class LandingPageController extends MainApplication implements Initializa
                 VBox recipeContainer = new VBox(10);
                 recipeContainer.getChildren().addAll(titleLabel, descriptionLabel, sourceLink, imageView);
 
-                recipeLayout.getChildren().add(recipeContainer);
+                // Add the recipe to the appropriate layout (page1 or page2)
+                if (i % 2 == 0) {
+                    recipeLayoutPage1.getChildren().add(recipeContainer);
+                } else {
+                    recipeLayoutPage2.getChildren().add(recipeContainer);
+                }
             }
         }
 
-        // Clear previous content and add the recipe layout to cookbookPane
-        cookbookPane.getChildren().clear();
-        cookbookPane.getChildren().add(recipeLayout);
+        // Clear previous content and add the recipe layouts to page1 and page2
+        page1.getChildren().clear();
+        page1.getChildren().add(recipeLayoutPage1);
+
+        page2.getChildren().clear();
+        page2.getChildren().add(recipeLayoutPage2);
     }
 }
 
