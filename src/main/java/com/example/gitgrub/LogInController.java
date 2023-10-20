@@ -52,7 +52,7 @@ public class LogInController {
             Scene scene = new Scene(fxmlLoader.load());
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
-            stage.setTitle("Smart City");
+            stage.setTitle("GitGrub");
             stage.setScene(scene);
             stage.show();
             stage.centerOnScreen();
