@@ -15,6 +15,7 @@ public class MainApplication extends Application {
         stage.setTitle("GitGrub-Login");
         stage.setScene(scene);
         stage.show();
+        Spoonacular.getRandRecipe();
     }
 
     public static void main(String[] args) {
