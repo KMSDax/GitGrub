@@ -144,4 +144,16 @@ public class LogInController {
             }
         }
     }
+    @FXML
+    public void goToForgotPassword(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("forgot-my-password.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 535, 400);
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("GitGrub - ForgotmyPassword");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
+    }
 }
+

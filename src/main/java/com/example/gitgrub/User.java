@@ -115,4 +115,14 @@ public class User {
     public void setRole_id(int role_id) {
         this.role_id = role_id;
     }
+
+    public void updatePassword(String newPassword) {
+    }
+
+    public void setPassword(String newPassword) {
+    }
+
+    public Object getUsername() {
+        return null;
+    }
 }
