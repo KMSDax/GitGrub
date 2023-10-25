@@ -35,6 +35,8 @@ public class LandingPageController extends MainApplication implements Initializa
     public Button editButton;
     public Button confirmChangesButton;
     public Pane viewProfilePane;
+    public Button addMembersButton;
+    public Pane addMembersPane;
     @FXML
     private Button news;
     @FXML
@@ -143,10 +145,19 @@ public class LandingPageController extends MainApplication implements Initializa
     // Shows the profile page on ProfilePicture click and allows for profile editing
     public void openProfile() {
         viewProfilePane.setVisible(true);
+        addMembersPane.setVisible(false);
+        editProfilePane.setVisible(false);
     }
     public void openEditProfile() {
         editProfilePane.setVisible(true);
         viewProfilePane.setVisible(false);
+        addMembersPane.setVisible(false);
+    }
+
+    public void openMembersPane(){
+        addMembersPane.setVisible(true);
+        viewProfilePane.setVisible(false);
+        editProfilePane.setVisible(false);
     }
 
     // Confirm Profile Changes button on landing Page
@@ -216,4 +227,6 @@ public class LandingPageController extends MainApplication implements Initializa
         }
         return false;
     }
+
+
 }
