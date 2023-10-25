@@ -1,14 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.gitgrub.LandingPageController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
 
+    <children>
+      <Pane prefHeight="95.0" prefWidth="1194.0">
+         <children>
+            <Button fx:id="news" layoutX="31.0" layoutY="33.0" mnemonicParsing="false" onAction="#openNews" prefHeight="40.0" prefWidth="109.0" text="News" />
+            <Button fx:id="cookbook" layoutX="171.0" layoutY="33.0" mnemonicParsing="false" onAction="#openCookbook" prefHeight="40.0" prefWidth="109.0" text="Cookbook" />
+            <Button layoutX="311.0" layoutY="33.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" text="Bookmarks" />
+            <ImageView fx:id="profilePic" fitHeight="66.0" fitWidth="61.0" layoutX="1119.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+             <Label layoutX="1123.0" layoutY="73.0" text="Username" textFill="#bebebe" />
+             <Button layoutX="1019.0" layoutY="37.0" mnemonicParsing="false" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Profile" />
+         </children>
+      </Pane>
+      <Pane fx:id="newsPane" layoutY="94.0" prefHeight="482.0" prefWidth="690.0">
+         <children>
+            <TabPane id="menu" layoutX="25.0" layoutY="25.0" prefHeight="433.0" prefWidth="639.0" style="-fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Untitled Tab 1">
+                      <Pane />
+                </Tab>
+                <Tab text="Untitled Tab 2" />
+                <Tab text="Untitled Tab 3" />
+              </tabs>
+            </TabPane>
+         </children>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" height="2.0" offsetX="1.0" offsetY="1.0" radius="0.5" width="2.0" />
+         </effect>
+      </Pane>
+      <Pane fx:id="cookbookPane" layoutY="94.0" prefHeight="635.0" prefWidth="927.0" visible="false">
+         <children>
+            <Pane layoutX="18.0" layoutY="30.0" prefHeight="583.0" prefWidth="887.0" style="-fx-background-color: linear-gradient(to top left,#ba2557, #b81a4f,  #802040, #8c0f39, #ba2557);">
+               <effect>
+                  <DropShadow height="3.0" offsetX="1.0" offsetY="1.0" radius="1.0" spread="1.0" width="3.0">
+                     <color>
+                        <Color red="0.42105263471603394" green="0.010916179046034813" blue="0.010916179046034813" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="565.0" layoutX="571.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                     <image>
+                        <Image url="@images/Pages2.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow height="5.0" offsetX="1.0" offsetY="-1.0" radius="2.0" spread="0.57" width="5.0">
+                           <color>
+                              <Color opacity="0.6104452610015869" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </ImageView>
+                  <Pane fx:id="page1" layoutX="433.0" layoutY="10.0" prefHeight="565.0" prefWidth="420.0" style="-fx-background-color: linear-gradient(to right, #69675c, #a8a697,#bdbbac,#bdbbac,#ccc9b8,#dbd8c5,#fffced);">
+                     <effect>
+                        <DropShadow height="5.0" offsetX="1.0" offsetY="1.0" radius="2.0" spread="0.5" width="5.0">
+                           <color>
+                              <Color opacity="0.48972606658935547" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <children>
+                        <Pane layoutX="15.0" layoutY="23.0" prefHeight="246.0" prefWidth="384.0" style="-fx-background-color: linear-gradient(to right, #69675c, #a8a697,#bdbbac,#bdbbac,#ccc9b8,#dbd8c5,#fffced); -fx-opacity: 10%;">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="297.0" prefHeight="246.0" prefWidth="384.0" style="-fx-background-color: linear-gradient(to right, #69675c, #a8a697,#bdbbac,#bdbbac,#ccc9b8,#dbd8c5,#fffced); -fx-opacity: 10%;">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="page2" layoutX="14.0" layoutY="10.0" prefHeight="565.0" prefWidth="420.0" style="-fx-background-color: linear-gradient(to left, #69675c, #a8a697,#bdbbac,#bdbbac,#ccc9b8,#dbd8c5,#fffced);">
+                     <effect>
+                        <DropShadow height="5.0" offsetX="-1.0" offsetY="1.0" radius="2.0" spread="0.5" width="5.0">
+                           <color>
+                              <Color opacity="0.5419520735740662" />
+                           </color>
+                        </DropShadow>
+                        </effect>
+                     <children>
+                        <Pane layoutX="20.0" layoutY="23.0" prefHeight="246.0" prefWidth="384.0" style="-fx-background-color: linear-gradient(to left, #69675c, #a8a697,#bdbbac,#bdbbac,#ccc9b8,#dbd8c5,#fffced); -fx-opacity: 10%;">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Pane>
+                        <Pane layoutX="21.0" layoutY="297.0" prefHeight="246.0" prefWidth="384.0" style="-fx-background-color: linear-gradient(to left, #69675c, #a8a697,#bdbbac,#bdbbac,#ccc9b8,#dbd8c5,#fffced); -fx-opacity: 10%;">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children></Pane>
+      <Pane layoutX="927.0" layoutY="94.0" prefHeight="635.0" prefWidth="268.0">
+         <children>
+             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children></Pane>
+
+   </children>
 </AnchorPane>

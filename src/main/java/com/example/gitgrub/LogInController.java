@@ -32,7 +32,7 @@ public class LogInController {
         Window owner = loginButton.getScene().getWindow();
 
         if (userField.getText().isEmpty()) {
-            showAlert(owner, "Please enter your email id");
+            showAlert(owner, "Please enter your username");
             return;
         }
         if (passwordField.getText().isEmpty()) {
@@ -52,17 +52,18 @@ public class LogInController {
             Scene scene = new Scene(fxmlLoader.load());
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
-            stage.setTitle("Smart City");
+            stage.setTitle("GitGrub");
             stage.setScene(scene);
             stage.show();
             stage.centerOnScreen();
+
         } else {
-            infoBox("Please enter correct Email and Password", null, "Failed");
+            infoBox("Please enter correct Username and Password", null, "Failed");
         }
     }
     @FXML
     public void goToSignUp(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("sign-up.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("sign-up-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 535, 400);
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -106,8 +107,8 @@ public class LogInController {
                     ResultSet stateResultSet = preparedStatement2.executeQuery();
 
                     if (stateResultSet.next()) {
-                        User.initializeUser(resultSet.getString(3),
-                                Integer.parseInt(resultSet.getString(2)),
+                        User.initializeUser(Integer.parseInt(resultSet.getString(2)),
+                                resultSet.getString(3),
                                 resultSet.getString(4),
                                 resultSet.getString(5),
                                 resultSet.getString(6),
