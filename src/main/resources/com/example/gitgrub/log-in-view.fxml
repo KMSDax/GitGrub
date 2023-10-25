@@ -27,6 +27,6 @@
             <Font name="Castellar" size="45.0" />
          </font>
       </Label>
-      <Hyperlink layoutX="121.0" layoutY="345.0" text="Forgot my password" />
+      <Hyperlink layoutX="90.0" layoutY="339.0" text="Forgot my password" />
    </children>
 </Pane>

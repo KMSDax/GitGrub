@@ -43,3 +43,20 @@ Button:hover {
     -fx-clip: "round(50%)";
     -fx-background-color: transparent;
 }
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-pref-width:7px;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: Black;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-opacity: 0; /* Set opacity to 0 to make them invisible */
+    /* OR */
+    -fx-pref-height: 0px; /* Set the height to 0px to make them disappear */
+}
