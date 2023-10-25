@@ -3,6 +3,8 @@ package com.example.gitgrub;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.util.ArrayList;
+
 public class User {
     private static User user = null;
     private String user_id;
@@ -19,6 +21,7 @@ public class User {
     private String state_id;
     private int user_zipcode;
     private String user_profile;
+    private ArrayList <String> allergies;
     private User(int roleID, String userId, String userPassword, String userFirstname, String userLastname, String userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, String stateId, int userZipcode, String userProfilePic){
         role_id = roleID;
         user_id = userId;
@@ -114,5 +117,13 @@ public class User {
 
     public void setRole_id(int role_id) {
         this.role_id = role_id;
+    }
+
+    public ArrayList<String> getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(ArrayList<String> allergies) {
+        this.allergies = allergies;
     }
 }
