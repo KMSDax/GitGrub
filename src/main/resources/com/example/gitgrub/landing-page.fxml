@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
+<AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
 
     <children>
       <Pane prefHeight="95.0" prefWidth="1194.0">
@@ -109,42 +103,77 @@
                </children>
             </Pane>
          </children></Pane>
-      <Pane layoutX="927.0" layoutY="94.0" prefHeight="635.0" prefWidth="268.0">
+      <Pane layoutX="927.0" layoutY="94.0" prefHeight="399.0" prefWidth="268.0">
          <children>
              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children></Pane>
-       <Pane fx:id="profilePane" layoutX="913.0" layoutY="94.0" prefHeight="625.0" prefWidth="268.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+       <Pane fx:id="editProfilePane" layoutX="925.0" layoutY="94.0" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
           <children>
-             <Label layoutX="33.0" layoutY="14.0" text="General Information">
+             <Label layoutX="45.0" layoutY="14.0" text="General Information">
+                <font>
+                   <Font name="System Bold" size="18.0" />
+                </font>
+             </Label>
+             <Label layoutX="18.0" layoutY="48.0" text="First Name" />
+             <TextField fx:id="firstNameTextField" layoutX="95.0" layoutY="44.0" />
+             <Label layoutX="18.0" layoutY="83.0" text="Last Name" />
+             <TextField fx:id="lastNameTextField" layoutX="95.0" layoutY="79.0" />
+             <Label layoutX="18.0" layoutY="116.0" text="Email" />
+             <TextField fx:id="emailTextField" layoutX="95.0" layoutY="112.0" />
+             <Label layoutX="18.0" layoutY="148.0" text="Date of Birth" />
+             <TextField fx:id="dobTextField" layoutX="95.0" layoutY="144.0" />
+             <Label layoutX="18.0" layoutY="180.0" text="Phone #" />
+             <TextField fx:id="phoneTextField" layoutX="95.0" layoutY="176.0" />
+             <Label layoutX="18.0" layoutY="205.0" text="Location">
                 <font>
                    <Font name="System Bold" size="14.0" />
                 </font>
              </Label>
-             <Label layoutX="33.0" layoutY="38.0" text="First Name" />
-             <TextField fx:id="firstNameTextField" layoutX="110.0" layoutY="34.0" />
-             <Label layoutX="33.0" layoutY="73.0" text="Last Name" />
-             <TextField fx:id="lastNameTextField" layoutX="110.0" layoutY="69.0" />
-             <Label layoutX="33.0" layoutY="106.0" text="Email" />
-             <TextField fx:id="emailTextField" layoutX="110.0" layoutY="102.0" />
-             <Label layoutX="33.0" layoutY="138.0" text="Date of Birth" />
-             <TextField fx:id="dobTextField" layoutX="110.0" layoutY="134.0" />
-             <Label layoutX="33.0" layoutY="170.0" text="Phone #" />
-             <TextField fx:id="phoneTextField" layoutX="110.0" layoutY="166.0" />
-             <Label layoutX="33.0" layoutY="205.0" text="Location">
-                <font>
-                   <Font name="System Bold" size="14.0" />
-                </font>
-             </Label>
-             <Label layoutX="33.0" layoutY="229.0" text="Street" />
-             <TextField fx:id="streetTextField" layoutX="110.0" layoutY="225.0" />
-             <Label layoutX="33.0" layoutY="264.0" text="City" />
-             <TextField fx:id="cityTextField" layoutX="110.0" layoutY="260.0" />
-             <Label layoutX="33.0" layoutY="297.0" text="State" />
-             <TextField fx:id="stateTextField" layoutX="110.0" layoutY="293.0" />
-             <Label layoutX="33.0" layoutY="329.0" text="Zipcode" />
-             <TextField fx:id="zipTextField" layoutX="110.0" layoutY="325.0" />
-             <Button fx:id="confirmChangesButton" layoutX="94.0" layoutY="581.0" mnemonicParsing="false" onAction="#confirmProfileChanges" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Profile" />
+             <Label layoutX="18.0" layoutY="229.0" text="Street" />
+             <TextField fx:id="streetTextField" layoutX="95.0" layoutY="225.0" />
+             <Label layoutX="18.0" layoutY="264.0" text="City" />
+             <TextField fx:id="cityTextField" layoutX="95.0" layoutY="260.0" />
+             <Label layoutX="18.0" layoutY="297.0" text="State" />
+             <TextField fx:id="stateTextField" layoutX="95.0" layoutY="293.0" />
+             <Label layoutX="18.0" layoutY="329.0" text="Zipcode" />
+             <TextField fx:id="zipTextField" layoutX="95.0" layoutY="325.0" />
+             <Button fx:id="confirmChangesButton" layoutX="89.0" layoutY="361.0" mnemonicParsing="false" onAction="#confirmProfileChanges" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Confirm Changes" />
           </children></Pane>
+      <Pane fx:id="viewProfilePane" layoutX="925.0" layoutY="94.0" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+         <children>
+            <Label layoutX="45.0" layoutY="14.0" text="General Information">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="53.0" text="Name: ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="18.0" layoutY="83.0" text="Email: ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="17.0" layoutY="121.0" text="Date of Birth: ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="17.0" layoutY="158.0" text="Phone #: ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="17.0" layoutY="195.0" text="Address: ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Button fx:id="editButton" layoutX="97.0" layoutY="247.0" mnemonicParsing="false" onAction="#openEditProfile" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Profile" />
+            <Label fx:id="nameLabel" layoutX="101.0" layoutY="53.0" text="Name: " />
+            <Label fx:id="emailLabel" layoutX="102.0" layoutY="83.0" text="Email: " />
+            <Label fx:id="dobLabel" layoutX="101.0" layoutY="121.0" text="Date of Birth: " />
+            <Label fx:id="phoneLabel" layoutX="101.0" layoutY="158.0" text="Phone #: " />
+            <Label fx:id="addressLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="98.0" layoutY="195.0" prefHeight="52.0" prefWidth="149.0" text="Address: " wrapText="true" />
+         </children>
+      </Pane>
 
    </children>
 </AnchorPane>

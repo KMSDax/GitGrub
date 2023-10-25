@@ -27,12 +27,20 @@ import static com.example.gitgrub.LogInController.printSQLException;
 import static com.example.gitgrub.Spoonacular.fetchRecipeInformation;
 
 public class LandingPageController extends MainApplication implements Initializable {
+    public Label nameLabel;
+    public Label emailLabel;
+    public Label dobLabel;
+    public Label phoneLabel;
+    public Label addressLabel;
+    public Button editButton;
+    public Button confirmChangesButton;
+    public Pane viewProfilePane;
     @FXML
     private Button news;
     @FXML
     private ImageView profilePic;
     @FXML
-    private Pane newsPane, cookbookPane, page1, page2, profilePane;
+    private Pane newsPane, cookbookPane, page1, page2, editProfilePane;
     @FXML
     private Label usernameLabel;
     @FXML
@@ -57,6 +65,11 @@ public class LandingPageController extends MainApplication implements Initializa
         dobTextField.setText(dob);
         phoneTextField.setText(phoneNum);
         usernameLabel.setText(username);
+
+        nameLabel.setText(firstName + " " + lastName);
+        emailLabel.setText(email);
+        dobLabel.setText(dob);
+        phoneLabel.setText(phoneNum);
         // Initializes  user's Location information for the Profile Pane Display
         String street = User.getInstance().getUser_street();
         String city = User.getInstance().getUser_city();
@@ -66,6 +79,8 @@ public class LandingPageController extends MainApplication implements Initializa
         cityTextField.setText(city);
         stateTextField.setText(state);
         zipTextField.setText(String.valueOf(zip));
+
+        addressLabel.setText(street + ", " + city + ", \n" + state + " " + zip);
     }
 
     public void openNews() {
@@ -127,9 +142,12 @@ public class LandingPageController extends MainApplication implements Initializa
 
     // Shows the profile page on ProfilePicture click and allows for profile editing
     public void openProfile() {
-        profilePane.setVisible(!profilePane.isVisible());
+        viewProfilePane.setVisible(true);
     }
-
+    public void openEditProfile() {
+        editProfilePane.setVisible(true);
+        viewProfilePane.setVisible(false);
+    }
 
     // Confirm Profile Changes button on landing Page
     public void confirmProfileChanges(){
@@ -165,6 +183,8 @@ public class LandingPageController extends MainApplication implements Initializa
         } else {
             infoBox("User instance not found. Please log in.", null, "Failed");
         }
+        editProfilePane.setVisible(!editProfilePane.isVisible());
+        viewProfilePane.setVisible(!viewProfilePane.isVisible());
     }
 
 
