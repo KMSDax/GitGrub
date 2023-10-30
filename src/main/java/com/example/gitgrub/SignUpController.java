@@ -20,10 +20,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class SignUpController implements Initializable{
 
@@ -52,6 +49,12 @@ public class SignUpController implements Initializable{
     @FXML
     private ChoiceBox stateChoice;
     private int stateId;
+    @FXML
+    private CheckBox dairy;
+    @FXML
+    private CheckBox nuts;
+    @FXML
+    private CheckBox shellfish;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         final String SELECT_QUERY = "SELECT * FROM states"; // Include stateid in the query
@@ -188,7 +191,16 @@ public class SignUpController implements Initializable{
         String city = cityTextField.getText();
         String phoneNumber = phoneNumberTextField.getText();
         String zipCode = zipCodeTextField.getText();
-
+        ArrayList<String> allergies=new ArrayList<>();
+        if(dairy.isSelected()){
+            allergies.add("dairy");
+        }
+        if(nuts.isSelected()){
+            allergies.add("nuts");
+        }
+        if(shellfish.isSelected()){
+            allergies.add("shellfish");
+        }
         // Check if an account with the entered email already exists
         boolean flag = checkForUsername(userid);
         System.out.println("Flag: "+flag);
@@ -198,7 +210,7 @@ public class SignUpController implements Initializable{
             infoBox("An account with this username already exists.", null, "Failed");
         } else {
             // Create account
-            addUser(1,userid, password, firstName, lastName, DOB, phoneNumber, email, streetAddress, city, stateId, zipCode, "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3D%2522default%2Bprofile%2Bpicture%2522&psig=AOvVaw1tPyPjFlmrNqXAf6yLmQY4&ust=1696734540913000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOio6e764oEDFQAAAAAdAAAAABAE");
+            addUser(1,userid, password, firstName, lastName, DOB, phoneNumber, email, streetAddress, city, stateId, zipCode, "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3D%2522default%2Bprofile%2Bpicture%2522&psig=AOvVaw1tPyPjFlmrNqXAf6yLmQY4&ust=1696734540913000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOio6e764oEDFQAAAAAdAAAAABAE", allergies);
             infoBox("Registration Successful", null, "Success");
 
         }
@@ -234,7 +246,7 @@ public class SignUpController implements Initializable{
         return false;
     } // End of checkForEmail
 
-    public static void addUser(int roleID, String userId, String userPassword, String userFirstname, String userLastname, LocalDate userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, int stateId, String userZipcode, String userProfilePic) {
+    public static void addUser(int roleID, String userId, String userPassword, String userFirstname, String userLastname, LocalDate userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, int stateId, String userZipcode, String userProfilePic, ArrayList<String> allergies) {
 
         final String INSERT_QUERY = "INSERT INTO users (role_id, user_id,user_password,user_firstname,user_lastname,user_DOB,user_phonenum,user_email,user_street,user_city,state_id,user_zipcode,user_pic) " +
                 "VALUES (?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -249,7 +261,7 @@ public class SignUpController implements Initializable{
                 userStreet+ " " +
                 userCity+ " " +
                 stateId+ " " +
-                userZipcode);
+                userZipcode + " " +(allergies));
         try (Connection connection = DBConn.connectDB()) {
             assert connection != null;
             try (PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY)) {
