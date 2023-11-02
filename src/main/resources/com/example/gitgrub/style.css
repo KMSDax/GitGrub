@@ -2,14 +2,14 @@ Button{
     -fx-background-color: linear-gradient(to bottom, #e3b256, #fac869);
     -fx-font-weight: bold;
     -fx-text-fill: #545a5e;
-    -fx-font-size: 12px;
+    -fx-font-size: 10px;
     -fx-padding: 5px 10px;
 }
 Button:hover {
     -fx-background-color: linear-gradient(to bottom, #fac869, #e3b256);
     -fx-text-fill: #6b6e70;
     -fx-font-weight: bold;
-    -fx-font-size: 12px;
+    -fx-font-size: 10px;
     -fx-padding: 5px 10px;
 
     -fx-scale-x: .95;

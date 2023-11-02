@@ -8,8 +8,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 
-
-<AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
+<AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
 
     <children>
       <Pane prefHeight="95.0" prefWidth="1194.0">
@@ -23,15 +22,15 @@
 
          </children>
       </Pane>
-      <Pane fx:id="newsPane" layoutY="94.0" prefHeight="635.0" prefWidth="927.0" visible="false">
+      <Pane fx:id="newsPane" layoutY="94.0" prefHeight="635.0" prefWidth="919.0">
          <children>
-            <TabPane id="menu" layoutX="25.0" layoutY="25.0" prefHeight="433.0" prefWidth="639.0" style="-fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE">
+            <TabPane id="menu" layoutX="25.0" layoutY="25.0" prefHeight="583.0" prefWidth="869.0" style="-fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE">
               <tabs>
-                <Tab text="Untitled Tab 1">
+                <Tab text="Recipe of the Day">
                       <Pane prefWidth="801.0" />
                 </Tab>
-                <Tab text="Untitled Tab 2" />
-                <Tab text="Untitled Tab 3" />
+                <Tab text="Recipe Randomizer" />
+                <Tab text="Fitness" />
               </tabs>
             </TabPane>
          </children>
@@ -98,9 +97,9 @@
                               <WebView fx:id="descriptionPane1" fontScale="0.85" layoutX="5.0" layoutY="50.0" prefHeight="200.0" prefWidth="288.0" />
                               <ToolBar layoutX="300.0" layoutY="50.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="70.0">
                                 <items>
-                                  <Button mnemonicParsing="false" text="Button" />
-                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
-                                    <Button layoutX="10.0" layoutY="41.0" mnemonicParsing="false" text="Button" />
+                                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Description" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefWidth="64.0" text="Instructions" />
+                                    <Button layoutX="10.0" layoutY="41.0" mnemonicParsing="false" prefWidth="64.0" text="Nutrition" />
                                 </items>
                               </ToolBar>
                            </children>
@@ -128,91 +127,7 @@
                </children>
             </Pane>
          </children></Pane>
-      <Pane layoutX="927.0" layoutY="94.0" prefHeight="399.0" prefWidth="268.0">
-         <children>
-             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-         </children></Pane>
-       <Pane fx:id="editProfilePane" layoutX="925.0" layoutY="94.0" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
-          <children>
-             <Label layoutX="45.0" layoutY="14.0" text="General Information">
-                <font>
-                   <Font name="System Bold" size="18.0" />
-                </font>
-             </Label>
-             <Label layoutX="18.0" layoutY="48.0" text="First Name" />
-             <TextField fx:id="firstNameTextField" layoutX="95.0" layoutY="44.0" />
-             <Label layoutX="18.0" layoutY="83.0" text="Last Name" />
-             <TextField fx:id="lastNameTextField" layoutX="95.0" layoutY="79.0" />
-             <Label layoutX="18.0" layoutY="116.0" text="Email" />
-             <TextField fx:id="emailTextField" layoutX="95.0" layoutY="112.0" />
-             <Label layoutX="18.0" layoutY="148.0" text="Date of Birth" />
-             <TextField fx:id="dobTextField" layoutX="95.0" layoutY="144.0" />
-             <Label layoutX="18.0" layoutY="180.0" text="Phone #" />
-             <TextField fx:id="phoneTextField" layoutX="95.0" layoutY="176.0" />
-             <Label layoutX="18.0" layoutY="205.0" text="Location">
-                <font>
-                   <Font name="System Bold" size="14.0" />
-                </font>
-             </Label>
-             <Label layoutX="18.0" layoutY="229.0" text="Street" />
-             <TextField fx:id="streetTextField" layoutX="95.0" layoutY="225.0" />
-             <Label layoutX="18.0" layoutY="264.0" text="City" />
-             <TextField fx:id="cityTextField" layoutX="95.0" layoutY="260.0" />
-             <Label layoutX="18.0" layoutY="297.0" text="State" />
-             <TextField fx:id="stateTextField" layoutX="95.0" layoutY="293.0" />
-             <Label layoutX="18.0" layoutY="329.0" text="Zipcode" />
-             <TextField fx:id="zipTextField" layoutX="95.0" layoutY="325.0" />
-             <Button fx:id="confirmChangesButton" layoutX="89.0" layoutY="361.0" mnemonicParsing="false" onAction="#confirmProfileChanges" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Confirm Changes" />
-          </children></Pane>
-      <Pane fx:id="viewProfilePane" layoutX="925.0" layoutY="94.0" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
-         <children>
-            <Label layoutX="45.0" layoutY="14.0" text="General Information">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="17.0" layoutY="53.0" text="Name: ">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Label>
-            <Label layoutX="18.0" layoutY="83.0" text="Email: ">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Label>
-            <Label layoutX="17.0" layoutY="121.0" text="Date of Birth: ">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Label>
-            <Label layoutX="17.0" layoutY="158.0" text="Phone #: ">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Label>
-            <Label layoutX="17.0" layoutY="195.0" text="Address: ">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Label>
-            <Button fx:id="editButton" layoutX="97.0" layoutY="247.0" mnemonicParsing="false" onAction="#openEditProfile" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Profile" />
-            <Label fx:id="nameLabel" layoutX="101.0" layoutY="53.0" text="Name: " />
-            <Label fx:id="emailLabel" layoutX="102.0" layoutY="83.0" text="Email: " />
-            <Label fx:id="dobLabel" layoutX="101.0" layoutY="121.0" text="Date of Birth: " />
-            <Label fx:id="phoneLabel" layoutX="101.0" layoutY="158.0" text="Phone #: " />
-            <Label fx:id="addressLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="98.0" layoutY="195.0" prefHeight="52.0" prefWidth="149.0" text="Address: " wrapText="true" />
-            <Button fx:id="addMembersButton" layoutX="89.0" layoutY="284.0" mnemonicParsing="false" onAction="#openMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
-         </children>
-      </Pane>
-      <Pane fx:id="addMembersPane" layoutX="925.0" layoutY="94.0" prefHeight="583.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
-         <children>
-            <Label layoutX="94.0" layoutY="14.0" text="Allergies">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <CheckBox fx:id="dairy" layoutX="14.0" layoutY="54.0" mnemonicParsing="false" text="Dairy" />
-            <CheckBox fx:id="nuts" layoutX="14.0" layoutY="80.0" mnemonicParsing="false" text="Nuts" />
-            <CheckBox fx:id="shellfish" layoutX="14.0" layoutY="108.0" mnemonicParsing="false" text="Shellfish" />
-            <Button fx:id="addMembersButton1" layoutX="89.0" layoutY="284.0" mnemonicParsing="false" onAction="#openEditProfile" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
-         </children>
-      </Pane>
+
 
    </children>
 </AnchorPane>
