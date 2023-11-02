@@ -2,10 +2,7 @@ package com.example.gitgrub;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -13,6 +10,7 @@ import javafx.scene.layout.VBox;
 import org.json.JSONObject;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import java.io.IOException;
@@ -47,6 +45,8 @@ public class LandingPageController extends MainApplication implements Initializa
     private Label usernameLabel;
     @FXML
     private TextField firstNameTextField, lastNameTextField, emailTextField, dobTextField, phoneTextField, streetTextField, cityTextField, stateTextField, zipTextField;
+    @FXML
+    private CheckBox dairy, peanuts, shellfish, egg, gluten, grain, seafood, sesame, soy, sulfite, treenuts, wheat;
 
 
     @Override
@@ -227,6 +227,45 @@ public class LandingPageController extends MainApplication implements Initializa
         }
         return false;
     }
-
+public void getintolerence(){
+    ArrayList<String> allergies=new ArrayList<>();
+    if(dairy.isSelected()){
+        allergies.add("dairy");
+    }
+    if(peanuts.isSelected()){
+        allergies.add("peanuts");
+    }
+    if(shellfish.isSelected()){
+        allergies.add("shellfish");
+    }
+    if(egg.isSelected()){
+        allergies.add("egg");
+    }
+    if(gluten.isSelected()){
+        allergies.add("gluten");
+    }
+    if(grain.isSelected()){
+        allergies.add("grain");
+    }
+    if(seafood.isSelected()){
+        allergies.add("seafood");
+    }
+    if(soy.isSelected()){
+        allergies.add("soy");
+    }
+    if(sulfite.isSelected()){
+        allergies.add("sulfite");
+    }
+    if(treenuts.isSelected()){
+        allergies.add("treenuts");
+    }
+    if(wheat.isSelected()){
+        allergies.add("wheat");
+    }
+    if(sesame.isSelected()){
+        allergies.add("sesame");
+    }
+    System.out.print(allergies);
+}
 
 }

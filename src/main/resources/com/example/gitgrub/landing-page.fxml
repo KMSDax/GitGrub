@@ -175,17 +175,27 @@
             <Button fx:id="addMembersButton" layoutX="89.0" layoutY="284.0" mnemonicParsing="false" onAction="#openMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
          </children>
       </Pane>
-      <Pane fx:id="addMembersPane" layoutX="925.0" layoutY="94.0" prefHeight="583.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+      <Pane fx:id="addMembersPane" layoutX="925.0" layoutY="94.0" prefHeight="583.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="true">
          <children>
             <Label layoutX="94.0" layoutY="14.0" text="Allergies">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <CheckBox fx:id="dairy" layoutX="14.0" layoutY="54.0" mnemonicParsing="false" text="Dairy" />
-            <CheckBox fx:id="nuts" layoutX="14.0" layoutY="80.0" mnemonicParsing="false" text="Nuts" />
-            <CheckBox fx:id="shellfish" layoutX="14.0" layoutY="108.0" mnemonicParsing="false" text="Shellfish" />
-            <Button fx:id="addMembersButton1" layoutX="89.0" layoutY="284.0" mnemonicParsing="false" onAction="#openEditProfile" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
+            <CheckBox fx:id="dairy" layoutX="14.0" layoutY="55.0" mnemonicParsing="false" text="Dairy" />
+            <CheckBox fx:id="peanuts" layoutX="14.0" layoutY="80.0" mnemonicParsing="false" text="Peanuts" />
+            <CheckBox fx:id="shellfish" layoutX="14.0" layoutY="105.0" mnemonicParsing="false" text="Shellfish" />
+            <CheckBox fx:id="egg" layoutX="14.0" layoutY="130.0" mnemonicParsing="false" text="Egg" />
+            <CheckBox fx:id="gluten" layoutX="14.0" layoutY="155.0" mnemonicParsing="false" text="Gluten" />
+            <CheckBox fx:id="grain" layoutX="14.0" layoutY="180.0" mnemonicParsing="false" text="Grain" />
+            <CheckBox fx:id="seafood" layoutX="14.0" layoutY="205.0" mnemonicParsing="false" text="Seafood" />
+            <CheckBox fx:id="sesame" layoutX="14.0" layoutY="230.0" mnemonicParsing="false" text="Sesame" />
+            <CheckBox fx:id="soy" layoutX="14.0" layoutY="255.0" mnemonicParsing="false" text="Soy" />
+            <CheckBox fx:id="sulfite" layoutX="14.0" layoutY="280.0" mnemonicParsing="false" text="Sulfite" />
+            <CheckBox fx:id="treenuts" layoutX="14.0" layoutY="305.0" mnemonicParsing="false" text="Tree Nuts" />
+            <CheckBox fx:id="wheat" layoutX="14.0" layoutY="330.0" mnemonicParsing="false" text="Wheat" />
+            <Button fx:id="addMembersButton1" layoutX="89.0" layoutY="400.0" mnemonicParsing="false" onAction="#openEditProfile" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
+            <Button onAction="#getintolerence" fx:id ="addAllergyButton" layoutX="89.0" layoutY="357.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" text="Add Allergy" />
          </children>
       </Pane>
 
