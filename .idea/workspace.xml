@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="942264c4-5a86-4208-98b6-f49c167d906f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/ProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/controller-page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_24_2023_5_20_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_24_2023_5_20_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/controller-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/controller-page.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,9 +1,11 @@
 package com.example.gitgrub;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
-import javafx.scene.control.*;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
@@ -12,23 +14,21 @@ import javafx.scene.control.TextField;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import org.json.JSONObject;
 
 import java.net.URL;
-import java.sql.SQLOutput;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 // Imported Dax's infoBox and printSQLException methods from the LogInController
 import static com.example.gitgrub.LogInController.infoBox;
@@ -69,6 +69,7 @@ public class LandingPageController extends MainApplication implements Initializa
         profilePic.setImage(picture);
         usernameLabel.setText(User.getInstance().getUser_id());
 
+
         // Initializes  user's general information for the Profile Pane Display
         String firstName = User.getInstance().getUser_firstname();
         String lastName = User.getInstance().getUser_lastname();
@@ -81,7 +82,6 @@ public class LandingPageController extends MainApplication implements Initializa
         emailTextField.setText(email);
         dobTextField.setText(dob);
         phoneTextField.setText(phoneNum);
-        usernameLabel.setText(username);
 
         nameLabel.setText(firstName + " " + lastName);
         emailLabel.setText(email);
@@ -144,16 +144,14 @@ public class LandingPageController extends MainApplication implements Initializa
         }
 
     }
-    public void Mom(){
-        System.out.println("mom");
-    }
 
     // Shows the profile page on ProfilePicture click and allows for profile editing
     public void openProfile() {
+        editProfilePane.setVisible(false);
         viewProfilePane.setVisible(true);
         addMembersPane.setVisible(false);
-        editProfilePane.setVisible(false);
     }
+
     public void openEditProfile() {
         editProfilePane.setVisible(true);
         viewProfilePane.setVisible(false);
