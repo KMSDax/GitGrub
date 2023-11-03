@@ -5,21 +5,19 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="942264c4-5a86-4208-98b6-f49c167d906f" name="Changes" comment="Added viewProfilePane &amp; editProfileButton to change view to editProfilePane">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_20_2023_10_45_AM_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_20_2023_10_45_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 =======
 
+=======
+>>>>>>> adbcc6189d5de37a6ade83ef8647b018dbe1cd8a
     <list default="true" id="942264c4-5a86-4208-98b6-f49c167d906f" name="Changes" comment="My changes adding more checkboxes for allergies">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_20_2023_10_45_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_20_2023_10_45_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_24_2023_5_20_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_24_2023_5_20_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/SignUpController.java" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/Spoonacular.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/Spoonacular.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" afterDir="false" />
 >>>>>>> 10be18ab4c7b96f2ee3aba0c30359f230fd7b8b4
     </list>
@@ -67,6 +65,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> adbcc6189d5de37a6ade83ef8647b018dbe1cd8a
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
@@ -74,6 +75,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+<<<<<<< HEAD
     "git-widget-placeholder": "Jayson",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "C:/GitHubProjects/GitGrub/src/main/java/com/example/gitgrub",
@@ -104,8 +106,23 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
 
 >>>>>>> 10be18ab4c7b96f2ee3aba0c30359f230fd7b8b4
+=======
+    "git-widget-placeholder": "Merging Dax",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_directory_selection": "C:/GitHubProjects/GitGrub/src/main/java/com/example/gitgrub",
+    "last_opened_file_path": "C:/Users/aalbe/IdeaProjects/GitGrub/src/main/resources/com/example/gitgrub/sign-up-view.fxml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> adbcc6189d5de37a6ade83ef8647b018dbe1cd8a
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\GitHubProjects\GitGrub\src\main\java\com\example\gitgrub" />

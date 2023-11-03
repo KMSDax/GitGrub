@@ -4,6 +4,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> adbcc6189d5de37a6ade83ef8647b018dbe1cd8a
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
@@ -13,9 +17,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.*;
 
+<<<<<<< HEAD
 =======
 import javafx.scene.control.*;
 >>>>>>> 863c036ea85b3cd73f640c574f9d96d7a2e14fd8
+=======
+import javafx.scene.control.*;
+
+>>>>>>> adbcc6189d5de37a6ade83ef8647b018dbe1cd8a
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -54,9 +63,15 @@ public class LandingPageController extends MainApplication implements Initializa
     public Button addMembersButton;
     public Pane addMembersPane;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     public Pane nutrtionLabelPane;
 >>>>>>> 863c036ea85b3cd73f640c574f9d96d7a2e14fd8
+=======
+
+    public Pane nutrtionLabelPane;
+
+>>>>>>> adbcc6189d5de37a6ade83ef8647b018dbe1cd8a
 
     @FXML
     public ImageView imageView1,imageView2,imageView3,imageView4;
