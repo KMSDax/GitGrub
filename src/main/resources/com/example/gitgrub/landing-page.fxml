@@ -216,7 +216,7 @@
              <Label layoutX="122.0" layoutY="268.0" text="Diet" />
           </children>
        </Pane>
-       <Pane fx:id="addMembersPane11" layoutX="920.0" layoutY="120.0" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+       <Pane fx:id="addMembersPane11" layoutX="920.0" layoutY="120.0" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
           <children>
              <Label layoutX="74.0" layoutY="14.0" text="User Member">
                 <font>
@@ -240,20 +240,21 @@
              <Button fx:id="addMembersButton1111" layoutX="57.0" layoutY="360.0" mnemonicParsing="false" onAction="#openEditProfile" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Members" />
              <Pane layoutX="14.0" layoutY="227.0" prefHeight="121.0" prefWidth="234.0" visible="false">
                 <children>
-                   <CheckBox fx:id="dairy" mnemonicParsing="false" text="Dairy" />
-                   <CheckBox fx:id="nuts" layoutX="85.0" layoutY="90.0" mnemonicParsing="false" text="Nuts" />
-                   <CheckBox fx:id="shellfish" layoutX="84.0" layoutY="60.0" mnemonicParsing="false" text="Shellfish" />
-                   <CheckBox fx:id="dairy1" layoutX="167.0" layoutY="90.0" mnemonicParsing="false" text="Dairy" />
-                   <CheckBox fx:id="nuts1" layoutX="167.0" layoutY="60.0" mnemonicParsing="false" text="Nuts" />
-                   <CheckBox fx:id="shellfish1" layoutX="167.0" layoutY="31.0" mnemonicParsing="false" text="Shellfish" />
-                   <CheckBox fx:id="dairy11" layoutX="84.0" layoutY="31.0" mnemonicParsing="false" text="Dairy" />
-                   <CheckBox fx:id="nuts11" layoutX="167.0" mnemonicParsing="false" text="Nuts" />
-                   <CheckBox fx:id="shellfish11" layoutX="84.0" mnemonicParsing="false" text="Shellfish" />
-                   <CheckBox fx:id="dairy111" layoutY="31.0" mnemonicParsing="false" text="Dairy" />
-                   <CheckBox fx:id="nuts111" layoutY="60.0" mnemonicParsing="false" text="Nuts" />
-                   <CheckBox fx:id="shellfish111" layoutY="90.0" mnemonicParsing="false" text="Shellfish" />
+                   <CheckBox fx:id="dairy" layoutX="6.0" mnemonicParsing="false" text="Dairy" />
+                   <CheckBox fx:id="peanuts" layoutX="6.0" layoutY="25.0" mnemonicParsing="false" text="Peanuts" />
+                   <CheckBox fx:id="shellfish" layoutX="6.0" layoutY="50.0" mnemonicParsing="false" text="Shellfish" />
+                   <CheckBox fx:id="egg" layoutX="6.0" layoutY="75.0" mnemonicParsing="false" text="Egg" />
+                   <CheckBox fx:id="gluten" layoutX="84.0" mnemonicParsing="false" text="Gluten" />
+                   <CheckBox fx:id="grain" layoutX="84.0" layoutY="25.0" mnemonicParsing="false" text="Grain" />
+                   <CheckBox fx:id="seafood" layoutX="84.0" layoutY="50.0" mnemonicParsing="false" text="Seafood" />
+                   <CheckBox fx:id="sesame" layoutX="84.0" layoutY="75.0" mnemonicParsing="false" text="Sesame" />
+                   <CheckBox fx:id="soy" layoutX="160.0" mnemonicParsing="false" text="Soy" />
+                   <CheckBox fx:id="sulfite" layoutX="160.0" layoutY="25.0" mnemonicParsing="false" text="Sulfite" />
+                   <CheckBox fx:id="treenuts" layoutX="160.0" layoutY="50.0" mnemonicParsing="false" text="Tree Nuts" />
+                   <CheckBox fx:id="wheat" layoutX="160.0" layoutY="75.0" mnemonicParsing="false" text="Wheat" />
+                   <Button fx:id="addAllergyButton" layoutX="63.0" layoutY="96.0" mnemonicParsing="false" onAction="#getintolerence" prefHeight="25.0" prefWidth="100.0" text="Add Allergy" />
                 </children></Pane>
-             <Pane layoutX="14.0" layoutY="219.0" prefHeight="129.0" prefWidth="234.0">
+             <Pane layoutX="14.0" layoutY="219.0" prefHeight="129.0" prefWidth="234.0" visible="false">
                 <children>
                    <Label layoutX="117.0" layoutY="6.0" text="Input Weight(lbs)" />
                    <TextField layoutX="117.0" layoutY="22.0" prefHeight="25.0" prefWidth="107.0" />
@@ -292,6 +293,5 @@
              </Pane>
           </children>
        </Pane>
-
    </children>
 </AnchorPane>
