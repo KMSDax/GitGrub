@@ -14,11 +14,14 @@ import java.util.List;
  * Represents Spoonacular recipes retrieved from an external API.
  */
 public class Spoonacular {
+
+
     private final String title;
     private final String description;
     private String sourceUrl, image;
     private int readyInMinutes;
     private int servings;
+    static String apiKey = "apiKey=109600fd90884071b83282171199d792";
     private static final List<Spoonacular> recipeList = new ArrayList<>();
     public Spoonacular(String title, String description,String sourceUrl, String image, int readyInMinutes, int servings) {
         this.title = title;
@@ -38,7 +41,7 @@ public class Spoonacular {
     }
     public static void getRandRecipe() {
         // Define the API URL for Spoonacular recipes
-        String apiUrl = "https://api.spoonacular.com/recipes/random?number=1&tags=vegetarian,dessert&apiKey=109600fd90884071b83282171199d792";
+        String apiUrl = "https://api.spoonacular.com/recipes/random?number=1&tags=vegetarian,dessert&" + apiKey;
 
         try {
             // Create a URL object and open a connection
@@ -118,8 +121,7 @@ public class Spoonacular {
         }
     }
     public static JSONObject fetchRecipeInformation(int recipeId) {
-        String apiKey = "109600fd90884071b83282171199d792";
-        String apiUrl = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=" + apiKey;
+        String apiUrl = "https://api.spoonacular.com/recipes/" + recipeId + "/information?" + apiKey;
 
         try {
             URL url = new URL(apiUrl);
@@ -139,6 +141,39 @@ public class Spoonacular {
                 in.close();
 
                 return new JSONObject(response.toString());
+            } else {
+                System.out.println("Request failed with response code: " + responseCode);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String fetchNutritionLabel(int recipeId) {
+        String apiUrl = "https://api.spoonacular.com/recipes/" + recipeId + "/nutritionLabel?" + apiKey;
+
+        try {
+            URL url = new URL(apiUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+
+            // Set the Accept header to request HTML content
+            connection.setRequestProperty("Accept", "text/html");
+
+            int responseCode = connection.getResponseCode();
+
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+
+                return response.toString();
             } else {
                 System.out.println("Request failed with response code: " + responseCode);
             }

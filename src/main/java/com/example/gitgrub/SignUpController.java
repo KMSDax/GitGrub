@@ -20,10 +20,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class SignUpController implements Initializable{
 
@@ -52,6 +49,7 @@ public class SignUpController implements Initializable{
     @FXML
     private ChoiceBox stateChoice;
     private int stateId;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         final String SELECT_QUERY = "SELECT * FROM states"; // Include stateid in the query
@@ -237,7 +235,7 @@ public class SignUpController implements Initializable{
     public static void addUser(int roleID, String userId, String userPassword, String userFirstname, String userLastname, LocalDate userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, int stateId, String userZipcode, String userProfilePic) {
 
         final String INSERT_QUERY = "INSERT INTO users (role_id, user_id,user_password,user_firstname,user_lastname,user_DOB,user_phonenum,user_email,user_street,user_city,state_id,user_zipcode,user_pic) " +
-                "VALUES (?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "VALUES (?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
         System.out.println(roleID + " " +
                 userId+ " " +
                 userPassword+ " " +
