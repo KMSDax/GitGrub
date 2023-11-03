@@ -2,10 +2,7 @@ package com.example.gitgrub;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -14,6 +11,7 @@ import org.json.JSONObject;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.web.*;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -24,6 +22,7 @@ import java.sql.SQLException;
 // Imported Dax's infoBox and printSQLException methods from the LogInController
 import static com.example.gitgrub.LogInController.infoBox;
 import static com.example.gitgrub.LogInController.printSQLException;
+import static com.example.gitgrub.Spoonacular.fetchNutritionLabel;
 import static com.example.gitgrub.Spoonacular.fetchRecipeInformation;
 
 public class LandingPageController extends MainApplication implements Initializable {
@@ -37,6 +36,8 @@ public class LandingPageController extends MainApplication implements Initializa
     public Pane viewProfilePane;
     public Button addMembersButton;
     public Pane addMembersPane;
+    public Pane nutrtionLabelPane;
+
     @FXML
     private Button news;
     @FXML
@@ -142,6 +143,21 @@ public class LandingPageController extends MainApplication implements Initializa
         page2.getChildren().add(recipeLayoutPage2);
     }
 
+    // Testing fetchNutritionLabel through the bookmarks label
+    public void showRecipeNutritionLabel() {
+        WebView webView = new WebView();
+
+        String nutritionLabelContent = fetchNutritionLabel(1);
+        if (nutritionLabelContent != null) {
+            webView.getEngine().loadContent(nutritionLabelContent);
+
+            webView.setPrefSize(nutrtionLabelPane.getWidth()-10, nutrtionLabelPane.getHeight()-10);
+            webView.setMaxSize(nutrtionLabelPane.getWidth(), nutrtionLabelPane.getHeight());
+            webView.setTranslateX(10);
+            webView.setTranslateY(10);
+            nutrtionLabelPane.getChildren().add(webView);
+        }
+    }
     // Shows the profile page on ProfilePicture click and allows for profile editing
     public void openProfile() {
         viewProfilePane.setVisible(true);

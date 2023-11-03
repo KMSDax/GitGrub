@@ -149,6 +149,39 @@ public class Spoonacular {
         }
         return null;
     }
+
+    public static String fetchNutritionLabel(int recipeId) {
+        String apiUrl = "https://api.spoonacular.com/recipes/" + recipeId + "/nutritionLabel?" + apiKey;
+
+        try {
+            URL url = new URL(apiUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+
+            // Set the Accept header to request HTML content
+            connection.setRequestProperty("Accept", "text/html");
+
+            int responseCode = connection.getResponseCode();
+
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+
+                return response.toString();
+            } else {
+                System.out.println("Request failed with response code: " + responseCode);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 //    public static void recipeSearch(){
 //        String apiURL = "https://api.spoonacular.com/food/products/search&apiKey=109600fd90884071b83282171199d792";
 //    }
