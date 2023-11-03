@@ -4,6 +4,7 @@ module com.example.gitgrub {
     requires java.sql;
     requires javafx.web;
     requires org.json;
+    requires java.desktop;
 
 
     opens com.example.gitgrub to javafx.fxml;
