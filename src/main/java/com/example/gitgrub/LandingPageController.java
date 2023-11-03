@@ -1,25 +1,37 @@
 package com.example.gitgrub;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import org.json.JSONObject;
 
 import java.net.URL;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 // Imported Dax's infoBox and printSQLException methods from the LogInController
 import static com.example.gitgrub.LogInController.infoBox;
@@ -27,32 +39,41 @@ import static com.example.gitgrub.LogInController.printSQLException;
 import static com.example.gitgrub.Spoonacular.fetchRecipeInformation;
 
 public class LandingPageController extends MainApplication implements Initializable {
-    public Label nameLabel;
-    public Label emailLabel;
-    public Label dobLabel;
-    public Label phoneLabel;
-    public Label addressLabel;
+
+    public Label usernameLabel,nameLabel,emailLabel,dobLabel,phoneLabel,addressLabel;
+
     public Button editButton;
     public Button confirmChangesButton;
     public Pane viewProfilePane;
     public Button addMembersButton;
     public Pane addMembersPane;
+
     @FXML
-    private Button news;
+    public ImageView imageView1,imageView2,imageView3,imageView4;
+    @FXML
+    public Label titleLabel1,titleLabel2,titleLabel3,titleLabel4;
+
+    @FXML
+    public Hyperlink sourceLink1,sourceLink2,sourceLink3,sourceLink4;
+    public WebView descriptionPane1;
+
+
     @FXML
     private ImageView profilePic;
     @FXML
     private Pane newsPane, cookbookPane, page1, page2, editProfilePane;
     @FXML
-    private Label usernameLabel;
-    @FXML
     private TextField firstNameTextField, lastNameTextField, emailTextField, dobTextField, phoneTextField, streetTextField, cityTextField, stateTextField, zipTextField;
+    @FXML
+    private CheckBox dairy, peanuts, shellfish, egg, gluten, grain, seafood, sesame, soy, sulfite, treenuts, wheat;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image picture = new Image(User.getInstance().getUser_profile());
         profilePic.setImage(picture);
+        usernameLabel.setText(User.getInstance().getUser_id());
+
 
         // Initializes  user's general information for the Profile Pane Display
         String firstName = User.getInstance().getUser_firstname();
@@ -66,7 +87,6 @@ public class LandingPageController extends MainApplication implements Initializa
         emailTextField.setText(email);
         dobTextField.setText(dob);
         phoneTextField.setText(phoneNum);
-        usernameLabel.setText(username);
 
         nameLabel.setText(firstName + " " + lastName);
         emailLabel.setText(email);
@@ -95,12 +115,7 @@ public class LandingPageController extends MainApplication implements Initializa
         cookbookPane.setVisible(true);
         newsPane.setVisible(false);
 
-        // Create layouts for page1 and page2
-        VBox recipeLayoutPage1 = new VBox(20);
-        VBox recipeLayoutPage2 = new VBox(20);
-
-        // Fetch and display recipes
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i <= 2; i++) {
             int recipeId = i + 1; // Replace with the appropriate recipe IDs
             JSONObject recipeInfo = fetchRecipeInformation(recipeId);
 
@@ -110,44 +125,38 @@ public class LandingPageController extends MainApplication implements Initializa
                 String sourceUrl = recipeInfo.getString("sourceUrl");
                 String imageUrl = recipeInfo.optString("image", "null");
 
-                // Create nodes to display recipe information
-                Label titleLabel = new Label("Title: " + title);
-                Label descriptionLabel = new Label("Description: " + description);
-                Hyperlink sourceLink = new Hyperlink("Source URL");
-                sourceLink.setOnAction(e -> getHostServices().showDocument(sourceUrl));
+                // Get references to the JavaFX components in page1
+                Label titleLabel = (Label) page1.lookup("#titleLabel" + (i + 1));
+                ImageView imageView = (ImageView) page1.lookup("#imageView" + (i + 1));
+                Hyperlink sourceLink = (Hyperlink) page1.lookup("#sourceLink" + (i + 1));
+                WebView descriptionPane = (WebView) page1.lookup("#descriptionPane" + (i + 1));
 
+                // Set the recipe information
+                titleLabel.setText(title);
+                sourceLink.setText("Source URL");
+                sourceLink.setOnAction(e -> getHostServices().showDocument(sourceUrl));
+                // Set image
                 Image recipeImage = new Image(imageUrl);
-                ImageView imageView = new ImageView(recipeImage);
-                imageView.setFitHeight(75);
-                imageView.setFitWidth(150);
+                //imageView.setImage(recipeImage);
 
                 // Create a container for each recipe
-                VBox recipeContainer = new VBox(10);
-                recipeContainer.getChildren().addAll(titleLabel, descriptionLabel, sourceLink, imageView);
-
-                // Add the recipe to the appropriate layout (page1 or page2)
-                if (i % 2 == 0) {
-                    recipeLayoutPage1.getChildren().add(recipeContainer);
-                } else {
-                    recipeLayoutPage2.getChildren().add(recipeContainer);
-                }
+                Label descriptionLabel = new Label(description);
+                Text styledText = new Text(description);
+                WebEngine webEngine = descriptionPane.getEngine();
+                webEngine.loadContent(description);
             }
+
         }
 
-        // Clear previous content and add the recipe layouts to page1 and page2
-        page1.getChildren().clear();
-        page1.getChildren().add(recipeLayoutPage1);
-
-        page2.getChildren().clear();
-        page2.getChildren().add(recipeLayoutPage2);
     }
 
     // Shows the profile page on ProfilePicture click and allows for profile editing
     public void openProfile() {
+        editProfilePane.setVisible(false);
         viewProfilePane.setVisible(true);
         addMembersPane.setVisible(false);
-        editProfilePane.setVisible(false);
     }
+
     public void openEditProfile() {
         editProfilePane.setVisible(true);
         viewProfilePane.setVisible(false);
@@ -227,6 +236,45 @@ public class LandingPageController extends MainApplication implements Initializa
         }
         return false;
     }
-
+public void getintolerence(){
+    ArrayList<String> allergies=new ArrayList<>();
+    if(dairy.isSelected()){
+        allergies.add("dairy");
+    }
+    if(peanuts.isSelected()){
+        allergies.add("peanuts");
+    }
+    if(shellfish.isSelected()){
+        allergies.add("shellfish");
+    }
+    if(egg.isSelected()){
+        allergies.add("egg");
+    }
+    if(gluten.isSelected()){
+        allergies.add("gluten");
+    }
+    if(grain.isSelected()){
+        allergies.add("grain");
+    }
+    if(seafood.isSelected()){
+        allergies.add("seafood");
+    }
+    if(soy.isSelected()){
+        allergies.add("soy");
+    }
+    if(sulfite.isSelected()){
+        allergies.add("sulfite");
+    }
+    if(treenuts.isSelected()){
+        allergies.add("treenuts");
+    }
+    if(wheat.isSelected()){
+        allergies.add("wheat");
+    }
+    if(sesame.isSelected()){
+        allergies.add("sesame");
+    }
+    System.out.print(allergies);
+}
 
 }
