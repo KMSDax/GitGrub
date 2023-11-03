@@ -6,10 +6,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.awt.*;
+
 import java.io.IOException;
 
 
@@ -52,7 +60,9 @@ public class ForgotPasswordController {
 
         // Update the user's password
         if (currentUser != null) {
+
             currentUser.setUser_password(newPassword);
+
             System.out.println("Password updated successfully!");
         } else {
             System.out.println("User not found!");
@@ -64,7 +74,9 @@ public class ForgotPasswordController {
         // Search the users list, database, or any other data source to find the user
         User[] users = new User[0];
         for (User user : users) {
+
             if (user.getUser_id().equals(username)) {
+
                 return user;
             }
         }

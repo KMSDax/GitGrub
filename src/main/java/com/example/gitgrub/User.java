@@ -119,11 +119,14 @@ public class User {
         this.role_id = role_id;
     }
 
+
     public ArrayList<String> getAllergies() {
         return allergies;
     }
 
     public void setAllergies(ArrayList<String> allergies) {
         this.allergies = allergies;
+
     }
+
 }
