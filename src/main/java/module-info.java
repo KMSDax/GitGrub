@@ -5,6 +5,7 @@ module com.example.gitgrub {
     requires javafx.web;
     requires org.json;
     requires java.desktop;
+    requires jsoup;
 
 
     opens com.example.gitgrub to javafx.fxml;
