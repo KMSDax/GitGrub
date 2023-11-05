@@ -194,8 +194,14 @@
             <CheckBox fx:id="sulfite" layoutX="14.0" layoutY="280.0" mnemonicParsing="false" text="Sulfite" />
             <CheckBox fx:id="treenuts" layoutX="14.0" layoutY="305.0" mnemonicParsing="false" text="Tree Nuts" />
             <CheckBox fx:id="wheat" layoutX="14.0" layoutY="330.0" mnemonicParsing="false" text="Wheat" />
-            <Button fx:id="addMembersButton1" layoutX="89.0" layoutY="400.0" mnemonicParsing="false" onAction="#openEditProfile" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
-            <Button onAction="#getintolerence" fx:id ="addAllergyButton" layoutX="89.0" layoutY="357.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" text="Add Allergy" />
+            <Button fx:id="addMembersButton1" layoutX="93.0" layoutY="498.0" mnemonicParsing="false" onAction="#openEditProfile" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
+            <Button fx:id="addAllergyButton" layoutX="93.0" layoutY="463.0" mnemonicParsing="false" onAction="#getintolerence" prefHeight="27.0" prefWidth="100.0" text="Add Allergy" />
+            <TextField fx:id="weight" layoutX="89.0" layoutY="354.0" />
+            <TextField fx:id="height" layoutX="89.0" layoutY="389.0" />
+            <Label layoutX="35.0" layoutY="358.0" prefHeight="17.0" prefWidth="49.0" text="Weight" />
+            <Label layoutX="36.0" layoutY="393.0" prefHeight="17.0" prefWidth="44.0" text="Height" />
+            <TextField fx:id="age" layoutX="89.0" layoutY="427.0" />
+            <Label layoutX="36.0" layoutY="431.0" text="Age" />
          </children>
       </Pane>
 

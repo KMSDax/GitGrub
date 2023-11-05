@@ -44,7 +44,7 @@ public class LandingPageController extends MainApplication implements Initializa
     @FXML
     private Label usernameLabel;
     @FXML
-    private TextField firstNameTextField, lastNameTextField, emailTextField, dobTextField, phoneTextField, streetTextField, cityTextField, stateTextField, zipTextField;
+    private TextField firstNameTextField, lastNameTextField, emailTextField, dobTextField, phoneTextField, streetTextField, cityTextField, stateTextField, zipTextField, height, weight, age;
     @FXML
     private CheckBox dairy, peanuts, shellfish, egg, gluten, grain, seafood, sesame, soy, sulfite, treenuts, wheat;
 
@@ -265,7 +265,19 @@ public void getintolerence(){
     if(sesame.isSelected()){
         allergies.add("sesame");
     }
-    System.out.print(allergies);
+    System.out.println(allergies);
+    double w = Double.parseDouble(weight.getText());
+    double h = Double.parseDouble(height.getText());
+    int a = Integer.parseInt(age.getText());
+    System.out.println("Weight: " + w);
+    System.out.println("Height: " + h);
+    System.out.println("age: " + a);
+    double bmi = (w / (h * h )) * 703;
+    System.out.println("bmi: " + bmi);
+    double BFP = (1.20 * bmi) + (0.23 * a) - 16.2;
+    System.out.println("bfp: " + BFP);
+    double MM = BFP - 100;
+    System.out.println("MM: " + MM);
 }
 
 }
