@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -31,6 +32,7 @@ public class CookbookController extends MainApplication implements Initializable
     public ImageView imageView1, imageView2, imageView3, imageView4;
     @FXML
     public Button back,next;
+    public TextField search;
     private int currentIndex = 0;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -130,15 +132,15 @@ public class CookbookController extends MainApplication implements Initializable
         }
     }
     private void showNextRecipes() {
-        if (currentIndex + 4 < 99999) { // Assuming a total of 20 recipes
-            currentIndex += 4;
+        if (currentIndex + 4 < 12) { // cuz we're poor college students and can't afford more then 150 api calls a day!
+            currentIndex += 5;
             updateRecipes();
         }
     }
 
     private void showPreviousRecipes() {
         if (currentIndex > 0) {
-            currentIndex -= 4;
+            currentIndex -= 5;
             updateRecipes();
         }
     }

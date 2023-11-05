@@ -160,8 +160,10 @@
                     </Pane>
                 </children>
             </Pane>
-         <Button fx:id="back" layoutX="584.0" layoutY="731.0" mnemonicParsing="false" text="&lt;&lt;"/>
+         <Button fx:id="back" layoutX="584.0" layoutY="731.0" mnemonicParsing="false" text="&lt;&lt;" />
          <Button fx:id="next" layoutX="632.0" layoutY="731.0" mnemonicParsing="false" text="&gt;&gt;" />
+         <Button layoutX="14.0" layoutY="731.0" mnemonicParsing="false" text="Back to Home" />
+         <TextField fx:id="search" layoutX="119.0" layoutY="731.0" prefHeight="25.0" prefWidth="244.0" promptText="Search" />
         </children></Pane>
 
 </AnchorPane>

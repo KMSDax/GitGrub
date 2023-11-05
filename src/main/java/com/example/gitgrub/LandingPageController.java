@@ -46,24 +46,12 @@ import static com.example.gitgrub.Spoonacular.fetchNutritionLabel;
 import static com.example.gitgrub.Spoonacular.fetchRecipeInformation;
 
 public class LandingPageController extends MainApplication implements Initializable {
-
+    @FXML
     public Label usernameLabel,nameLabel,emailLabel,dobLabel,phoneLabel,addressLabel;
-
-    public Button editButton,confirmChangesButton,addMembersButton;
-
-    public Pane viewProfilePane,addMembersPane,nutrtionLabelPane;
-
-
-
     @FXML
-    public ImageView imageView1,imageView2,imageView3,imageView4;
+    public Button editButton,confirmChangesButton,addMembersButton,openFitnessButton,openAllergiesButton;
     @FXML
-    public Label titleLabel1,titleLabel2,titleLabel3,titleLabel4;
-
-    @FXML
-    public Hyperlink sourceLink1,sourceLink2,sourceLink3,sourceLink4;
-    public WebView descriptionPane1;
-
+    public Pane viewProfilePane,addMembersPane,nutrtionLabelPane,viewMembersInfoPane,fitnessPane,allergiesPane;
 
     @FXML
     private ImageView profilePic;
@@ -73,8 +61,6 @@ public class LandingPageController extends MainApplication implements Initializa
     private TextField firstNameTextField, lastNameTextField, emailTextField, dobTextField, phoneTextField, streetTextField, cityTextField, stateTextField, zipTextField;
     @FXML
     private CheckBox dairy, peanuts, shellfish, egg, gluten, grain, seafood, sesame, soy, sulfite, treenuts, wheat;
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image picture = new Image(User.getInstance().getUser_profile());
@@ -147,21 +133,35 @@ public class LandingPageController extends MainApplication implements Initializa
     }
     // Shows the profile page on ProfilePicture click and allows for profile editing
     public void openProfile() {
-        editProfilePane.setVisible(false);
-        viewProfilePane.setVisible(true);
-        addMembersPane.setVisible(false);
+        if(viewProfilePane.isVisible()) {
+            viewProfilePane.setVisible(false);
+        }else{
+            viewProfilePane.setVisible(true);
+        }
+
+            editProfilePane.setVisible(false);
+            addMembersPane.setVisible(false);
+        viewMembersInfoPane.setVisible(false);
     }
 
     public void openEditProfile() {
         editProfilePane.setVisible(true);
         viewProfilePane.setVisible(false);
         addMembersPane.setVisible(false);
+        viewMembersInfoPane.setVisible(false);
     }
 
     public void openMembersPane(){
         addMembersPane.setVisible(true);
         viewProfilePane.setVisible(false);
         editProfilePane.setVisible(false);
+        viewMembersInfoPane.setVisible(false);
+    }
+    public void openViewMembersPane(){
+        addMembersPane.setVisible(false);
+        viewProfilePane.setVisible(false);
+        editProfilePane.setVisible(false);
+        viewMembersInfoPane.setVisible(true);
     }
 
     // Confirm Profile Changes button on landing Page
@@ -272,4 +272,33 @@ public void getintolerence(){
     System.out.print(allergies);
 }
 
+    public void addNewMember(ActionEvent actionEvent) {
+    }
+
+    public void updateAllergies(ActionEvent actionEvent) {
+    }
+
+    public void openAllergies() {
+        if(allergiesPane.isVisible()){
+            allergiesPane.setVisible(false);
+        }else{
+            allergiesPane.setVisible(true);
+        }
+        fitnessPane.setVisible(false);
+    }
+
+    public void openFitness() {
+        if(fitnessPane.isVisible()){
+            fitnessPane.setVisible(false);
+        }else{
+            fitnessPane.setVisible(true);
+        }
+        allergiesPane.setVisible(false);
+    }
+
+    public void calcFitness(ActionEvent actionEvent) {
+    }
+
+    public void editMember(ActionEvent actionEvent) {
+    }
 }
