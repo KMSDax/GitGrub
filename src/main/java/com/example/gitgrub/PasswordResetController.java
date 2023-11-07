@@ -1,3 +1,4 @@
+
 package com.example.gitgrub;
 
 import javafx.event.ActionEvent;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class PasswordResetController {
 
-    private List<User> users; // Assume this list holds your user data
+    private final List<User> users; // Assume this list holds your user data
 
     @FXML
     private PasswordField passwordResetField; // Password field in the UI

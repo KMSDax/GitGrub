@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane prefHeight="783.0" prefWidth="1250.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.CookbookController">
+    <Pane fx:id="cookbookPane" layoutY="8.0" prefHeight="765.0" prefWidth="1250.0">
+        <children>
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="710.0" prefWidth="1230.0" style="-fx-background-color: linear-gradient(to top left,#ba2557, #b81a4f,  #802040, #8c0f39, #ba2557);">
+                <effect>
+                    <DropShadow height="3.0" offsetX="1.0" offsetY="1.0" radius="1.0" spread="1.0" width="3.0">
+                        <color>
+                            <Color red="0.42105263471603394" green="0.010916179046034813" blue="0.010916179046034813" />
+                        </color>
+                    </DropShadow>
+                </effect>
+                <children>
+                    <ImageView fitHeight="59.0" fitWidth="690.0" layoutX="847.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                        <image>
+                            <Image url="@images/Pages2.jpg" />
+                        </image>
+                        <effect>
+                            <DropShadow height="5.0" offsetX="1.0" offsetY="-1.0" radius="2.0" spread="0.57" width="5.0">
+                                <color>
+                                    <Color opacity="0.6104452610015869" />
+                                </color>
+                            </DropShadow>
+                        </effect>
+                    </ImageView>
+                    <Pane fx:id="page2" layoutX="598.0" layoutY="10.0" prefHeight="690.0" prefWidth="585.0" style="-fx-background-color: linear-gradient(to right, #69675c, #a8a697,#bdbbac,#bdbbac,#ccc9b8,#dbd8c5,#fffced);">
+                        <effect>
+                            <DropShadow height="5.0" offsetX="1.0" offsetY="1.0" radius="2.0" spread="0.5" width="5.0">
+                                <color>
+                                    <Color opacity="0.48972606658935547" />
+                                </color>
+                            </DropShadow>
+                        </effect>
+                  <children>
+                     <Pane layoutX="27.0" layoutY="14.0" prefHeight="320.0" prefWidth="540.0" style="-fx-background-color: linear-gradient(to right, #69675c1F, #a8a6971F,#bdbbac1F,#bdbbac1F,#ccc9b81F,#dbd8c51F,#fffced1F);">
+                        <effect>
+                           <DropShadow height="2.0" radius="0.5" width="2.0" />
+                        </effect>
+                        <children>
+                           <Label fx:id="titleLabel3" layoutX="11.0" layoutY="6.0" prefHeight="27.0" prefWidth="518.0" text="Title" textFill="#484444" wrapText="true">
+                              <font>
+                                 <Font name="Droid Serif Italic" size="20.0" />
+                              </font>
+                           </Label>
+                           <Hyperlink fx:id="sourceLink3" layoutX="475.0" layoutY="155.0" text="Source URL" textFill="#79f7f5">
+                              <font>
+                                 <Font size="10.0" />
+                              </font>
+                           </Hyperlink>
+                           <WebView fx:id="descriptionPane3" fontScale="0.85" layoutX="10.0" layoutY="60.0" prefHeight="250.0" prefWidth="390.0" />
+                           <ToolBar layoutX="425.0" layoutY="210.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="96.0">
+                              <items>
+                                 <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
+                                 <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
+                                 <Button layoutX="10.0" layoutY="41.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
+                              </items>
+                           </ToolBar>
+                           <ImageView fx:id="imageView3" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                        </children>
+                     </Pane>
+                     <Pane layoutX="27.0" layoutY="352.0" prefHeight="320.0" prefWidth="540.0" style="-fx-background-color: linear-gradient(to right, #69675c1F, #a8a6971F,#bdbbac1F,#bdbbac1F,#ccc9b81F,#dbd8c51F,#fffced1F);">
+                        <effect>
+                           <DropShadow height="2.0" radius="0.5" width="2.0" />
+                        </effect>
+                        <children>
+                           <Label fx:id="titleLabel4" layoutX="11.0" layoutY="6.0" prefHeight="27.0" prefWidth="518.0" text="Title" textFill="#484444" wrapText="true">
+                              <font>
+                                 <Font name="Droid Serif Italic" size="20.0" />
+                              </font>
+                           </Label>
+                           <Hyperlink fx:id="sourceLink4" layoutX="475.0" layoutY="155.0" text="Source URL" textFill="#79f7f5">
+                              <font>
+                                 <Font size="10.0" />
+                              </font>
+                           </Hyperlink>
+                           <WebView fx:id="descriptionPane4" fontScale="0.85" layoutX="10.0" layoutY="60.0" prefHeight="250.0" prefWidth="390.0" />
+                           <ToolBar layoutX="425.0" layoutY="210.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="96.0">
+                              <items>
+                                 <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
+                                 <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
+                                 <Button layoutX="10.0" layoutY="41.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
+                              </items>
+                           </ToolBar>
+                           <ImageView fx:id="imageView4" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                        </children>
+                     </Pane>
+                  </children>
+                    </Pane>
+                    <Pane fx:id="page1" layoutX="14.0" layoutY="10.0" prefHeight="690.0" prefWidth="585.0" style="-fx-background-color: linear-gradient(to left, #69675c, #a8a697,#bdbbac,#bdbbac,#ccc9b8,#dbd8c5,#fffced);">
+                        <effect>
+                            <DropShadow height="5.0" offsetX="-1.0" offsetY="1.0" radius="2.0" spread="0.5" width="5.0">
+                                <color>
+                                    <Color opacity="0.5419520735740662" />
+                                </color>
+                            </DropShadow>
+                        </effect>
+                        <children>
+                            <Pane layoutX="19.0" layoutY="14.0" prefHeight="320.0" prefWidth="540.0" style="-fx-background-color: linear-gradient(to left, #69675c1F, #a8a6971F,#bdbbac1F,#bdbbac1F,#ccc9b81F,#dbd8c51F,#fffced1F);">
+                                <effect>
+                                    <DropShadow height="2.0" radius="0.5" width="2.0" />
+                                </effect>
+                                <children>
+                                    <Label fx:id="titleLabel1" layoutX="11.0" layoutY="6.0" prefHeight="27.0" prefWidth="518.0" text="Title" textFill="#484444" wrapText="true">
+                                        <font>
+                                            <Font name="Droid Serif Italic" size="20.0" />
+                                        </font>
+                                    </Label>
+                                    <Hyperlink fx:id="sourceLink1" layoutX="475.0" layoutY="155.0" text="Source URL" textFill="#79f7f5">
+                                        <font>
+                                            <Font size="10.0" />
+                                        </font>
+                                    </Hyperlink>
+                                    <WebView fx:id="descriptionPane1" fontScale="0.85" layoutX="10.0" layoutY="60.0" prefHeight="250.0" prefWidth="390.0" />
+                                    <ToolBar layoutX="425.0" layoutY="210.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="96.0">
+                                        <items>
+                                            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
+                                            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
+                                            <Button layoutX="10.0" layoutY="41.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
+                                        </items>
+                                    </ToolBar>
+                           <ImageView fx:id="imageView1" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                                </children>
+                            </Pane>
+                     <Pane layoutX="19.0" layoutY="352.0" prefHeight="320.0" prefWidth="540.0" style="-fx-background-color: linear-gradient(to left, #69675c1F, #a8a6971F,#bdbbac1F,#bdbbac1F,#ccc9b81F,#dbd8c51F,#fffced1F);">
+                        <effect>
+                           <DropShadow height="2.0" radius="0.5" width="2.0" />
+                        </effect>
+                        <children>
+                           <Label fx:id="titleLabel2" layoutX="11.0" layoutY="6.0" prefHeight="27.0" prefWidth="518.0" text="Title" textFill="#484444" wrapText="true">
+                              <font>
+                                 <Font name="Droid Serif Italic" size="20.0" />
+                              </font>
+                           </Label>
+                           <Hyperlink fx:id="sourceLink2" layoutX="475.0" layoutY="155.0" text="Source URL" textFill="#79f7f5">
+                              <font>
+                                 <Font size="10.0" />
+                              </font>
+                           </Hyperlink>
+                           <WebView fx:id="descriptionPane2" fontScale="0.85" layoutX="10.0" layoutY="60.0" prefHeight="250.0" prefWidth="390.0" />
+                           <ToolBar layoutX="425.0" layoutY="210.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="96.0">
+                              <items>
+                                 <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
+                                 <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
+                                 <Button layoutX="10.0" layoutY="41.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
+                              </items>
+                           </ToolBar>
+                           <ImageView fx:id="imageView2" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                        </children>
+                     </Pane>
+                        </children>
+                    </Pane>
+                </children>
+            </Pane>
+         <Button fx:id="back" layoutX="584.0" layoutY="731.0" mnemonicParsing="false" text="&lt;&lt;" />
+         <Button fx:id="next" layoutX="632.0" layoutY="731.0" mnemonicParsing="false" text="&gt;&gt;" />
+         <Button layoutX="14.0" layoutY="731.0" mnemonicParsing="false" text="Back to Home" />
+         <TextField fx:id="search" layoutX="119.0" layoutY="731.0" prefHeight="25.0" prefWidth="244.0" promptText="Search" />
+        </children></Pane>
+
+</AnchorPane>

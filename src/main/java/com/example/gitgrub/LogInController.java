@@ -56,6 +56,7 @@ public class LogInController {
             stage.setScene(scene);
             stage.show();
             stage.centerOnScreen();
+
         } else {
             infoBox("Please enter correct Username and Password", null, "Failed");
         }
@@ -66,12 +67,22 @@ public class LogInController {
         Scene scene = new Scene(fxmlLoader.load(), 535, 400);
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        stage.setTitle("Smart City - Sign up");
+        stage.setTitle("GitGrub - Sign up");
         stage.setScene(scene);
         stage.show();
         stage.centerOnScreen();
     }
-
+    @FXML
+    public void goToForgotPassword(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("forgot-my-password-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("GitGrub - Forgot Password");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
+    }
     public static void infoBox(String infoMessage, String headerText, String title) {
         Platform.runLater(() -> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -144,16 +155,6 @@ public class LogInController {
             }
         }
     }
-    @FXML
-    public void goToForgotPassword(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("forgot-my-password.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 535, 400);
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.setTitle("GitGrub - ForgotmyPassword");
-        stage.setScene(scene);
-        stage.show();
-        stage.centerOnScreen();
-    }
+
 }
 
