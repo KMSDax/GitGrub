@@ -16,7 +16,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.*;
 
-public class FridgeContents extends Application {
+public class FridgeContents extends MainApplication {
 
     public static void main(String[] args) {
         launch(args);
