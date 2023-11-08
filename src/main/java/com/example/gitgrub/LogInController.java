@@ -48,7 +48,7 @@ public class LogInController {
         if (flag) {
             infoBox("Login Successful!", null, "Success");
             // Load the main application window
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("landing-page.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("CalorieCount.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
