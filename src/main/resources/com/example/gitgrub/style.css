@@ -1,0 +1,62 @@
+Button{
+    -fx-background-color: linear-gradient(to bottom, #e3b256, #fac869);
+    -fx-font-weight: bold;
+    -fx-text-fill: #545a5e;
+    -fx-font-size: 10px;
+    -fx-padding: 5px 10px;
+}
+Button:hover {
+    -fx-background-color: linear-gradient(to bottom, #fac869, #e3b256);
+    -fx-text-fill: #6b6e70;
+    -fx-font-weight: bold;
+    -fx-font-size: 10px;
+    -fx-padding: 5px 10px;
+
+    -fx-scale-x: .95;
+    -fx-scale-y: .95;
+    -fx-scale-z: .95;
+}
+.backgroundPane{
+    -fx-background-color: linear-gradient(to bottom, #fee1c2, #f9eee2);
+}
+
+#menu, .tab {
+    -fx-background-color:  linear-gradient(to bottom, #ccc2c2, #b3a6a6);
+}
+
+#menu, .tab:selected{
+    -fx-background-color:#b3a6a6;
+
+}
+#menu, .tab:selected, .tab-label{
+    -fx-background-color: #b3a6a6;
+    -fx-text-fill: #d9dcde;
+}
+#menu, .tab, .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #1d262b;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-font-family: "YU Gothic";
+}
+.round-image {
+    -fx-clip: "round(50%)";
+    -fx-background-color: transparent;
+}
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-pref-width:7px;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: Black;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-opacity: 0; /* Set opacity to 0 to make them invisible */
+    /* OR */
+    -fx-pref-height: 0px; /* Set the height to 0px to make them disappear */
+}

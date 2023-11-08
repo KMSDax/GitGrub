@@ -3,6 +3,8 @@ package com.example.gitgrub;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.util.ArrayList;
+
 public class User {
     private static User user = null;
     private String user_id;
@@ -19,10 +21,10 @@ public class User {
     private String state_id;
     private int user_zipcode;
     private String user_profile;
-    private User(String userId,int roleID, String userPassword, String userFirstname, String userLastname, String userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, String stateId, int userZipcode, String userProfilePic){
-
-        user_id = userId;
+    private ArrayList <String> allergies;
+    private User(int roleID, String userId, String userPassword, String userFirstname, String userLastname, String userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, String stateId, int userZipcode, String userProfilePic){
         role_id = roleID;
+        user_id = userId;
         user_password = userPassword;
         user_firstname = userFirstname;
         user_lastname = userLastname;
@@ -36,10 +38,10 @@ public class User {
         user_profile = userProfilePic;
     }
 
-    public static synchronized void initializeUser(String userId, int roleID, String userPassword, String userFirstname, String userLastname, String userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, String stateId, int userZipcode, String userProfilePic){
+    public static synchronized void initializeUser( int roleID, String userId, String userPassword, String userFirstname, String userLastname, String userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, String stateId, int userZipcode, String userProfilePic){
 
         if (user == null) {
-            user = new User(userId,roleID,userPassword, userFirstname, userLastname, userDob, userPhonenumber, userEmail, userStreet, userCity, stateId, userZipcode, userProfilePic);
+            user = new User(roleID,userId, userPassword, userFirstname, userLastname, userDob, userPhonenumber, userEmail, userStreet, userCity, stateId, userZipcode, userProfilePic);
         }
     }
 
@@ -116,4 +118,15 @@ public class User {
     public void setRole_id(int role_id) {
         this.role_id = role_id;
     }
+
+
+    public ArrayList<String> getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(ArrayList<String> allergies) {
+        this.allergies = allergies;
+
+    }
+
 }
