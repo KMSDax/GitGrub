@@ -39,7 +39,7 @@
          </effect>
       </Pane>
 
-      <Pane fx:id="nutrtionLabelPane" layoutX="927.0" layoutY="94.0" prefHeight="595.0" prefWidth="268.0">
+      <Pane fx:id="nutrtionLabelPane" layoutX="908.0" layoutY="119.0" prefHeight="583.0" prefWidth="268.0">
          <children>
              <Pane fx:id="editProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
       
@@ -75,49 +75,50 @@
                    <Button fx:id="confirmChangesButton" layoutX="89.0" layoutY="361.0" mnemonicParsing="false" onAction="#confirmProfileChanges" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Confirm Changes" />
                 </children>
             </Pane>
-             <Pane fx:id="viewProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+             <Pane fx:id="viewProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
                 <children>
                    <Label layoutX="45.0" layoutY="14.0" text="General Information">
                       <font>
                          <Font name="System Bold" size="18.0" />
                       </font>
                    </Label>
-                   <Label layoutX="17.0" layoutY="53.0" text="Name: ">
+                   <Label layoutX="17.0" layoutY="60.0" text="Name: ">
                       <font>
                          <Font name="System Bold" size="12.0" />
                       </font>
                   </Label>
-                   <Label layoutX="18.0" layoutY="83.0" text="Email: ">
+                   <Label layoutX="18.0" layoutY="85.0" text="Email: ">
                       <font>
                          <Font name="System Bold" size="12.0" />
                       </font>
                   </Label>
-                   <Label layoutX="17.0" layoutY="121.0" text="Date of Birth: ">
+                   <Label layoutX="17.0" layoutY="110.0" text="Date of Birth: ">
                       <font>
                          <Font name="System Bold" size="12.0" />
                       </font>
                   </Label>
-                   <Label layoutX="17.0" layoutY="158.0" text="Phone #: ">
+                   <Label layoutX="17.0" layoutY="135.0" text="Phone #: ">
                       <font>
                          <Font name="System Bold" size="12.0" />
                       </font>
                   </Label>
-                   <Label layoutX="17.0" layoutY="195.0" text="Address: ">
+                   <Label layoutX="17.0" layoutY="160.0" text="Address: ">
                       <font>
                          <Font name="System Bold" size="12.0" />
                       </font>
                   </Label>
 
-                   <Label fx:id="nameLabel" layoutX="101.0" layoutY="53.0" text="Name: " />
-                   <Label fx:id="emailLabel" layoutX="102.0" layoutY="83.0" text="Email: " />
-                   <Label fx:id="dobLabel" layoutX="101.0" layoutY="121.0" text="Date of Birth: " />
-                   <Label fx:id="phoneLabel" layoutX="101.0" layoutY="158.0" text="Phone #: " />
-                   <Label fx:id="addressLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="98.0" layoutY="195.0" prefHeight="52.0" prefWidth="149.0" text="Address: " wrapText="true" />
-                    <Button fx:id="editButton" layoutX="97.0" layoutY="247.0" mnemonicParsing="false" onAction="#openEditProfile" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Profile" />
-                    <Button fx:id="addMembersButton" layoutX="89.0" layoutY="284.0" mnemonicParsing="false" onAction="#openViewMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="View Members" />
+                   <Label fx:id="nameLabel" layoutX="101.0" layoutY="60.0" text="Name: " />
+                   <Label fx:id="emailLabel" layoutX="102.0" layoutY="85.0" text="Email: " />
+                   <Label fx:id="dobLabel" layoutX="101.0" layoutY="110.0" text="Date of Birth: " />
+                   <Label fx:id="phoneLabel" layoutX="101.0" layoutY="135.0" text="Phone #: " />
+                   <Label fx:id="addressLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="98.0" layoutY="160.0" prefHeight="52.0" prefWidth="149.0" text="Address: " wrapText="true" />
+                    <Button fx:id="editButton" layoutX="9.0" layoutY="221.0" mnemonicParsing="false" onAction="#openEditProfile" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Profile" />
+                    <Button fx:id="addMembersButton" layoutX="86.0" layoutY="360.0" mnemonicParsing="false" onAction="#openViewMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="View Members" />
+                  <Button fx:id="refrigeratorButton" layoutX="85.0" layoutY="325.0" mnemonicParsing="false" onAction="#openRefrigeratorPane" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Refrigerator" />
                 </children>
              </Pane>
-             <Pane fx:id="addMembersPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
+             <Pane fx:id="addMembersPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
                 <children>
                    <Label layoutX="74.0" layoutY="14.0" text="User Member">
                       <font>
