@@ -140,7 +140,7 @@
                   <Button fx:id="cancel" layoutX="79.0" layoutY="360.0" mnemonicParsing="false" onAction="#openViewMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Cancel" />
                 </children>
              </Pane>
-             <Pane fx:id="viewMembersInfoPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+             <Pane fx:id="viewMembersInfoPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
                 <children>
                    <Label layoutX="74.0" layoutY="14.0" text="User Member">
                       <font>
