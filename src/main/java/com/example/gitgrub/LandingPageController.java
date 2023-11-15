@@ -114,7 +114,7 @@ public class LandingPageController extends MainApplication implements Initializa
             stage.setTitle("GitGrub - Cookbook");
             stage.setScene(scene);
             stage.show();
-            stage.setFullScreen(true);
+            stage.centerOnScreen();
 
     }
 
@@ -314,5 +314,16 @@ public void getintolerence(){
     }
 
     public void editMember(ActionEvent actionEvent) {
+    }
+
+    public void openRefrigeratorPane(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("fridge-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("GitGrub - Sign up");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
     }
 }
