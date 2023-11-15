@@ -147,8 +147,8 @@
                          <Font name="System Bold" size="18.0" />
                       </font>
                    </Label>
-                   <Button fx:id="openMembersPaneButton" layoutX="156.0" layoutY="360.0" mnemonicParsing="false" onAction="#openMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
-                    <Button fx:id="editMemberButton" layoutX="57.0" layoutY="360.0" mnemonicParsing="false" onAction="#editMember" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Members" />
+                   <Button fx:id="openMembersPaneButton" layoutX="156.0" layoutY="359.0" mnemonicParsing="false" onAction="#openMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
+                    <Button fx:id="editMemberButton" layoutX="57.0" layoutY="359.0" mnemonicParsing="false" onAction="#editMember" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Members" />
 
                     <ListView layoutX="31.0" layoutY="41.0" prefHeight="80.0" prefWidth="200.0" />
                    <Pane layoutX="14.0" layoutY="131.0" prefHeight="96.0" prefWidth="234.0">
