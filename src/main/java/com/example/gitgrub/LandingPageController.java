@@ -1,5 +1,6 @@
 package com.example.gitgrub;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -63,12 +64,15 @@ public class LandingPageController extends MainApplication implements Initializa
 
     @FXML
     private CheckBox dairy, peanuts, shellfish, egg, gluten, grain, seafood, sesame, soy, sulfite, treenuts, wheat;
+    @FXML
+    private ChoiceBox umdietChoiceBox;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image picture = new Image(User.getInstance().getUser_profile());
         profilePic.setImage(picture);
         usernameLabel.setText(User.getInstance().getUser_id());
-
+        umdietChoiceBox.setItems(FXCollections.observableArrayList("Keto","Vegetarian","Gluten Free"));
 
         // Initializes  user's general information for the Profile Pane Display
         String firstName = User.getInstance().getUser_firstname();
@@ -272,18 +276,7 @@ public void getintolerence(){
         allergies.add("sesame");
     }
     System.out.println(allergies);
-    double w = Double.parseDouble(weight.getText());
-    double h = Double.parseDouble(height.getText());
-    int a = Integer.parseInt(age.getText());
-    System.out.println("Weight: " + w);
-    System.out.println("Height: " + h);
-    System.out.println("age: " + a);
-    double bmi = (w / (h * h )) * 703;
-    System.out.println("bmi: " + bmi);
-    double BFP = (1.20 * bmi) + (0.23 * a) - 16.2;
-    System.out.println("bfp: " + BFP);
-    double MM = BFP - 100;
-    System.out.println("MM: " + MM);
+
 }
 
     public void addNewMember(ActionEvent actionEvent) {
@@ -311,6 +304,18 @@ public void getintolerence(){
     }
 
     public void calcFitness(ActionEvent actionEvent) {
+        double w = Double.parseDouble(weight.getText());
+        double h = Double.parseDouble(height.getText());
+        int a = Integer.parseInt(age.getText());
+        System.out.println("Weight: " + w);
+        System.out.println("Height: " + h);
+        System.out.println("age: " + a);
+        double bmi = (w / (h * h )) * 703;
+        System.out.println("bmi: " + bmi);
+        double BFP = (1.20 * bmi) + (0.23 * a) - 16.2;
+        System.out.println("bfp: " + BFP);
+        double MM = BFP - 100;
+        System.out.println("MM: " + MM);
     }
 
     public void editMember(ActionEvent actionEvent) {
