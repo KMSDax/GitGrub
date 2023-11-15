@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LogInController">
    <children>
-      <ImageView fitHeight="45.0" fitWidth="39.0" layoutX="101.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="45.0" fitWidth="39.0" layoutX="131.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/GitGrublogo.png" />
          </image>
@@ -20,13 +20,17 @@
       <PasswordField fx:id="passwordField" layoutX="25.0" layoutY="183.0" prefHeight="35.0" prefWidth="250.0" promptText="Password" />
       <Button fx:id="loginButton" layoutX="85.0" layoutY="269.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="132.0" text="Log In" />
 
+
+
       <Label layoutX="93.0" layoutY="322.0" text="Click here to " />
       <Hyperlink layoutX="158.0" layoutY="318.0" onAction="#goToSignUp" text="Sign up" />
-      <Label layoutX="17.0" layoutY="29.0" prefHeight="69.0" prefWidth="267.0" text="Git  Grub" textFill="#76897b">
+      <Label layoutX="68.0" layoutY="60.0" prefHeight="69.0" prefWidth="267.0" text="GitGrub" textFill="#76897b">
          <font>
             <Font name="Castellar" size="45.0" />
          </font>
       </Label>
-      <Hyperlink layoutX="121.0" layoutY="345.0" text="Forgot my password" />
+
+      <Hyperlink onAction="#goToForgotPassword" layoutX="90.0" layoutY="339.0" text="Forgot my password" />
+
    </children>
 </Pane>

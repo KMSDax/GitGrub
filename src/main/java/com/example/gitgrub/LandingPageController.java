@@ -1,58 +1,74 @@
 package com.example.gitgrub;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+
+import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.*;
+
+import javafx.scene.control.*;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import org.json.JSONObject;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+import javafx.scene.web.*;
+
+import java.io.IOException;
 
 // Imported Dax's infoBox and printSQLException methods from the LogInController
 import static com.example.gitgrub.LogInController.infoBox;
 import static com.example.gitgrub.LogInController.printSQLException;
+import static com.example.gitgrub.Spoonacular.fetchNutritionLabel;
 import static com.example.gitgrub.Spoonacular.fetchRecipeInformation;
 
 public class LandingPageController extends MainApplication implements Initializable {
-    public Label nameLabel;
-    public Label emailLabel;
-    public Label dobLabel;
-    public Label phoneLabel;
-    public Label addressLabel;
-    public Button editButton;
-    public Button confirmChangesButton;
-    public Pane viewProfilePane;
-    public Button addMembersButton;
-    public Pane addMembersPane;
     @FXML
-    private Button news;
+    public Label usernameLabel,nameLabel,emailLabel,dobLabel,phoneLabel,addressLabel;
+    @FXML
+    public Button editButton,confirmChangesButton,addMembersButton,openFitnessButton,openAllergiesButton;
+    @FXML
+    public Pane viewProfilePane,addMembersPane,nutrtionLabelPane,viewMembersInfoPane,fitnessPane,allergiesPane;
+
     @FXML
     private ImageView profilePic;
     @FXML
     private Pane newsPane, cookbookPane, page1, page2, editProfilePane;
     @FXML
-    private Label usernameLabel;
-    @FXML
+
     private TextField firstNameTextField, lastNameTextField, emailTextField, dobTextField, phoneTextField, streetTextField, cityTextField, stateTextField, zipTextField, height, weight, age;
+
     @FXML
     private CheckBox dairy, peanuts, shellfish, egg, gluten, grain, seafood, sesame, soy, sulfite, treenuts, wheat;
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image picture = new Image(User.getInstance().getUser_profile());
         profilePic.setImage(picture);
+        usernameLabel.setText(User.getInstance().getUser_id());
+
 
         // Initializes  user's general information for the Profile Pane Display
         String firstName = User.getInstance().getUser_firstname();
@@ -66,7 +82,6 @@ public class LandingPageController extends MainApplication implements Initializa
         emailTextField.setText(email);
         dobTextField.setText(dob);
         phoneTextField.setText(phoneNum);
-        usernameLabel.setText(username);
 
         nameLabel.setText(firstName + " " + lastName);
         emailLabel.setText(email);
@@ -91,73 +106,64 @@ public class LandingPageController extends MainApplication implements Initializa
     }
 
 
-    public void openCookbook() {
-        cookbookPane.setVisible(true);
-        newsPane.setVisible(false);
+    public void openCookbook(ActionEvent event) throws IOException {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("cookbook-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.setTitle("GitGrub - Cookbook");
+            stage.setScene(scene);
+            stage.show();
+            stage.setFullScreen(true);
 
-        // Create layouts for page1 and page2
-        VBox recipeLayoutPage1 = new VBox(20);
-        VBox recipeLayoutPage2 = new VBox(20);
-
-        // Fetch and display recipes
-        for (int i = 0; i < 4; i++) {
-            int recipeId = i + 1; // Replace with the appropriate recipe IDs
-            JSONObject recipeInfo = fetchRecipeInformation(recipeId);
-
-            if (recipeInfo != null) {
-                String title = recipeInfo.getString("title");
-                String description = recipeInfo.optString("summary", "Description Unavailable: Please visit source link");
-                String sourceUrl = recipeInfo.getString("sourceUrl");
-                String imageUrl = recipeInfo.optString("image", "null");
-
-                // Create nodes to display recipe information
-                Label titleLabel = new Label("Title: " + title);
-                Label descriptionLabel = new Label("Description: " + description);
-                Hyperlink sourceLink = new Hyperlink("Source URL");
-                sourceLink.setOnAction(e -> getHostServices().showDocument(sourceUrl));
-
-                Image recipeImage = new Image(imageUrl);
-                ImageView imageView = new ImageView(recipeImage);
-                imageView.setFitHeight(75);
-                imageView.setFitWidth(150);
-
-                // Create a container for each recipe
-                VBox recipeContainer = new VBox(10);
-                recipeContainer.getChildren().addAll(titleLabel, descriptionLabel, sourceLink, imageView);
-
-                // Add the recipe to the appropriate layout (page1 or page2)
-                if (i % 2 == 0) {
-                    recipeLayoutPage1.getChildren().add(recipeContainer);
-                } else {
-                    recipeLayoutPage2.getChildren().add(recipeContainer);
-                }
-            }
-        }
-
-        // Clear previous content and add the recipe layouts to page1 and page2
-        page1.getChildren().clear();
-        page1.getChildren().add(recipeLayoutPage1);
-
-        page2.getChildren().clear();
-        page2.getChildren().add(recipeLayoutPage2);
     }
 
+    // Testing fetchNutritionLabel through the bookmarks label
+    public void showRecipeNutritionLabel() {
+        WebView webView = new WebView();
+
+        String nutritionLabelContent = fetchNutritionLabel(1);
+        if (nutritionLabelContent != null) {
+            webView.getEngine().loadContent(nutritionLabelContent);
+
+            webView.setPrefSize(nutrtionLabelPane.getWidth()-10, nutrtionLabelPane.getHeight()-10);
+            webView.setMaxSize(nutrtionLabelPane.getWidth(), nutrtionLabelPane.getHeight());
+            webView.setTranslateX(10);
+            webView.setTranslateY(10);
+            nutrtionLabelPane.getChildren().add(webView);
+        }
+    }
     // Shows the profile page on ProfilePicture click and allows for profile editing
     public void openProfile() {
-        viewProfilePane.setVisible(true);
-        addMembersPane.setVisible(false);
-        editProfilePane.setVisible(false);
+        if(viewProfilePane.isVisible()) {
+            viewProfilePane.setVisible(false);
+        }else{
+            viewProfilePane.setVisible(true);
+        }
+
+            editProfilePane.setVisible(false);
+            addMembersPane.setVisible(false);
+        viewMembersInfoPane.setVisible(false);
     }
+
     public void openEditProfile() {
         editProfilePane.setVisible(true);
         viewProfilePane.setVisible(false);
         addMembersPane.setVisible(false);
+        viewMembersInfoPane.setVisible(false);
     }
 
     public void openMembersPane(){
         addMembersPane.setVisible(true);
         viewProfilePane.setVisible(false);
         editProfilePane.setVisible(false);
+        viewMembersInfoPane.setVisible(false);
+    }
+    public void openViewMembersPane(){
+        addMembersPane.setVisible(false);
+        viewProfilePane.setVisible(false);
+        editProfilePane.setVisible(false);
+        viewMembersInfoPane.setVisible(true);
     }
 
     // Confirm Profile Changes button on landing Page
@@ -280,4 +286,33 @@ public void getintolerence(){
     System.out.println("MM: " + MM);
 }
 
+    public void addNewMember(ActionEvent actionEvent) {
+    }
+
+    public void updateAllergies(ActionEvent actionEvent) {
+    }
+
+    public void openAllergies() {
+        if(allergiesPane.isVisible()){
+            allergiesPane.setVisible(false);
+        }else{
+            allergiesPane.setVisible(true);
+        }
+        fitnessPane.setVisible(false);
+    }
+
+    public void openFitness() {
+        if(fitnessPane.isVisible()){
+            fitnessPane.setVisible(false);
+        }else{
+            fitnessPane.setVisible(true);
+        }
+        allergiesPane.setVisible(false);
+    }
+
+    public void calcFitness(ActionEvent actionEvent) {
+    }
+
+    public void editMember(ActionEvent actionEvent) {
+    }
 }
