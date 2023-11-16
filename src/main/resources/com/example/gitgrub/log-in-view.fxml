@@ -29,13 +29,8 @@
             <Font name="Castellar" size="45.0" />
          </font>
       </Label>
-<<<<<<< HEAD
+
       <Hyperlink onAction="#goToForgotPassword" layoutX="90.0" layoutY="339.0" text="Forgot my password" />
-=======
 
-      <Hyperlink onAction ="#goToForgotPassword" layoutX="91.0" layoutY="341.0" text="Forgot my password" />
-
-
->>>>>>> c9381d27ee4b30fef78f3d026a9272b8a4e09d31
    </children>
 </Pane>
