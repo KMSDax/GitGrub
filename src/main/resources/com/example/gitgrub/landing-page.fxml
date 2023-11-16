@@ -155,14 +155,14 @@
                         <ListView fx:id="userMembersListView" layoutX="31.0" layoutY="41.0" prefHeight="80.0" prefWidth="200.0" />
                         <Pane layoutX="14.0" layoutY="131.0" prefHeight="96.0" prefWidth="234.0">
                             <children>
-                                <Label layoutX="16.0" layoutY="6.0" text="Full Name">
+                                <Label fx:id="umfullnameLabel" layoutX="16.0" layoutY="6.0" text="Full Name">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
                                 </Label>
-                                <Label layoutX="16.0" layoutY="32.0" text="Height(inches)" />
-                                <Label layoutX="16.0" layoutY="49.0" text="Date of Birth" />
-                                <Label layoutX="16.0" layoutY="66.0" text="Diet" />
+                                <Label fx:id="umheightLabel" layoutX="16.0" layoutY="32.0" text="Height(inches)" />
+                                <Label fx:id="umdobLabel" layoutX="16.0" layoutY="49.0" text="Date of Birth" />
+                                <Label fx:id="umdietLabel" layoutX="16.0" layoutY="66.0" text="Diet" />
                                 <Button fx:id="openAllergiesButton" layoutX="159.0" layoutY="45.0" mnemonicParsing="false" onAction="#openAllergies" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Allergies" />
                                 <Button fx:id="openFitnessButton" layoutX="159.0" layoutY="13.0" mnemonicParsing="false" onAction="#openFitness" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Fitness" />
                             </children>
