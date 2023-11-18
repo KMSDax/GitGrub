@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/FridgeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/FridgeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CookbookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CookbookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/cookbook-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/cookbook-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Dax",
+    "git-widget-placeholder": "Jayson",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "C:/GitHubProjects/GitGrub/src/main/resources/com/example/gitgrub",
     "last_opened_file_path": "C:/Users/aalbe/IdeaProjects/GitGrub/src/main/resources/com/example/gitgrub/sign-up-view.fxml",
@@ -157,20 +157,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/gitgrub/User.java</url>
-          <line>117</line>
-          <properties class="com.example.gitgrub.User" method="getRole_id">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/gitgrub/User.java</url>
-          <line>143</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java</url>
           <line>75</line>

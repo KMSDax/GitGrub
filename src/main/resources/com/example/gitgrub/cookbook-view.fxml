@@ -171,6 +171,7 @@
          <Button fx:id="next" layoutX="632.0" layoutY="731.0" mnemonicParsing="false" text="&gt;&gt;" />
          <Button layoutX="14.0" layoutY="731.0" mnemonicParsing="false" text="Back to Home" />
          <TextField fx:id="search" layoutX="119.0" layoutY="731.0" prefHeight="25.0" prefWidth="244.0" promptText="Search" />
+         <Button fx:id="ViewBookmarksBtn" layoutX="1081.0" layoutY="731.0" mnemonicParsing="false" onAction="#showBookmarks" prefHeight="25.0" prefWidth="136.0" text="View Bookmarks" />
         </children></Pane>
 
 </AnchorPane>
