@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="Added fetchNutritionLabel &amp; showRecipeNutritionLabel method.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="ShowNutritionLabel inside cookbook">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CookbookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CookbookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/cookbook-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/cookbook-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,11 +55,12 @@
     &quot;git-widget-placeholder&quot;: &quot;Jayson&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/GitHubProjects/GitGrub/src/main/resources/com/example/gitgrub&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jayso/IdeaProjects/GarmentSimulator&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jayso/IdeaProjects/GitGrub&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -100,7 +95,12 @@
       <workItem from="1697141475766" duration="9408000" />
       <workItem from="1697153089355" duration="43000" />
       <workItem from="1699378666029" duration="9000" />
-      <workItem from="1699900478576" duration="1256000" />
+      <workItem from="1699900478576" duration="2066000" />
+      <workItem from="1700015710001" duration="930000" />
+      <workItem from="1700093747714" duration="141000" />
+      <workItem from="1700095164692" duration="14000" />
+      <workItem from="1700252656480" duration="1193000" />
+      <workItem from="1700335755657" duration="1068000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Landing Page styling &amp; John Doe Profile Page">
       <option name="closed" value="true" />
@@ -134,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698193018041</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ShowNutritionLabel inside cookbook">
+      <option name="closed" value="true" />
+      <created>1699933070887</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699933070887</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +165,8 @@
     <MESSAGE value="Added viewProfilePane &amp; editProfileButton to change view to editProfilePane" />
     <MESSAGE value="My changes adding more checkboxes for allergies" />
     <MESSAGE value="Added fetchNutritionLabel &amp; showRecipeNutritionLabel method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fetchNutritionLabel &amp; showRecipeNutritionLabel method." />
+    <MESSAGE value="ShowNutritionLabel inside cookbook" />
+    <option name="LAST_COMMIT_MESSAGE" value="ShowNutritionLabel inside cookbook" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
