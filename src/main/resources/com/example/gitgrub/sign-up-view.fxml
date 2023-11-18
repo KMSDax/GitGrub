@@ -4,66 +4,65 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800" prefWidth="544.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.SignUpController">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="346.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.SignUpController">
     <children>
-      <AnchorPane prefHeight="500.0" prefWidth="200.0" />
-        <AnchorPane prefHeight="500.0" prefWidth="413.0">
+        <AnchorPane prefHeight="481.0" prefWidth="380.0">
             <children>
-            <TextField id="userid" fx:id="usernameTextField" layoutX="31.0" layoutY="43.0" prefHeight="22.0" prefWidth="126.0" promptText="Username">
+            <TextField id="userid" fx:id="usernameTextField" layoutX="31.0" layoutY="33.0" prefHeight="22.0" prefWidth="126.0" promptText="Username">
                <font>
                   <Font size="10.0" />
                </font>
             </TextField>
-                <PasswordField id="passwordTextField" fx:id="passwordField" layoutX="182.0" layoutY="43.0" prefHeight="22.0" prefWidth="126.0" promptText="Enter Password">
+                <PasswordField id="passwordTextField" fx:id="passwordField" layoutX="182.0" layoutY="33.0" prefHeight="22.0" prefWidth="126.0" promptText="Enter Password">
                     <font>
                         <Font size="10.0" />
                     </font>
                 </PasswordField>
-                <PasswordField id="confirmPasswordTextField" fx:id="confirmPassword" layoutX="183.0" layoutY="78.0" prefHeight="22.0" prefWidth="126.0" promptText="Re-enter Password">
+                <PasswordField id="confirmPasswordTextField" fx:id="confirmPassword" layoutX="183.0" layoutY="68.0" prefHeight="22.0" prefWidth="126.0" promptText="Re-enter Password">
                     <font>
                         <Font size="10.0" />
                     </font>
                 </PasswordField>
-                <TextField id="firstNameTextField" fx:id="firstNameTextField" layoutX="31.0" layoutY="128.0" prefHeight="22.0" prefWidth="126.0" promptText="First Name">
+                <TextField id="firstNameTextField" fx:id="firstNameTextField" layoutX="31.0" layoutY="118.0" prefHeight="22.0" prefWidth="126.0" promptText="First Name">
                     <font>
                         <Font size="10.0" />
                     </font>
                 </TextField>
-                <TextField id="lastNameTextField" fx:id="lastNameTextField" layoutX="182.0" layoutY="128.0" prefHeight="22.0" prefWidth="126.0" promptText="Last Name">
+                <TextField id="lastNameTextField" fx:id="lastNameTextField" layoutX="182.0" layoutY="118.0" prefHeight="22.0" prefWidth="126.0" promptText="Last Name">
                     <font>
                         <Font size="10.0" />
                     </font>
                 </TextField>
-                <TextField id="emailTextField" fx:id="emailIdTextField" layoutX="31.0" layoutY="163.0" prefHeight="22.0" prefWidth="126.0" promptText="E-mail">
+                <TextField id="emailTextField" fx:id="emailIdTextField" layoutX="31.0" layoutY="153.0" prefHeight="22.0" prefWidth="126.0" promptText="E-mail">
                     <font>
                         <Font size="10.0" />
                     </font>
                 </TextField>
-                <TextField id="phoneNumberTextField" fx:id="phoneNumberTextField" layoutX="183.0" layoutY="163.0" prefHeight="22.0" prefWidth="126.0" promptText="Phone Number">
+                <TextField id="phoneNumberTextField" fx:id="phoneNumberTextField" layoutX="183.0" layoutY="153.0" prefHeight="22.0" prefWidth="126.0" promptText="Phone Number">
                     <font>
                         <Font size="10.0" />
                     </font>
                 </TextField>
-            <DatePicker fx:id="DOBDatePicker" layoutX="31.0" layoutY="198.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="126.0" promptText="Date of Birth" />
-                <TextField id="streetAddressTextField" fx:id="addressTextField" layoutX="30.0" layoutY="250.0" prefHeight="22.0" prefWidth="281.0" promptText="Street Address">
+            <DatePicker fx:id="DOBDatePicker" layoutX="31.0" layoutY="188.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="126.0" promptText="Date of Birth" />
+                <TextField id="streetAddressTextField" fx:id="addressTextField" layoutX="30.0" layoutY="240.0" prefHeight="22.0" prefWidth="281.0" promptText="Street Address">
                     <font>
                         <Font size="10.0" />
                     </font>
                 </TextField>
-                <TextField id="cityTextField" fx:id="cityTextField" layoutX="30.0" layoutY="285.0" prefHeight="22.0" prefWidth="150.0" promptText="City">
+                <TextField id="cityTextField" fx:id="cityTextField" layoutX="30.0" layoutY="275.0" prefHeight="22.0" prefWidth="150.0" promptText="City">
                     <font>
                         <Font size="10.0" />
                     </font>
                 </TextField>
-                <ChoiceBox id="stateDropDown" fx:id="stateChoice" layoutX="192.0" layoutY="285.0" minHeight="-Infinity" prefHeight="22.0" prefWidth="48.0" value="state" />
-                <TextField id="zipCodeTextField" fx:id="zipCodeTextField" layoutX="253.0" layoutY="285.0" prefHeight="22.0" prefWidth="58.0" promptText="Zip Code">
+                <ChoiceBox id="stateDropDown" fx:id="stateChoice" layoutX="192.0" layoutY="275.0" minHeight="-Infinity" prefHeight="22.0" prefWidth="48.0" value="state" />
+                <TextField id="zipCodeTextField" fx:id="zipCodeTextField" layoutX="253.0" layoutY="275.0" prefHeight="22.0" prefWidth="58.0" promptText="Zip Code">
                     <font>
                         <Font size="10.0" />
                     </font></TextField>
-                <Separator layoutX="71.0" layoutY="113.0" prefWidth="200.0" />
-            <Separator layoutX="70.0" layoutY="235.0" prefWidth="200.0" />
-                <Button layoutX="29.0" layoutY="451.0" mnemonicParsing="false" onAction="#BackToLogin" text="Back to Login" />
-                <Button id="signUpButton" fx:id="signUp" layoutX="185.0" layoutY="451.0" mnemonicParsing="false" onAction="#signUp" text="Sign up" />
+                <Separator layoutX="71.0" layoutY="103.0" prefWidth="200.0" />
+            <Separator layoutX="70.0" layoutY="225.0" prefWidth="200.0" />
+                <Button layoutX="31.0" layoutY="335.0" mnemonicParsing="false" onAction="#BackToLogin" text="Back to Login" />
+                <Button id="signUpButton" fx:id="signUp" layoutX="187.0" layoutY="335.0" mnemonicParsing="false" onAction="#signUp" text="Sign up" />
               </children></AnchorPane>
     </children>
 </HBox>
