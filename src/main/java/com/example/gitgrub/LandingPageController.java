@@ -254,6 +254,7 @@ public class LandingPageController extends MainApplication implements Initializa
         }
         return false;
     }
+    //Select Allergies and output it
     public void getintolerence(){
         ArrayList<String> allergies=new ArrayList<>();
         if(dairy.isSelected()){
@@ -296,6 +297,30 @@ public class LandingPageController extends MainApplication implements Initializa
 
     }
 
+    //Open Allergies Pane inside userMember
+    @FXML
+    public void openAllergies() {
+        if(allergiesPane.isVisible()){
+            allergiesPane.setVisible(false);
+        }else{
+            allergiesPane.setVisible(true);
+        }
+        fitnessPane.setVisible(false);
+    }
+    //Open The Fitness Pane inside userMember
+    @FXML
+    public void openFitness() {
+        if(fitnessPane.isVisible()){
+            fitnessPane.setVisible(false);
+        }else{
+            fitnessPane.setVisible(true);
+        }
+        allergiesPane.setVisible(false);
+    }
+    @FXML
+    public void editMember() {
+    }
+    //Create new Member
     @FXML
     private void addNewMember() {
         String firstName = umfirstnameTextfield.getText();
@@ -343,30 +368,7 @@ public class LandingPageController extends MainApplication implements Initializa
             e.printStackTrace();
         }
     }
-
-    public void updateAllergies() {
-    }
-    @FXML
-    public void openAllergies() {
-        if(allergiesPane.isVisible()){
-            allergiesPane.setVisible(false);
-        }else{
-            allergiesPane.setVisible(true);
-        }
-        fitnessPane.setVisible(false);
-    }
-    @FXML
-    public void openFitness() {
-        if(fitnessPane.isVisible()){
-            fitnessPane.setVisible(false);
-        }else{
-            fitnessPane.setVisible(true);
-        }
-        allergiesPane.setVisible(false);
-    }
-    @FXML
-    public void editMember() {
-    }
+    //Opens the Refrigerator Menu
     @FXML
     public void openRefrigeratorPane(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("fridge-view.fxml"));
@@ -378,6 +380,7 @@ public class LandingPageController extends MainApplication implements Initializa
         stage.show();
         stage.centerOnScreen();
     }
+    //Populates the User Member List
     @FXML
     public void populateListView() {
         int UID = Integer.parseInt(User.getUser_Uid());
@@ -410,6 +413,7 @@ public class LandingPageController extends MainApplication implements Initializa
         }
     }
 
+    //Sets the labels of the selected user in the memberPane
     private void updateLabelsForSelectedUserMember(String selectedUserMember) {
         String UID = User.getUser_Uid(); // Assuming this gets the active user's ID
 
