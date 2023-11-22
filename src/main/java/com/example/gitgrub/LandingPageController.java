@@ -137,21 +137,6 @@ public class LandingPageController extends MainApplication implements Initializa
 
     }
 
-    // Testing fetchNutritionLabel through the bookmarks label
-    public void showRecipeNutritionLabel() {
-        WebView webView = new WebView();
-
-        String nutritionLabelContent = fetchNutritionLabel(1);
-        if (nutritionLabelContent != null) {
-            webView.getEngine().loadContent(nutritionLabelContent);
-
-            webView.setPrefSize(nutrtionLabelPane.getWidth()-10, nutrtionLabelPane.getHeight()-10);
-            webView.setMaxSize(nutrtionLabelPane.getWidth(), nutrtionLabelPane.getHeight());
-            webView.setTranslateX(10);
-            webView.setTranslateY(10);
-            nutrtionLabelPane.getChildren().add(webView);
-        }
-    }
     // Shows the profile page on ProfilePicture click and allows for profile editing
     public void openProfile() {
         if(viewProfilePane.isVisible()) {

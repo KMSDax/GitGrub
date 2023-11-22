@@ -1,5 +1,6 @@
 package com.example.gitgrub;
-
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +25,10 @@ import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import static com.example.gitgrub.Spoonacular.fetchNutritionLabel;
@@ -35,20 +40,20 @@ public class CookbookController extends MainApplication implements Initializable
     @FXML
     public Hyperlink sourceLink1, sourceLink2, sourceLink3, sourceLink4;
     @FXML
-    public WebView descriptionPane1, descriptionPane2, descriptionPane3, descriptionPane4;
+    public WebView descriptionPane1, descriptionPane2, descriptionPane3, descriptionPane4, webView;
+    @FXML
+    public Pane nutritionLabelPane;
     @FXML
     public ImageView imageView1, imageView2, imageView3, imageView4;
     @FXML
-    public Button nutritionButton1,nutritionButton2,nutritionButton3,nutritionButton4;
-    @FXML
-    public Button back,next;
-    @FXML
+    public Button back,next, nutritionButton1, nutritionButton2, nutritionButton3, nutritionButton4, ViewBookmarksBtn;
     public TextField search;
     @FXML
     public Pane nutrtionLabelPane;
     public Button descriptionButton1,descriptionButton2,descriptionButton3,descriptionButton4;
     public Button instructionButton1,instructionButton2,instructionButton3,instructionButton4;
     private int currentIndex = 0;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         updateRecipes();
@@ -107,7 +112,6 @@ public class CookbookController extends MainApplication implements Initializable
             }
         }
     }
-
     public void getRecipeInstructions(int recipeId, WebView descriptionPane) {
         // Fetch recipe information including instructions, ingredients, appliances, etc.
         JSONObject recipeInfo = fetchRecipeInformation(recipeId);
@@ -201,6 +205,65 @@ public class CookbookController extends MainApplication implements Initializable
         }
     }
 
+    public void showBookmarks() {
+        ObservableList<Integer> userBookmarks = getUserBookmarks();
+        for (int i = 0; i < userBookmarks.size(); i++) {
+            int recipeId = userBookmarks.get(i);
+            JSONObject recipeInfo = fetchRecipeInformation(recipeId);
+
+            if (recipeInfo != null) {
+                String title = recipeInfo.getString("title");
+                String description = recipeInfo.optString("summary", "Description Unavailable: Please visit source link");
+                String sourceUrl = recipeInfo.getString("sourceUrl");
+                String imageUrl = recipeInfo.optString("image", "null");
+
+                // Get references to the JavaFX components
+                Label titleLabel = getRecipeLabel(i + 1);
+                Hyperlink sourceLink = getRecipeSourceLink(i + 1);
+                WebView descriptionPane = getRecipeDescriptionPane(i + 1);
+                ImageView imageView = getRecipeImage(i + 1);
+                // Set the recipe information
+                titleLabel.setText(title);
+
+                sourceLink.setOnAction(e -> getHostServices().showDocument(sourceUrl));
+                // Convert imageURl from String to Image Object, set Image to recipeImage
+                Image recipeImage = new Image(imageUrl);
+                imageView.setImage(recipeImage);
+                // Create webEngine Object to load description content
+                WebEngine webEngine = descriptionPane.getEngine();
+                Document doc = Jsoup.parse(description);
+                doc.select("a").remove();
+
+                webEngine.loadContent(String.valueOf(doc));
+            }
+        }
+    }
+    public ObservableList<Integer> getUserBookmarks() {
+        int UID = Integer.parseInt(User.getUser_Uid());
+
+        ObservableList<Integer> userBookmarks = FXCollections.observableArrayList();
+
+        try {
+            Connection connection = DBConn.connectDB();
+            String sql = "SELECT bookmark_recipe_id FROM user_bookmark WHERE UID = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, UID);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int bookmark = resultSet.getInt("bookmark_recipe_id");
+                userBookmarks.add(bookmark);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userBookmarks;
+    }
     private Button getDescriptionButton(int index) {
         switch (index) {
             case 1:
@@ -257,7 +320,6 @@ public class CookbookController extends MainApplication implements Initializable
                 return null;
         }
     }
-
     private Hyperlink getRecipeSourceLink(int index) {
         switch (index) {
             case 1:
@@ -272,7 +334,6 @@ public class CookbookController extends MainApplication implements Initializable
                 return null;
         }
     }
-
     private WebView getRecipeDescriptionPane(int index) {
         switch (index) {
             case 1:
@@ -307,14 +368,12 @@ public class CookbookController extends MainApplication implements Initializable
             updateRecipes();
         }
     }
-
     private void showPreviousRecipes() {
         if (currentIndex > 0) {
             currentIndex -= 5;
             updateRecipes();
         }
     }
-
     public void backToHome(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("landing-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
