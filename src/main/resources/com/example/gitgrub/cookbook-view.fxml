@@ -124,13 +124,7 @@
                                         <items>
                                             <Button fx:id="descriptionButton1" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
                                             <Button fx:id="instructionButton1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
-                                            <Button fx:id="nutritionButton1"
-                                                    layoutX="10.0"
-                                                    layoutY="41.0"
-                                                    mnemonicParsing="false"
-                                                    prefHeight="26.0"
-                                                    prefWidth="85.0"
-                                                    text="Nutrition"/>
+                                            <Button fx:id="nutritionButton1" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
                                         </items>
                                     </ToolBar>
                            <ImageView fx:id="imageView1" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
@@ -168,8 +162,7 @@
             </Pane>
          <Button fx:id="back" layoutX="584.0" layoutY="731.0" mnemonicParsing="false" text="&lt;&lt;" />
          <Button fx:id="next" layoutX="632.0" layoutY="731.0" mnemonicParsing="false" text="&gt;&gt;" />
-         <Button layoutX="14.0" layoutY="731.0" mnemonicParsing="false" text="Back to Home" />
-         <TextField fx:id="searchRecipes" layoutX="119.0" layoutY="731.0" prefHeight="25.0" prefWidth="244.0" promptText="Search" />
+         <Button layoutX="14.0" layoutY="731.0" mnemonicParsing="false" onAction="#backToHome" text="Back to Home" />
         </children></Pane>
 
 </AnchorPane>
