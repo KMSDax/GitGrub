@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.gitgrub.MealPlannerController">
+
+    <children>
+        <Label text="Meal Planner" />
+
+        <HBox spacing="10">
+            <TextField fx:id="mealNameField" promptText="Meal Name" />
+            <TextField fx:id="caloriesField" promptText="Calories" />
+            <TextField fx:id="proteinField" promptText="Protein" />
+            <TextField fx:id="carbsField" promptText="Carbs" />
+            <TextField fx:id="fatField" promptText="Fat" />
+            <Button text="Add Meal" onAction="#addMeal" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Button text="Display Meals" onAction="#displayMeals" />
+            <Button text="Calculate Total Nutrition" onAction="#calculateTotalNutrition" />
+        </HBox>
+
+        <ListView fx:id="mealListView" />
+
+        <Label fx:id="totalNutritionLabel" />
+
+    </children>
+</VBox>
