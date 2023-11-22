@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="My changes adding more checkboxes for allergies">
+    <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="calorie counter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CalorieCountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CalorieCountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/Meal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/CalorieCount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/CalorieCount.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -35,7 +38,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -55,7 +58,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Dax&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/GitHubProjects/GitGrub/src/main/resources/com/example/gitgrub&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/hakimel-mobasher/Documents/GitHub/csc325_oop_designreview_lab/GitGrub/src/main/java/com/example/gitgrub&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/aalbe/IdeaProjects/GitGrub/src/main/resources/com/example/gitgrub/sign-up-view.fxml&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -127,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698193018041</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="calorie counter">
+      <created>1700106826819</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700106826819</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +159,8 @@
     <MESSAGE value="Added Profile Pane" />
     <MESSAGE value="Added viewProfilePane &amp; editProfileButton to change view to editProfilePane" />
     <MESSAGE value="My changes adding more checkboxes for allergies" />
-    <option name="LAST_COMMIT_MESSAGE" value="My changes adding more checkboxes for allergies" />
+    <MESSAGE value="calorie counter" />
+    <option name="LAST_COMMIT_MESSAGE" value="calorie counter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

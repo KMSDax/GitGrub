@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.CalorieCountController" style="-fx-background-color: #f4f4f4;">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.CalorieCountController">
 
     <Label layoutX="14.0" layoutY="20.0" text="Meal Information">
         <font>
@@ -13,36 +13,22 @@
     </Label>
 
     <Label layoutX="14.0" layoutY="60.0" text="Meal Name:" />
-    <TextField fx:id="mealNameField" layoutX="130.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1px;"/>
+    <TextField fx:id="mealNameField" layoutX="130.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1px;" />
 
-    <Label layoutX="14.0" layoutY="100.0" text="Food Item:" />
-    <TextField fx:id="foodItemField" layoutX="130.0" layoutY="95.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1px;"/>
+    <Label layoutX="14.0" layoutY="100.0" text="Calories:" />
+    <TextField fx:id="caloriesField" layoutX="130.0" layoutY="95.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1px;" />
 
-    <Label layoutX="14.0" layoutY="140.0" text="Portion Size:" />
-    <TextField fx:id="portionSizeField" layoutX="130.0" layoutY="135.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1px;"/>
+    <!-- Center and move the button down -->
+    <Button fx:id="addMealButton" layoutX="25.0" layoutY="170.0" mnemonicParsing="false" onAction="#addMeal" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-font-weight: bold;" text="Add Meal" />
 
-    <Label layoutX="14.0" layoutY="180.0" text="User Information">
-        <font>
-            <Font name="Arial" size="18.0" />
-        </font>
-    </Label>
-
-    <Label layoutX="14.0" layoutY="220.0" text="Age:" />
-    <TextField fx:id="ageField" layoutX="130.0" layoutY="215.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1px;"/>
-
-    <Label layoutX="14.0" layoutY="260.0" text="Height (ft):" />
-    <TextField fx:id="heightField" layoutX="130.0" layoutY="255.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1px;"/>
-
-    <Label layoutX="14.0" layoutY="300.0" text="Weight (lbs):" />
-    <TextField fx:id="weightField" layoutX="130.0" layoutY="295.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1px;"/>
-
-    <ListView fx:id="itemsListView" layoutX="350.0" layoutY="55.0" prefHeight="275.0" prefWidth="230.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1px;"/>
-
-    <Button fx:id="addButton" layoutX="25.0" layoutY="350.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Add Food Item" style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-font-weight: bold;"/>
-
-    <Button fx:id="removeButton" layoutX="190.0" layoutY="350.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Remove Food Item" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;"/>
-
-    <Button fx:id="calculateButton" layoutX="350.0" layoutY="350.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Calculate Calories" style="-fx-background-color: #2196f3; -fx-text-fill: white; -fx-font-weight: bold;"/>
-
-    <Label fx:id="caloriesResLabel" layoutX="510.0" layoutY="360.0" text="Calories:" style="-fx-font-size: 16px;"/>
+    <VBox alignment="TOP_CENTER" layoutX="600.0" layoutY="20.0" spacing="5">
+        <Label text="Meal Summary">
+            <font>
+                <Font name="Arial" size="18.0" />
+            </font>
+        </Label>
+        <!-- Add a ScrollPane if you have many meals -->
+        <VBox fx:id="mealSummaryBox" prefHeight="300.0" prefWidth="180.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1px;" />
+        <Label fx:id="totalCaloriesLabel" style="-fx-font-size: 16px;" text="Total Calories: 0" />
+    </VBox>
 </AnchorPane>
