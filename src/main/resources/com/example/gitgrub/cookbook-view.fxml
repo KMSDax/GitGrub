@@ -65,9 +65,9 @@
                            <WebView fx:id="descriptionPane3" fontScale="0.85" layoutX="10.0" layoutY="60.0" prefHeight="250.0" prefWidth="390.0" />
                            <ToolBar layoutX="425.0" layoutY="210.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="96.0">
                               <items>
-                                 <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
-                                 <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
-                                 <Button fx:id="nutritionButton3" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" onAction="#showRecipeNutritionLabel" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
+                                 <Button fx:id="descriptionButton3" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
+                                 <Button fx:id="instructionButton3" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
+                                 <Button fx:id="nutritionButton3" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
                               </items>
                            </ToolBar>
                            <ImageView fx:id="imageView3" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
@@ -91,9 +91,9 @@
                            <WebView fx:id="descriptionPane4" fontScale="0.85" layoutX="10.0" layoutY="60.0" prefHeight="250.0" prefWidth="390.0" />
                            <ToolBar layoutX="425.0" layoutY="210.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="96.0">
                               <items>
-                                 <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
-                                 <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
-                                 <Button fx:id="nutritionButton4" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" onAction="#showRecipeNutritionLabel" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
+                                 <Button fx:id="descriptionButton4" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
+                                 <Button fx:id="instructionButton4" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
+                                 <Button fx:id="nutritionButton4" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
                               </items>
                            </ToolBar>
                            <ImageView fx:id="imageView4" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
@@ -128,9 +128,9 @@
                                     <WebView fx:id="descriptionPane1" fontScale="0.85" layoutX="10.0" layoutY="60.0" prefHeight="250.0" prefWidth="390.0" />
                                     <ToolBar layoutX="425.0" layoutY="210.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="96.0">
                                         <items>
-                                            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
-                                            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
-                                            <Button fx:id="nutritionButton1" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" onAction="#showRecipeNutritionLabel" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
+                                            <Button fx:id="descriptionButton1" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
+                                            <Button fx:id="instructionButton1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
+                                            <Button fx:id="nutritionButton1" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
                                         </items>
                                     </ToolBar>
                            <ImageView fx:id="imageView1" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
@@ -154,9 +154,9 @@
                            <WebView fx:id="descriptionPane2" fontScale="0.85" layoutX="10.0" layoutY="60.0" prefHeight="250.0" prefWidth="390.0" />
                            <ToolBar layoutX="425.0" layoutY="210.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="96.0">
                               <items>
-                                 <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
-                                 <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
-                                 <Button fx:id="nutritionButton2" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" onAction="#showRecipeNutritionLabel" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
+                                 <Button fx:id="descriptionButton2" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Description" />
+                                 <Button fx:id="instructionButton2" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Instructions" />
+                                 <Button fx:id="nutritionButton2" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Nutrition" />
                               </items>
                            </ToolBar>
                            <ImageView fx:id="imageView2" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
@@ -169,9 +169,10 @@
             </Pane>
          <Button fx:id="back" layoutX="584.0" layoutY="731.0" mnemonicParsing="false" text="&lt;&lt;" />
          <Button fx:id="next" layoutX="632.0" layoutY="731.0" mnemonicParsing="false" text="&gt;&gt;" />
-         <Button layoutX="14.0" layoutY="731.0" mnemonicParsing="false" text="Back to Home" />
-         <TextField fx:id="search" layoutX="119.0" layoutY="731.0" prefHeight="25.0" prefWidth="244.0" promptText="Search" />
+
+         <Button onAction="#backToHome" layoutX="14.0" layoutY="731.0" mnemonicParsing="false" text="Back to Home" />
          <Button fx:id="ViewBookmarksBtn" layoutX="1081.0" layoutY="731.0" mnemonicParsing="false" onAction="#showBookmarks" prefHeight="25.0" prefWidth="136.0" text="View Bookmarks" />
+
         </children></Pane>
 
 </AnchorPane>

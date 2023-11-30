@@ -32,6 +32,5 @@
 
       <Hyperlink onAction="#goToForgotPassword" layoutX="90.0" layoutY="339.0" text="Forgot my password" />
 
-
    </children>
 </Pane>
