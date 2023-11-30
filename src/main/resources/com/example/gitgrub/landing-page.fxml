@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
+<AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
 
 
     <children>
@@ -27,7 +37,15 @@
                 <TabPane id="menu" layoutX="25.0" layoutY="25.0" prefHeight="583.0" prefWidth="869.0" style="-fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                         <Tab text="Recipe of the Day">
-                            <Pane prefWidth="801.0" />
+                            <Pane prefWidth="801.0">
+                        <children>
+                           <Label fx:id="randTitleLabel" layoutX="14.0" layoutY="14.0" text="Label" />
+                           <WebView fx:id="randDescriptionPane" layoutX="14.0" layoutY="34.0" prefHeight="196.0" prefWidth="321.0" />
+                           <Label fx:id="randReadyInMinutesLabel" layoutX="14.0" layoutY="237.0" text="Label" />
+                           <Label fx:id="randServingsLabel" layoutX="14.0" layoutY="257.0" text="Label" />
+                           <Label fx:id="stepsLabel" layoutX="14.0" layoutY="277.0" maxHeight="1.7976931348623157E308" maxWidth="800.0" text="Label" />
+                           <ImageView fx:id="randImageView" fitHeight="198.0" fitWidth="254.0" layoutX="347.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+                        </children></Pane>
                         </Tab>
                         <Tab text="Recipe Randomizer" />
                         <Tab text="Fitness" />

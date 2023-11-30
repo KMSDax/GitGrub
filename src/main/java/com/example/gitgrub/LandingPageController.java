@@ -14,6 +14,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,6 +33,7 @@ import java.util.ResourceBundle;
 import static com.example.gitgrub.LogInController.infoBox;
 import static com.example.gitgrub.LogInController.printSQLException;
 import static com.example.gitgrub.Spoonacular.fetchNutritionLabel;
+import static com.example.gitgrub.Spoonacular.getRandRecipe;
 
 public class LandingPageController extends MainApplication implements Initializable {
     @FXML
@@ -39,35 +42,26 @@ public class LandingPageController extends MainApplication implements Initializa
     public Label umdietLabel,umfullnameLabel,umdobLabel,umheightLabel;
     @FXML
     private DatePicker umDOBDatePicker;
-
     @FXML
     private TextField umfirstnameTextfield,umlastnameTextfield,umHeightTextField;
-
     @FXML
     private ChoiceBox<String> umdietChoiceBox;
-
     @FXML
-    private Button addNewMembersButton;
-
-    @FXML
-    private Button cancel;
-    @FXML
-    public Label usernameLabel,nameLabel,emailLabel,dobLabel,phoneLabel,addressLabel,MMCalcLabel,BFPCalcLabel,BMICalcLabel;
+    public Label usernameLabel,nameLabel,emailLabel,dobLabel,phoneLabel,addressLabel,MMCalcLabel,BFPCalcLabel,BMICalcLabel, randTitleLabel, randReadyInMinutesLabel, randServingsLabel, stepsLabel;
     @FXML
     public Button editButton,confirmChangesButton,addMembersButton,openFitnessButton,openAllergiesButton;
     @FXML
     public Pane viewProfilePane,addMembersPane,nutrtionLabelPane,viewMembersInfoPane,fitnessPane,allergiesPane,umuserPane;
     @FXML
-    private ImageView profilePic;
+    private ImageView profilePic, randImageView;
     @FXML
-    private Pane newsPane, cookbookPane, page1, page2, editProfilePane;
+    private Pane newsPane, editProfilePane;
     @FXML
-
     private TextField firstNameTextField, lastNameTextField, emailTextField, dobTextField, phoneTextField, streetTextField, cityTextField, stateTextField, zipTextField, height, weight, age;
-
     @FXML
     private CheckBox dairy, peanuts, shellfish, egg, gluten, grain, seafood, sesame, soy, sulfite, treenuts, wheat;
-
+    @FXML
+    public WebView randDescriptionPane;
 
     private int selectedUserHeight = 0;
     private String selectedUserDOB = "";
@@ -77,6 +71,8 @@ public class LandingPageController extends MainApplication implements Initializa
         profilePic.setImage(picture);
         usernameLabel.setText(User.getInstance().getUser_id());
         umdietChoiceBox.setItems(FXCollections.observableArrayList("Keto","Vegetarian","Gluten Free"));
+
+        loadRandRecipe();
 
         // Initializes  user's general information for the Profile Pane Display
         String firstName = User.getInstance().getUser_firstname();
@@ -121,9 +117,49 @@ public class LandingPageController extends MainApplication implements Initializa
 
     public void openNews() {
         newsPane.setVisible(true);
-        cookbookPane.setVisible(false);
     }
 
+    public void loadRandRecipe(){
+        JSONObject randRecipe = getRandRecipe();
+        String title = randRecipe.getString("title");
+        String description = "Description Unavailable: Please visit source link.";
+        int readyInMinutes = randRecipe.getInt("readyInMinutes");
+        int servings = randRecipe.getInt("servings");
+        String sourceUrl = randRecipe.getString("sourceUrl");
+        String image = "null";
+
+        if (randRecipe.has("summary") && !randRecipe.isNull("summary")) {
+            description = randRecipe.getString("summary");
+        }
+        if (randRecipe.has("image") && !randRecipe.isNull("image")) {
+            image = randRecipe.getString("image");
+        }
+
+        randTitleLabel.setText(title);
+        randDescriptionPane.getEngine().loadContent(description);
+        System.out.println("Source URL: " + sourceUrl);
+        randReadyInMinutesLabel.setText("Ready In Minutes: " + readyInMinutes);
+        randServingsLabel.setText("Servings: " + servings);
+
+        Image recipeImage = new Image(image);
+        randImageView.setImage(recipeImage);
+
+        // Extract and print analyzedInstructions
+        JSONArray analyzedInstructions = randRecipe.getJSONArray("analyzedInstructions");
+        StringBuilder stepsText = new StringBuilder("Instructions:\n");
+
+        for (int j = 0; j < analyzedInstructions.length(); j++) {
+            JSONObject instruction = analyzedInstructions.getJSONObject(j);
+            JSONArray steps = instruction.getJSONArray("steps");
+            for (int k = 0; k < steps.length(); k++) {
+                JSONObject step = steps.getJSONObject(k);
+                int stepNumber = step.getInt("number");
+                String stepDescription = step.getString("step");
+                stepsText.append("Step ").append(stepNumber).append(": ").append(stepDescription).append("\n");
+            }
+        }
+        stepsLabel.setText(stepsText.toString());
+    }
 
     public void openCookbook(ActionEvent event) throws IOException {
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("cookbook-view.fxml"));
