@@ -10,217 +10,224 @@
 
 
     <children>
-      <Pane prefHeight="95.0" prefWidth="1194.0">
-         <children>
-            <Button fx:id="news" layoutX="31.0" layoutY="33.0" mnemonicParsing="false" onAction="#openNews" prefHeight="40.0" prefWidth="109.0" text="News" />
-            <Button fx:id="cookbook" layoutX="171.0" layoutY="33.0" mnemonicParsing="false" onAction="#openCookbook" prefHeight="40.0" prefWidth="109.0" text="Cookbook" />
+        <Pane prefHeight="95.0" prefWidth="1194.0">
+            <children>
+                <Button fx:id="news" layoutX="31.0" layoutY="33.0" mnemonicParsing="false" onAction="#openNews" prefHeight="40.0" prefWidth="109.0" text="News" />
+                <Button fx:id="cookbook" layoutX="171.0" layoutY="33.0" mnemonicParsing="false" onAction="#openCookbook" prefHeight="40.0" prefWidth="109.0" text="Cookbook" />
 
-            <Button layoutX="311.0" layoutY="33.0" mnemonicParsing="false" onAction="#showRecipeNutritionLabel" prefHeight="40.0" prefWidth="109.0" text="Bookmarks" />
+                <Button layoutX="311.0" layoutY="33.0" mnemonicParsing="false" onAction="#showRecipeNutritionLabel" prefHeight="40.0" prefWidth="109.0" text="Bookmarks" />
 
-            <ImageView fx:id="profilePic" fitHeight="66.0" fitWidth="61.0" layoutX="1119.0" layoutY="5.0" onMouseClicked="#openProfile" pickOnBounds="true" preserveRatio="true" />
-             <Label fx:id="usernameLabel" layoutX="1123.0" layoutY="73.0" text="Username" textFill="#bebebe" />
+                <ImageView fx:id="profilePic" fitHeight="66.0" fitWidth="61.0" layoutX="1119.0" layoutY="5.0" onMouseClicked="#openProfile" pickOnBounds="true" preserveRatio="true" />
+                <Label fx:id="usernameLabel" layoutX="1123.0" layoutY="73.0" text="Username" textFill="#bebebe" />
 
-         </children>
-      </Pane>
-      <Pane fx:id="newsPane" layoutY="94.0" prefHeight="635.0" prefWidth="919.0">
-         <children>
-            <TabPane id="menu" layoutX="25.0" layoutY="25.0" prefHeight="583.0" prefWidth="869.0" style="-fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE">
-              <tabs>
-                <Tab text="Recipe of the Day">
-                      <Pane prefWidth="801.0" />
-                </Tab>
-                <Tab text="Recipe Randomizer" />
-                <Tab text="Fitness" />
-              </tabs>
-            </TabPane>
-         </children>
-         <effect>
-            <DropShadow blurType="TWO_PASS_BOX" height="2.0" offsetX="1.0" offsetY="1.0" radius="0.5" width="2.0" />
-         </effect>
-      </Pane>
+            </children>
+        </Pane>
+        <Pane fx:id="newsPane" layoutY="94.0" prefHeight="635.0" prefWidth="919.0">
+            <children>
+                <TabPane id="menu" layoutX="25.0" layoutY="25.0" prefHeight="583.0" prefWidth="869.0" style="-fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Recipe of the Day">
+                            <Pane prefWidth="801.0" />
+                        </Tab>
+                        <Tab text="Recipe Randomizer" />
+                        <Tab text="Fitness" />
+                    </tabs>
+                </TabPane>
+            </children>
+            <effect>
+                <DropShadow blurType="TWO_PASS_BOX" height="2.0" offsetX="1.0" offsetY="1.0" radius="0.5" width="2.0" />
+            </effect>
+        </Pane>
 
-      <Pane fx:id="nutrtionLabelPane" layoutX="927.0" layoutY="94.0" prefHeight="595.0" prefWidth="268.0">
-         <children>
-             <Pane fx:id="editProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
-      
-                <children>
-                   <Label layoutX="45.0" layoutY="14.0" text="General Information">
-                      <font>
-                         <Font name="System Bold" size="18.0" />
-                      </font>
-                   </Label>
-                   <Label layoutX="18.0" layoutY="48.0" text="First Name" />
-                   <TextField fx:id="firstNameTextField" layoutX="95.0" layoutY="44.0" />
-                   <Label layoutX="18.0" layoutY="83.0" text="Last Name" />
-                   <TextField fx:id="lastNameTextField" layoutX="95.0" layoutY="79.0" />
-                   <Label layoutX="18.0" layoutY="116.0" text="Email" />
-                   <TextField fx:id="emailTextField" layoutX="95.0" layoutY="112.0" />
-                   <Label layoutX="18.0" layoutY="148.0" text="Date of Birth" />
-                   <TextField fx:id="dobTextField" layoutX="95.0" layoutY="144.0" />
-                   <Label layoutX="18.0" layoutY="180.0" text="Phone #" />
-                   <TextField fx:id="phoneTextField" layoutX="95.0" layoutY="176.0" />
-                   <Label layoutX="18.0" layoutY="205.0" text="Location">
-                      <font>
-                         <Font name="System Bold" size="14.0" />
-                      </font>
-                   </Label>
-                   <Label layoutX="18.0" layoutY="229.0" text="Street" />
-                   <TextField fx:id="streetTextField" layoutX="95.0" layoutY="225.0" />
-                   <Label layoutX="18.0" layoutY="264.0" text="City" />
-                   <TextField fx:id="cityTextField" layoutX="95.0" layoutY="260.0" />
-                   <Label layoutX="18.0" layoutY="297.0" text="State" />
-                   <TextField fx:id="stateTextField" layoutX="95.0" layoutY="293.0" />
-                   <Label layoutX="18.0" layoutY="329.0" text="Zipcode" />
-                   <TextField fx:id="zipTextField" layoutX="95.0" layoutY="325.0" />
-                   <Button fx:id="confirmChangesButton" layoutX="89.0" layoutY="361.0" mnemonicParsing="false" onAction="#confirmProfileChanges" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Confirm Changes" />
-                </children>
-            </Pane>
-             <Pane fx:id="viewProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
-                <children>
-                   <Label layoutX="45.0" layoutY="14.0" text="General Information">
-                      <font>
-                         <Font name="System Bold" size="18.0" />
-                      </font>
-                   </Label>
-                   <Label layoutX="17.0" layoutY="53.0" text="Name: ">
-                      <font>
-                         <Font name="System Bold" size="12.0" />
-                      </font>
-                  </Label>
-                   <Label layoutX="18.0" layoutY="83.0" text="Email: ">
-                      <font>
-                         <Font name="System Bold" size="12.0" />
-                      </font>
-                  </Label>
-                   <Label layoutX="17.0" layoutY="121.0" text="Date of Birth: ">
-                      <font>
-                         <Font name="System Bold" size="12.0" />
-                      </font>
-                  </Label>
-                   <Label layoutX="17.0" layoutY="158.0" text="Phone #: ">
-                      <font>
-                         <Font name="System Bold" size="12.0" />
-                      </font>
-                  </Label>
-                   <Label layoutX="17.0" layoutY="195.0" text="Address: ">
-                      <font>
-                         <Font name="System Bold" size="12.0" />
-                      </font>
-                  </Label>
+        <Pane fx:id="nutrtionLabelPane" layoutX="908.0" layoutY="119.0" prefHeight="583.0" prefWidth="268.0">
+            <children>
+                <Pane fx:id="editProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+                    <children>
+                        <Label layoutX="45.0" layoutY="14.0" text="General Information">
 
-                   <Label fx:id="nameLabel" layoutX="101.0" layoutY="53.0" text="Name: " />
-                   <Label fx:id="emailLabel" layoutX="102.0" layoutY="83.0" text="Email: " />
-                   <Label fx:id="dobLabel" layoutX="101.0" layoutY="121.0" text="Date of Birth: " />
-                   <Label fx:id="phoneLabel" layoutX="101.0" layoutY="158.0" text="Phone #: " />
-                   <Label fx:id="addressLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="98.0" layoutY="195.0" prefHeight="52.0" prefWidth="149.0" text="Address: " wrapText="true" />
-                    <Button fx:id="editButton" layoutX="97.0" layoutY="247.0" mnemonicParsing="false" onAction="#openEditProfile" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Profile" />
-                    <Button fx:id="addMembersButton" layoutX="89.0" layoutY="284.0" mnemonicParsing="false" onAction="#openViewMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="View Members" />
-                </children>
-             </Pane>
-             <Pane fx:id="addMembersPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
-                <children>
-                   <Label layoutX="74.0" layoutY="14.0" text="User Member">
-                      <font>
-                         <Font name="System Bold" size="18.0" />
-                      </font>
-                   </Label>
-                   <Button fx:id="addNewMembersButton" layoutX="140.0" layoutY="360.0" mnemonicParsing="false" onAction="#addNewMember" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add New Members" />
-                   <ListView layoutX="31.0" layoutY="41.0" prefHeight="80.0" prefWidth="200.0" />
-                   <DatePicker fx:id="umDOBDatePicker" layoutX="21.0" layoutY="285.0" prefHeight="25.0" prefWidth="91.0" />
-                   <TextField fx:id="umfirstnameTextfield" layoutX="21.0" layoutY="152.0" prefHeight="25.0" prefWidth="220.0" promptText="First Name" />
-                   <TextField fx:id="umlastnameTextfield" layoutX="21.0" layoutY="197.0" prefHeight="25.0" prefWidth="220.0" promptText="Last Name" />
-                   <ChoiceBox fx:id="umdietChoiceBox" layoutX="120.0" layoutY="285.0" prefHeight="25.0" prefWidth="121.0" />
-                   <TextField fx:id="umHeightTextField" layoutX="21.0" layoutY="241.0" prefHeight="25.0" prefWidth="220.0" promptText="Height(inches)" />
-                   <Label layoutX="21.0" layoutY="134.0" text="First Name" />
-                   <Label layoutX="23.0" layoutY="179.0" text="Last Name" />
-                   <Label layoutX="21.0" layoutY="224.0" text="Height(inches)" />
-                   <Label layoutX="21.0" layoutY="268.0" text="Date of Birth" />
-                   <Label layoutX="122.0" layoutY="268.0" text="Diet" />
-                  <Button fx:id="cancel" layoutX="79.0" layoutY="360.0" mnemonicParsing="false" onAction="#openViewMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Cancel" />
-                </children>
-             </Pane>
-             <Pane fx:id="viewMembersInfoPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
-                <children>
-                   <Label layoutX="74.0" layoutY="14.0" text="User Member">
-                      <font>
-                         <Font name="System Bold" size="18.0" />
-                      </font>
-                   </Label>
-                   <Button fx:id="openMembersPaneButton" layoutX="156.0" layoutY="360.0" mnemonicParsing="false" onAction="#openMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
-                    <Button fx:id="editMemberButton" layoutX="57.0" layoutY="360.0" mnemonicParsing="false" onAction="#editMember" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Members" />
-
-                    <ListView layoutX="31.0" layoutY="41.0" prefHeight="80.0" prefWidth="200.0" />
-                   <Pane layoutX="14.0" layoutY="131.0" prefHeight="96.0" prefWidth="234.0">
-                      <children>
-                         <Label layoutX="16.0" layoutY="6.0" text="Full Name">
                             <font>
-                               <Font size="14.0" />
+                                <Font name="System Bold" size="18.0" />
                             </font>
                         </Label>
-                         <Label layoutX="16.0" layoutY="32.0" text="Height(inches)" />
-                         <Label layoutX="16.0" layoutY="49.0" text="Date of Birth" />
-                         <Label layoutX="16.0" layoutY="66.0" text="Diet" />
-                         <Button fx:id="openAllergiesButton" layoutX="159.0" layoutY="45.0" mnemonicParsing="false" onAction="#openAllergies" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Allergies" />
-                         <Button fx:id="openFitnessButton" layoutX="159.0" layoutY="13.0" mnemonicParsing="false" onAction="#openFitness" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Fitness" />
-                      </children>
-                  </Pane>
-                     <Pane fx:id="allergiesPane" layoutX="14.0" layoutY="227.0" prefHeight="121.0" prefWidth="234.0" visible="false">
-                      <children>
-                         <CheckBox fx:id="dairy" layoutX="6.0" mnemonicParsing="false" text="Dairy" />
-                         <CheckBox fx:id="peanuts" layoutX="6.0" layoutY="25.0" mnemonicParsing="false" text="Peanuts" />
-                         <CheckBox fx:id="shellfish" layoutX="6.0" layoutY="50.0" mnemonicParsing="false" text="Shellfish" />
-                         <CheckBox fx:id="egg" layoutX="6.0" layoutY="75.0" mnemonicParsing="false" text="Egg" />
-                         <CheckBox fx:id="gluten" layoutX="84.0" mnemonicParsing="false" text="Gluten" />
-                         <CheckBox fx:id="grain" layoutX="84.0" layoutY="25.0" mnemonicParsing="false" text="Grain" />
-                         <CheckBox fx:id="seafood" layoutX="84.0" layoutY="50.0" mnemonicParsing="false" text="Seafood" />
-                         <CheckBox fx:id="sesame" layoutX="84.0" layoutY="75.0" mnemonicParsing="false" text="Sesame" />
-                         <CheckBox fx:id="soy" layoutX="160.0" mnemonicParsing="false" text="Soy" />
-                         <CheckBox fx:id="sulfite" layoutX="160.0" layoutY="25.0" mnemonicParsing="false" text="Sulfite" />
-                         <CheckBox fx:id="treenuts" layoutX="160.0" layoutY="50.0" mnemonicParsing="false" text="Tree Nuts" />
-                         <CheckBox fx:id="wheat" layoutX="160.0" layoutY="75.0" mnemonicParsing="false" text="Wheat" />
-                         <Button fx:id="addAllergyButton" layoutX="63.0" layoutY="96.0" mnemonicParsing="false" onAction="#getintolerence" prefHeight="25.0" prefWidth="100.0" text="Add Allergy" />
-                      </children>
-                  </Pane>
-                   <Pane fx:id="fitnessPane" layoutX="14.0" layoutY="219.0" prefHeight="129.0" prefWidth="234.0" visible="false">
-                      <children>
-                         <Label layoutX="117.0" layoutY="6.0" text="Input Weight(lbs)" />
-                         <TextField layoutX="117.0" layoutY="22.0" prefHeight="25.0" prefWidth="107.0" />
-                         <Label layoutX="14.0" layoutY="26.0" text="BMI">
+                        <Label layoutX="18.0" layoutY="48.0" text="First Name" />
+                        <TextField fx:id="firstNameTextField" layoutX="95.0" layoutY="44.0" />
+                        <Label layoutX="18.0" layoutY="83.0" text="Last Name" />
+                        <TextField fx:id="lastNameTextField" layoutX="95.0" layoutY="79.0" />
+                        <Label layoutX="18.0" layoutY="116.0" text="Email" />
+                        <TextField fx:id="emailTextField" layoutX="95.0" layoutY="112.0" />
+                        <Label layoutX="18.0" layoutY="148.0" text="Date of Birth" />
+                        <TextField fx:id="dobTextField" layoutX="95.0" layoutY="144.0" />
+                        <Label layoutX="18.0" layoutY="180.0" text="Phone #" />
+                        <TextField fx:id="phoneTextField" layoutX="95.0" layoutY="176.0" />
+                        <Label layoutX="18.0" layoutY="205.0" text="Location">
                             <font>
-                               <Font name="System Bold" size="12.0" />
+                                <Font name="System Bold" size="14.0" />
                             </font>
-                         </Label>
-                         <Label layoutX="14.0" layoutY="58.0" text="BFP">
+                        </Label>
+                        <Label layoutX="18.0" layoutY="229.0" text="Street" />
+                        <TextField fx:id="streetTextField" layoutX="95.0" layoutY="225.0" />
+                        <Label layoutX="18.0" layoutY="264.0" text="City" />
+                        <TextField fx:id="cityTextField" layoutX="95.0" layoutY="260.0" />
+                        <Label layoutX="18.0" layoutY="297.0" text="State" />
+                        <TextField fx:id="stateTextField" layoutX="95.0" layoutY="293.0" />
+                        <Label layoutX="18.0" layoutY="329.0" text="Zipcode" />
+                        <TextField fx:id="zipTextField" layoutX="95.0" layoutY="325.0" />
+                        <Button fx:id="confirmChangesButton" layoutX="89.0" layoutY="361.0" mnemonicParsing="false" onAction="#confirmProfileChanges" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Confirm Changes" />
+                    </children>
+                </Pane>
+                <Pane fx:id="viewProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
+                    <children>
+                        <Label layoutX="45.0" layoutY="14.0" text="General Information">
                             <font>
-                               <Font name="System Bold" size="12.0" />
+                                <Font name="System Bold" size="18.0" />
                             </font>
-                         </Label>
-                         <Label layoutX="13.0" layoutY="89.0" text="MM">
+                        </Label>
+                        <Label layoutX="17.0" layoutY="60.0" text="Name: ">
                             <font>
-                               <Font name="System Bold" size="12.0" />
+                                <Font name="System Bold" size="12.0" />
                             </font>
-                         </Label>
-                         <Label layoutX="45.0" layoutY="21.0" text="BMI">
+                        </Label>
+                        <Label layoutX="18.0" layoutY="85.0" text="Email: ">
                             <font>
-                               <Font name="System Bold" size="18.0" />
+                                <Font name="System Bold" size="12.0" />
                             </font>
-                         </Label>
-                         <Label layoutX="46.0" layoutY="53.0" text="BFP">
+                        </Label>
+                        <Label layoutX="17.0" layoutY="110.0" text="Date of Birth: ">
                             <font>
-                               <Font name="System Bold" size="18.0" />
+                                <Font name="System Bold" size="12.0" />
                             </font>
-                         </Label>
-                         <Label layoutX="45.0" layoutY="84.0" text="MM">
+                        </Label>
+                        <Label layoutX="17.0" layoutY="135.0" text="Phone #: ">
                             <font>
-                               <Font name="System Bold" size="18.0" />
+                                <Font name="System Bold" size="12.0" />
                             </font>
-                         </Label>
-                         <Button fx:id="calcFitnessButton" layoutX="134.0" layoutY="85.0" mnemonicParsing="false" onAction="#calcFitness" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Caclulate" />
-                      </children>
-                   </Pane>
-                </children>
-             </Pane>
-         </children></Pane>
+                        </Label>
+                        <Label layoutX="17.0" layoutY="160.0" text="Address: ">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
 
-   </children>
+                        <Label fx:id="nameLabel" layoutX="101.0" layoutY="60.0" text="Name: " />
+                        <Label fx:id="emailLabel" layoutX="102.0" layoutY="85.0" text="Email: " />
+                        <Label fx:id="dobLabel" layoutX="101.0" layoutY="110.0" text="Date of Birth: " />
+                        <Label fx:id="phoneLabel" layoutX="101.0" layoutY="135.0" text="Phone #: " />
+                        <Label fx:id="addressLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="98.0" layoutY="160.0" prefHeight="52.0" prefWidth="149.0" text="Address: " wrapText="true" />
+                        <Button fx:id="editButton" layoutX="9.0" layoutY="221.0" mnemonicParsing="false" onAction="#openEditProfile" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Profile" />
+                        <Button fx:id="addMembersButton" layoutX="86.0" layoutY="360.0" mnemonicParsing="false" onAction="#openViewMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="View Members" />
+                        <Button fx:id="refrigeratorButton" layoutX="85.0" layoutY="325.0" mnemonicParsing="false" onAction="#openRefrigeratorPane" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Refrigerator" />
+                    </children>
+                </Pane>
+                <Pane fx:id="addMembersPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
+                    <children>
+                        <Label layoutX="74.0" layoutY="14.0" text="User Member">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+
+                        <ListView layoutX="31.0" layoutY="41.0" prefHeight="80.0" prefWidth="200.0" />
+                        <TextField fx:id="umfirstnameTextfield" layoutX="21.0" layoutY="152.0" prefHeight="25.0" prefWidth="220.0" promptText="First Name" />
+                        <TextField fx:id="umlastnameTextfield" layoutX="21.0" layoutY="197.0" prefHeight="25.0" prefWidth="220.0" promptText="Last Name" />
+                        <TextField fx:id="umHeightTextField" layoutX="21.0" layoutY="241.0" prefHeight="25.0" prefWidth="220.0" promptText="Height(inches)" />
+                        <DatePicker fx:id="umDOBDatePicker" layoutX="21.0" layoutY="285.0" prefHeight="25.0" prefWidth="91.0" />
+                        <ChoiceBox fx:id="umdietChoiceBox" layoutX="120.0" layoutY="285.0" prefHeight="25.0" prefWidth="121.0" />
+
+                        <Label layoutX="21.0" layoutY="134.0" text="First Name" />
+                        <Label layoutX="23.0" layoutY="179.0" text="Last Name" />
+                        <Label layoutX="21.0" layoutY="224.0" text="Height(inches)" />
+                        <Label layoutX="21.0" layoutY="268.0" text="Date of Birth" />
+                        <Label layoutX="122.0" layoutY="268.0" text="Diet" />
+                        <Button fx:id="cancel" layoutX="79.0" layoutY="360.0" mnemonicParsing="false" onAction="#openViewMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Cancel" />
+                        <Button fx:id="addNewMembersButton" layoutX="140.0" layoutY="360.0" mnemonicParsing="false" onAction="#addNewMember" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add New Members" />
+                    </children>
+                </Pane>
+                <Pane fx:id="viewMembersInfoPane" prefHeight="550.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+                    <children>
+                        <Label layoutX="74.0" layoutY="14.0" text="User Member">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="openMembersPaneButton" layoutX="161.0" layoutY="395.0" mnemonicParsing="false" onAction="#openMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
+                        <Button fx:id="editMemberButton" layoutX="52.0" layoutY="395.0" mnemonicParsing="false" onAction="#editMember" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Members" />
+
+                        <ListView fx:id="userMembersListView" layoutX="31.0" layoutY="41.0" prefHeight="80.0" prefWidth="200.0" />
+                        <Pane layoutX="14.0" layoutY="131.0" prefHeight="96.0" prefWidth="234.0">
+                            <children>
+                                <Label fx:id="umfullnameLabel" layoutX="16.0" layoutY="6.0" text="Full Name">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="umheightLabel" layoutX="16.0" layoutY="32.0" text="Height(inches)" />
+                                <Label fx:id="umdobLabel" layoutX="16.0" layoutY="49.0" text="Date of Birth" />
+                                <Label fx:id="umdietLabel" layoutX="16.0" layoutY="66.0" text="Diet" />
+                                <Button fx:id="openAllergiesButton" layoutX="159.0" layoutY="45.0" mnemonicParsing="false" onAction="#openAllergies" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Allergies" />
+                                <Button fx:id="openFitnessButton" layoutX="159.0" layoutY="13.0" mnemonicParsing="false" onAction="#openFitness" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Fitness" />
+                            </children>
+                        </Pane>
+                        <Pane fx:id="allergiesPane" layoutX="14.0" layoutY="227.0" prefHeight="121.0" prefWidth="234.0" visible="false">
+                            <children>
+                                <CheckBox fx:id="dairy" layoutX="6.0" mnemonicParsing="false" text="Dairy" />
+                                <CheckBox fx:id="peanuts" layoutX="6.0" layoutY="25.0" mnemonicParsing="false" text="Peanuts" />
+                                <CheckBox fx:id="shellfish" layoutX="6.0" layoutY="50.0" mnemonicParsing="false" text="Shellfish" />
+                                <CheckBox fx:id="egg" layoutX="6.0" layoutY="75.0" mnemonicParsing="false" text="Egg" />
+                                <CheckBox fx:id="gluten" layoutX="84.0" mnemonicParsing="false" text="Gluten" />
+                                <CheckBox fx:id="grain" layoutX="84.0" layoutY="25.0" mnemonicParsing="false" text="Grain" />
+                                <CheckBox fx:id="seafood" layoutX="84.0" layoutY="50.0" mnemonicParsing="false" text="Seafood" />
+                                <CheckBox fx:id="sesame" layoutX="84.0" layoutY="75.0" mnemonicParsing="false" text="Sesame" />
+                                <CheckBox fx:id="soy" layoutX="160.0" mnemonicParsing="false" text="Soy" />
+                                <CheckBox fx:id="sulfite" layoutX="160.0" layoutY="25.0" mnemonicParsing="false" text="Sulfite" />
+                                <CheckBox fx:id="treenuts" layoutX="160.0" layoutY="50.0" mnemonicParsing="false" text="Tree Nuts" />
+                                <CheckBox fx:id="wheat" layoutX="160.0" layoutY="75.0" mnemonicParsing="false" text="Wheat" />
+                                <Button fx:id="addAllergyButton" layoutX="63.0" layoutY="96.0" mnemonicParsing="false" onAction="#getintolerence" prefHeight="25.0" prefWidth="100.0" text="Add Allergy" />
+                            </children>
+                        </Pane>
+                        <Pane fx:id="fitnessPane" layoutX="14.0" layoutY="219.0" prefHeight="129.0" prefWidth="234.0">
+                            <children>
+                                <Label layoutX="117.0" layoutY="6.0" text="Input Weight(lbs)" />
+                                <TextField fx:id="weight" layoutX="117.0" layoutY="22.0" prefHeight="25.0" prefWidth="107.0" />
+                                <Label layoutX="117.0" layoutY="44.0" prefHeight="17.0" prefWidth="100.0" text="Input Height(inches)" />
+                                <TextField fx:id="height" layoutX="117.0" layoutY="59.0" prefHeight="25.0" prefWidth="107.0" />
+                                <Label layoutX="117.0" layoutY="81.0" text="Age" />
+                                <TextField fx:id="age" layoutX="117.0" layoutY="97.0" prefHeight="25.0" prefWidth="107.0" />
+                                <Label layoutX="14.0" layoutY="26.0" text="BMI">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="14.0" layoutY="58.0" text="BFP">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="13.0" layoutY="89.0" text="MM">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="BMICalcLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="21.0" prefWidth="60.0" text="BMI" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="BFPCalcLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="53.0" prefWidth="60.0" text="BFP" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="MMCalcLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="84.0" prefWidth="60.0" text="MM" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                          <Button fx:id="calcFitnessButton" layoutX="148.0" layoutY="352.0" mnemonicParsing="false" onAction="#calcFitness" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Caclulate" />
+                    </children>
+                </Pane>
+            </children></Pane>
+
+    </children>
 </AnchorPane>

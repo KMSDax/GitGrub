@@ -1,72 +1,82 @@
 package com.example.gitgrub;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.control.*;
-
-import javafx.scene.control.*;
-
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
-import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import org.json.JSONObject;
-
-import java.net.URL;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-import javafx.scene.web.*;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
-// Imported Dax's infoBox and printSQLException methods from the LogInController
 import static com.example.gitgrub.LogInController.infoBox;
 import static com.example.gitgrub.LogInController.printSQLException;
 import static com.example.gitgrub.Spoonacular.fetchNutritionLabel;
-import static com.example.gitgrub.Spoonacular.fetchRecipeInformation;
 
 public class LandingPageController extends MainApplication implements Initializable {
     @FXML
-    public Label usernameLabel,nameLabel,emailLabel,dobLabel,phoneLabel,addressLabel;
+    public ListView<String> userMembersListView,viewCurrentMembersInfoPane;
+    @FXML
+    public Label umdietLabel,umfullnameLabel,umdobLabel,umheightLabel;
+    @FXML
+    private DatePicker umDOBDatePicker;
+
+    @FXML
+    private TextField umfirstnameTextfield,umlastnameTextfield,umHeightTextField;
+
+    @FXML
+    private ChoiceBox<String> umdietChoiceBox;
+
+    @FXML
+    private Button addNewMembersButton;
+
+    @FXML
+    private Button cancel;
+    @FXML
+    public Label usernameLabel,nameLabel,emailLabel,dobLabel,phoneLabel,addressLabel,MMCalcLabel,BFPCalcLabel,BMICalcLabel;
     @FXML
     public Button editButton,confirmChangesButton,addMembersButton,openFitnessButton,openAllergiesButton;
     @FXML
-    public Pane viewProfilePane,addMembersPane,nutrtionLabelPane,viewMembersInfoPane,fitnessPane,allergiesPane;
-
+    public Pane viewProfilePane,addMembersPane,nutrtionLabelPane,viewMembersInfoPane,fitnessPane,allergiesPane,umuserPane;
     @FXML
     private ImageView profilePic;
     @FXML
     private Pane newsPane, cookbookPane, page1, page2, editProfilePane;
     @FXML
-    private TextField firstNameTextField, lastNameTextField, emailTextField, dobTextField, phoneTextField, streetTextField, cityTextField, stateTextField, zipTextField;
+
+    private TextField firstNameTextField, lastNameTextField, emailTextField, dobTextField, phoneTextField, streetTextField, cityTextField, stateTextField, zipTextField, height, weight, age;
+
     @FXML
     private CheckBox dairy, peanuts, shellfish, egg, gluten, grain, seafood, sesame, soy, sulfite, treenuts, wheat;
+
+
+    private int selectedUserHeight = 0;
+    private String selectedUserDOB = "";
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image picture = new Image(User.getInstance().getUser_profile());
         profilePic.setImage(picture);
         usernameLabel.setText(User.getInstance().getUser_id());
-
+        umdietChoiceBox.setItems(FXCollections.observableArrayList("Keto","Vegetarian","Gluten Free"));
 
         // Initializes  user's general information for the Profile Pane Display
         String firstName = User.getInstance().getUser_firstname();
@@ -96,6 +106,17 @@ public class LandingPageController extends MainApplication implements Initializa
         zipTextField.setText(String.valueOf(zip));
 
         addressLabel.setText(street + ", " + city + ", \n" + state + " " + zip);
+
+        userMembersListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                // Fetch the details of the selected user member and update the labels
+                updateLabelsForSelectedUserMember(newValue);
+                umuserPane.setVisible(true); // Make the Pane visible when an item is selected
+            } else {
+                // If nothing is selected, hide the Pane
+                umuserPane.setVisible(false);
+            }
+        });
     }
 
     public void openNews() {
@@ -112,7 +133,7 @@ public class LandingPageController extends MainApplication implements Initializa
             stage.setTitle("GitGrub - Cookbook");
             stage.setScene(scene);
             stage.show();
-            stage.setFullScreen(true);
+            stage.centerOnScreen();
 
     }
 
@@ -162,6 +183,8 @@ public class LandingPageController extends MainApplication implements Initializa
         viewProfilePane.setVisible(false);
         editProfilePane.setVisible(false);
         viewMembersInfoPane.setVisible(true);
+
+        populateListView();
     }
 
     // Confirm Profile Changes button on landing Page
@@ -231,53 +254,51 @@ public class LandingPageController extends MainApplication implements Initializa
         }
         return false;
     }
-public void getintolerence(){
-    ArrayList<String> allergies=new ArrayList<>();
-    if(dairy.isSelected()){
-        allergies.add("dairy");
-    }
-    if(peanuts.isSelected()){
-        allergies.add("peanuts");
-    }
-    if(shellfish.isSelected()){
-        allergies.add("shellfish");
-    }
-    if(egg.isSelected()){
-        allergies.add("egg");
-    }
-    if(gluten.isSelected()){
-        allergies.add("gluten");
-    }
-    if(grain.isSelected()){
-        allergies.add("grain");
-    }
-    if(seafood.isSelected()){
-        allergies.add("seafood");
-    }
-    if(soy.isSelected()){
-        allergies.add("soy");
-    }
-    if(sulfite.isSelected()){
-        allergies.add("sulfite");
-    }
-    if(treenuts.isSelected()){
-        allergies.add("treenuts");
-    }
-    if(wheat.isSelected()){
-        allergies.add("wheat");
-    }
-    if(sesame.isSelected()){
-        allergies.add("sesame");
-    }
-    System.out.print(allergies);
-}
+    //Select Allergies and output it
+    public void getintolerence(){
+        ArrayList<String> allergies=new ArrayList<>();
+        if(dairy.isSelected()){
+            allergies.add("dairy");
+        }
+        if(peanuts.isSelected()){
+            allergies.add("peanuts");
+        }
+        if(shellfish.isSelected()){
+            allergies.add("shellfish");
+        }
+        if(egg.isSelected()){
+            allergies.add("egg");
+        }
+        if(gluten.isSelected()){
+            allergies.add("gluten");
+        }
+        if(grain.isSelected()){
+            allergies.add("grain");
+        }
+        if(seafood.isSelected()){
+            allergies.add("seafood");
+        }
+        if(soy.isSelected()){
+            allergies.add("soy");
+        }
+        if(sulfite.isSelected()){
+            allergies.add("sulfite");
+        }
+        if(treenuts.isSelected()){
+            allergies.add("treenuts");
+        }
+        if(wheat.isSelected()){
+            allergies.add("wheat");
+        }
+        if(sesame.isSelected()){
+            allergies.add("sesame");
+        }
+        System.out.println(allergies);
 
-    public void addNewMember(ActionEvent actionEvent) {
-    }
-
-    public void updateAllergies(ActionEvent actionEvent) {
     }
 
+    //Open Allergies Pane inside userMember
+    @FXML
     public void openAllergies() {
         if(allergiesPane.isVisible()){
             allergiesPane.setVisible(false);
@@ -286,7 +307,8 @@ public void getintolerence(){
         }
         fitnessPane.setVisible(false);
     }
-
+    //Open The Fitness Pane inside userMember
+    @FXML
     public void openFitness() {
         if(fitnessPane.isVisible()){
             fitnessPane.setVisible(false);
@@ -295,10 +317,180 @@ public void getintolerence(){
         }
         allergiesPane.setVisible(false);
     }
+    @FXML
+    public void editMember() {
+    }
+    //Create new Member
+    @FXML
+    private void addNewMember() {
+        String firstName = umfirstnameTextfield.getText();
+        String lastName = umlastnameTextfield.getText();
+        String diet = umdietChoiceBox.getValue();
+        String heightStr = umHeightTextField.getText();
+        LocalDate dob = umDOBDatePicker.getValue();
 
-    public void calcFitness(ActionEvent actionEvent) {
+        // Validate input fields...
+
+        if (firstName.isEmpty() || lastName.isEmpty() || diet == null || heightStr.isEmpty() || dob == null) {
+            // Handle empty fields or show an alert to the user
+            return;
+        }
+
+        int height = Integer.parseInt(heightStr);
+        int UID = Integer.parseInt(Objects.requireNonNull(User.getUser_Uid())); // Fetch the current user's ID from your User class
+
+        try {
+            Connection connection = DBConn.connectDB();
+
+            String sql = "INSERT INTO user_member_specs (UID, user_member_firstname, user_member_lastname, dietValue, user_member_height, user_member_DOB) VALUES (?, ?, ?, ?, ?, ?)";
+            assert connection != null;
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setInt(1, UID);
+            preparedStatement.setString(2, firstName);
+            preparedStatement.setString(3, lastName);
+            preparedStatement.setString(4, diet);
+            preparedStatement.setInt(5, height);
+            preparedStatement.setDate(6, java.sql.Date.valueOf(dob));
+
+            preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+            connection.close();
+
+            // Clear fields or show success message
+            umfirstnameTextfield.clear();
+            umlastnameTextfield.clear();
+            umHeightTextField.clear();
+            umDOBDatePicker.getEditor().clear();
+
+        } catch (SQLException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+    }
+    //Opens the Refrigerator Menu
+    @FXML
+    public void openRefrigeratorPane(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("fridge-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("GitGrub - Sign up");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
+    }
+    //Populates the User Member List
+    @FXML
+    public void populateListView() {
+        int UID = Integer.parseInt(User.getUser_Uid());
+
+        ObservableList<String> userMembers = FXCollections.observableArrayList();
+
+        try {
+            Connection connection = DBConn.connectDB();
+            String sql = "SELECT user_member_firstname, user_member_lastname FROM user_member_specs WHERE UID = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, UID);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                String firstName = resultSet.getString("user_member_firstname");
+
+                userMembers.add(firstName);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+
+            // Set the populated list of user members to the ListView
+            userMembersListView.setItems(userMembers);
+            System.out.println(userMembers);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void editMember(ActionEvent actionEvent) {
+    //Sets the labels of the selected user in the memberPane
+    private void updateLabelsForSelectedUserMember(String selectedUserMember) {
+        String UID = User.getUser_Uid(); // Assuming this gets the active user's ID
+
+        try {
+            Connection connection = DBConn.connectDB(); // Assuming connectDB() establishes and returns a Connection
+            String sql = "SELECT user_member_firstname, user_member_lastname, user_member_height, user_member_DOB, dietValue FROM user_member_specs WHERE UID = ? AND user_member_firstname = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, UID);
+            preparedStatement.setString(2, selectedUserMember);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                String fullName = resultSet.getString("user_member_firstname") + " " + resultSet.getString("user_member_lastname");
+                String height = resultSet.getString("user_member_height");
+
+                // Save the height to an instance variable for later use in calcFitness
+                selectedUserHeight = Integer.parseInt(height);
+
+                String dob = resultSet.getString("user_member_DOB");
+
+                // Save the date of birth to an instance variable for later use in calcFitness
+                selectedUserDOB = dob;
+
+
+                System.out.println(selectedUserHeight + " " + selectedUserDOB);
+                //Height Conversion
+                int heightInInches = Integer.parseInt(height);
+                int feet = heightInInches / 12;
+                int remainingInches = heightInInches % 12;
+
+                String convertedHeight = feet + " feet " + remainingInches + " inches";
+                String diet = resultSet.getString("dietValue");
+
+                umfullnameLabel.setText(fullName);
+                umheightLabel.setText(convertedHeight);
+                umdobLabel.setText(String.valueOf(calculateAge(dob)));
+                umdietLabel.setText(diet);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void calcFitness() {
+        double w = Double.parseDouble(weight.getText());
+        double h = selectedUserHeight; // Use the fetched height value
+
+        // Calculate age using the selected user's date of birth
+        int a = calculateAge(selectedUserDOB);
+
+        // Calculate BMI
+        double bmi = (w / (h * h)) * 703;
+        DecimalFormat df = new DecimalFormat("#.##");
+        String roundedBMI = df.format(bmi);
+        BMICalcLabel.setText(roundedBMI);
+
+        // Calculate BFP
+        double BFP = (1.20 * bmi) + (0.23 * a) - 16.2;
+        String roundedBFP = df.format(BFP);
+        BFPCalcLabel.setText(roundedBFP);
+
+        // Calculate MM
+        double MM = BFP - 100;
+        String roundedMM = df.format(MM);
+        MMCalcLabel.setText(roundedMM);
+    }
+
+    private int calculateAge(String dobString) {
+        LocalDate dob = LocalDate.parse(dobString); // Assuming the date is in ISO format (yyyy-MM-dd)
+        LocalDate currentDate = LocalDate.now();
+
+        return Period.between(dob, currentDate).getYears();
     }
 }
