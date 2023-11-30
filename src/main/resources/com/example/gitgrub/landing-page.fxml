@@ -15,7 +15,7 @@
             <Button fx:id="news" layoutX="31.0" layoutY="33.0" mnemonicParsing="false" onAction="#openNews" prefHeight="40.0" prefWidth="109.0" text="News" />
             <Button fx:id="cookbook" layoutX="171.0" layoutY="33.0" mnemonicParsing="false" onAction="#openCookbook" prefHeight="40.0" prefWidth="109.0" text="Cookbook" />
 
-            <Button layoutX="311.0" layoutY="33.0" mnemonicParsing="false" onAction="#showRecipeNutritionLabel" prefHeight="40.0" prefWidth="109.0" text="Bookmarks" />
+            <Button layoutX="311.0" layoutY="33.0" mnemonicParsing="false" onAction="#showRecipeNutritionLabel" prefHeight="40.0" prefWidth="109.0" text="Admin Panel" />
 
             <ImageView fx:id="profilePic" fitHeight="66.0" fitWidth="61.0" layoutX="1119.0" layoutY="5.0" onMouseClicked="#openProfile" pickOnBounds="true" preserveRatio="true" />
              <Label fx:id="usernameLabel" layoutX="1123.0" layoutY="73.0" text="Username" textFill="#bebebe" />

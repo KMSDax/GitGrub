@@ -22,7 +22,7 @@ public class User {
     private int user_zipcode;
     private String user_profile;
     private ArrayList <String> allergies;
-    private User(int roleID, String userId, String userPassword, String userFirstname, String userLastname, String userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, String stateId, int userZipcode, String userProfilePic){
+    User(int roleID, String userId, String userPassword, String userFirstname, String userLastname, String userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, String stateId, int userZipcode, String userProfilePic){
         role_id = roleID;
         user_id = userId;
         user_password = userPassword;
@@ -129,4 +129,9 @@ public class User {
 
     }
 
+    public void promoteToAdministrator() {
+    }
+
+    public void banUser(User userToBan) {
+    }
 }
