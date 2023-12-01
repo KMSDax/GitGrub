@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="Edited getRandRecipe to return a JSONObject which is used in loadRandRecipe (created inside LandPageController) to output in the &quot;Recipe of the Day&quot; TabPane view instead of in the console. Styling still needs to be added.&#10;&#10;Removed unused/relocated fxml declarations in LandingPageController.">
+    <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="Removed redundant forgot my password controllers and fxml files. Completed Password Reset feature.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/ForgotPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/ForgotPasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/PasswordResetController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/forgot-my-password-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/forgot-my-password-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/forgot-my-password.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,28 +46,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Jayson",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "/Users/hakimel-mobasher/Documents/GitHub/csc325_oop_designreview_lab/GitGrub/src/main/java/com/example/gitgrub",
-    "last_opened_file_path": "C:/Users/aalbe/IdeaProjects/GitGrub/src/main/resources/com/example/gitgrub/sign-up-view.fxml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Jayson&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/hakimel-mobasher/Documents/GitHub/csc325_oop_designreview_lab/GitGrub/src/main/java/com/example/gitgrub&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aalbe/IdeaProjects/GitGrub/src/main/resources/com/example/gitgrub/sign-up-view.fxml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.gitgrub" />
@@ -100,6 +97,8 @@
       <updated>1697905206297</updated>
       <workItem from="1697141475766" duration="9408000" />
       <workItem from="1697153089355" duration="43000" />
+      <workItem from="1701346215322" duration="598000" />
+      <workItem from="1701389751262" duration="7459000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Landing Page styling &amp; John Doe Profile Page">
       <option name="closed" value="true" />
@@ -155,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701341594135</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Removed redundant forgot my password controllers and fxml files. Completed Password Reset feature.">
+      <option name="closed" value="true" />
+      <created>1701344180031</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701344180031</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +187,8 @@
     <MESSAGE value="calorie counter" />
     <MESSAGE value="fixed calorie counter , added Meal, MealPlanner, MealPlannerController, and Mealpalnnerfxml to get the users total nutrition" />
     <MESSAGE value="Edited getRandRecipe to return a JSONObject which is used in loadRandRecipe (created inside LandPageController) to output in the &quot;Recipe of the Day&quot; TabPane view instead of in the console. Styling still needs to be added.&#10;&#10;Removed unused/relocated fxml declarations in LandingPageController." />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited getRandRecipe to return a JSONObject which is used in loadRandRecipe (created inside LandPageController) to output in the &quot;Recipe of the Day&quot; TabPane view instead of in the console. Styling still needs to be added.&#10;&#10;Removed unused/relocated fxml declarations in LandingPageController." />
+    <MESSAGE value="Removed redundant forgot my password controllers and fxml files. Completed Password Reset feature." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed redundant forgot my password controllers and fxml files. Completed Password Reset feature." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

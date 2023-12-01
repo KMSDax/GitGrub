@@ -171,7 +171,7 @@
                         <Button fx:id="editMemberButton" layoutX="52.0" layoutY="395.0" mnemonicParsing="false" onAction="#editMember" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Members" />
 
                         <ListView fx:id="userMembersListView" layoutX="31.0" layoutY="41.0" prefHeight="80.0" prefWidth="200.0" />
-                        <Pane layoutX="14.0" layoutY="131.0" prefHeight="96.0" prefWidth="234.0">
+                        <Pane fx:id="umuserPane" layoutX="14.0" layoutY="131.0" prefHeight="96.0" prefWidth="234.0">
                             <children>
                                 <Label fx:id="umfullnameLabel" layoutX="16.0" layoutY="6.0" text="Full Name">
                                     <font>
