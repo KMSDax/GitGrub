@@ -1,22 +1,17 @@
 package com.example.gitgrub;
 
-import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.util.*;
 
 public class FridgeController extends MainApplication {
-    @FXML
-    private ListView<FridgeItem> listView;
 
+    @FXML
+    private ListView<FridgeItem> searchlistView;
     private FridgeManager fridgeManager = new FridgeManager();
 
     public void initialize() {
@@ -39,7 +34,7 @@ public class FridgeController extends MainApplication {
 
     public void removeItem() {
         // Remove the selected item from the fridge
-        FridgeItem selectedItem = listView.getSelectionModel().getSelectedItem();
+        FridgeItem selectedItem = searchlistView.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
             fridgeManager.removeItemFromFridge(selectedItem.getName());
             updateListView();
@@ -52,7 +47,7 @@ public class FridgeController extends MainApplication {
     }
 
     private void updateListView() {
-        listView.getItems().clear();
+        searchlistView.getItems().clear();
         System.out.println(fridgeManager.getFridgeContents().values());
     }
 }
