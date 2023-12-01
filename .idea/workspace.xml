@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d8b61cb-cc31-4cef-9519-296acb955848" name="Changes" comment="My changes adding more checkboxes for allergies">
+    <list default="true" id="9d8b61cb-cc31-4cef-9519-296acb955848" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" afterDir="false" />
@@ -77,17 +77,95 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="" />
+      <created>1697905206297</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697905206297</updated>
+      <workItem from="1697141475766" duration="9408000" />
+      <workItem from="1697153089355" duration="43000" />
+    </task>
+    <task id="LOCAL-00001" summary="Adding Landing Page styling &amp; John Doe Profile Page">
+      <option name="closed" value="true" />
+      <created>1697149384324</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697149384324</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added Profile Pane">
+      <option name="closed" value="true" />
+      <created>1698183911931</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698183911931</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Profile Pane">
+      <option name="closed" value="true" />
+      <created>1698184057245</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698184057245</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added viewProfilePane &amp; editProfileButton to change view to editProfilePane">
+      <option name="closed" value="true" />
+      <created>1698193018041</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698193018041</updated>
+    </task>
+    <task id="LOCAL-00005" summary="calorie counter">
+      <created>1700106826819</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700106826819</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed calorie counter , added Meal, MealPlanner, MealPlannerController, and Mealpalnnerfxml to get the users total nutrition">
+      <created>1700613989987</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700613989987</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Edited getRandRecipe to return a JSONObject which is used in loadRandRecipe (created inside LandPageController) to output in the &quot;Recipe of the Day&quot; TabPane view instead of in the console. Styling still needs to be added.&#10;&#10;Removed unused/relocated fxml declarations in LandingPageController.">
+      <option name="closed" value="true" />
+      <created>1701341594135</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701341594135</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method" />
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adding Landing Page styling &amp; John Doe Profile Page" />
+    <MESSAGE value="Added Profile Pane" />
+    <MESSAGE value="Added viewProfilePane &amp; editProfileButton to change view to editProfilePane" />
+    <MESSAGE value="My changes adding more checkboxes for allergies" />
+    <MESSAGE value="calorie counter" />
+    <MESSAGE value="fixed calorie counter , added Meal, MealPlanner, MealPlannerController, and Mealpalnnerfxml to get the users total nutrition" />
+    <MESSAGE value="Edited getRandRecipe to return a JSONObject which is used in loadRandRecipe (created inside LandPageController) to output in the &quot;Recipe of the Day&quot; TabPane view instead of in the console. Styling still needs to be added.&#10;&#10;Removed unused/relocated fxml declarations in LandingPageController." />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited getRandRecipe to return a JSONObject which is used in loadRandRecipe (created inside LandPageController) to output in the &quot;Recipe of the Day&quot; TabPane view instead of in the console. Styling still needs to be added.&#10;&#10;Removed unused/relocated fxml declarations in LandingPageController." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

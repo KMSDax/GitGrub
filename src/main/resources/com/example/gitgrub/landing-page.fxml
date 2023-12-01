@@ -5,8 +5,9 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
 
-<AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
+<AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
 
 
     <children>
@@ -15,7 +16,7 @@
                 <Button fx:id="news" layoutX="31.0" layoutY="33.0" mnemonicParsing="false" onAction="#openNews" prefHeight="40.0" prefWidth="109.0" text="News" />
                 <Button fx:id="cookbook" layoutX="171.0" layoutY="33.0" mnemonicParsing="false" onAction="#openCookbook" prefHeight="40.0" prefWidth="109.0" text="Cookbook" />
 
-                <Button layoutX="311.0" layoutY="33.0" mnemonicParsing="false"  prefHeight="40.0" prefWidth="109.0" text="Admin Panel" />
+                <Button layoutX="311.0" layoutY="33.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" text="Admin Panel" />
 
 
 
@@ -29,7 +30,15 @@
                 <TabPane id="menu" layoutX="25.0" layoutY="25.0" prefHeight="583.0" prefWidth="869.0" style="-fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                         <Tab text="Recipe of the Day">
-                            <Pane prefWidth="801.0" />
+                            <Pane prefWidth="801.0">
+                        <children>
+                           <Label fx:id="randTitleLabel" layoutX="14.0" layoutY="14.0" text="Label" />
+                           <WebView fx:id="randDescriptionPane" layoutX="14.0" layoutY="34.0" prefHeight="196.0" prefWidth="321.0" />
+                           <Label fx:id="randReadyInMinutesLabel" layoutX="14.0" layoutY="237.0" text="Label" />
+                           <Label fx:id="randServingsLabel" layoutX="14.0" layoutY="257.0" text="Label" />
+                           <Label fx:id="stepsLabel" layoutX="14.0" layoutY="277.0" maxHeight="1.7976931348623157E308" maxWidth="800.0" text="Label" />
+                           <ImageView fx:id="randImageView" fitHeight="198.0" fitWidth="254.0" layoutX="347.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+                        </children></Pane>
                         </Tab>
                         <Tab text="Recipe Randomizer" />
                         <Tab text="Fitness" />
@@ -119,7 +128,7 @@
                         <Button fx:id="addMembersButton" layoutX="89.0" layoutY="284.0" mnemonicParsing="false" onAction="#openViewMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="View Members" />
                     </children>
                 </Pane>
-                <Pane fx:id="addMembersPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
+                <Pane fx:id="addMembersPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
                     <children>
                         <Label layoutX="74.0" layoutY="14.0" text="User Member">
                             <font>
@@ -146,7 +155,7 @@
 
 
 
-                <Pane fx:id="viewMembersInfoPane" prefHeight="550.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+                <Pane fx:id="viewMembersInfoPane" prefHeight="550.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
 
                     <children>
                         <Label layoutX="74.0" layoutY="14.0" text="User Member">
@@ -158,7 +167,7 @@
                         <Button fx:id="editMemberButton" layoutX="57.0" layoutY="360.0" mnemonicParsing="false" onAction="#editMember" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Members" />
 
                         <ListView fx:id="userMembersListView" layoutX="31.0" layoutY="41.0" prefHeight="80.0" prefWidth="200.0" />
-                        <Pane layoutX="14.0" layoutY="131.0" prefHeight="96.0" prefWidth="234.0">
+                        <Pane fx:id="umuserPane" layoutX="14.0" layoutY="131.0" prefHeight="96.0" prefWidth="234.0" visible="false">
                             <children>
                                 <Label fx:id="umfullnameLabel" layoutX="16.0" layoutY="6.0" text="Full Name">
                                     <font>
