@@ -510,4 +510,15 @@ public class LandingPageController extends MainApplication implements Initializa
 
         return Period.between(dob, currentDate).getYears();
     }
+
+    public void goToAdminPanel(ActionEvent event) {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("adminpage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("GitGrub - Cookbook");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
+    }
 }

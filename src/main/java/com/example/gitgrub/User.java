@@ -114,7 +114,6 @@ public class User {
         }
         return new SimpleStringProperty(admin);
     }
-
     public int getRole_id() {
         return role_id;
     }

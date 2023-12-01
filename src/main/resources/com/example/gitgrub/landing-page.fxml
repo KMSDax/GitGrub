@@ -16,7 +16,7 @@
                 <Button fx:id="news" layoutX="31.0" layoutY="33.0" mnemonicParsing="false" onAction="#openNews" prefHeight="40.0" prefWidth="109.0" text="News" />
                 <Button fx:id="cookbook" layoutX="171.0" layoutY="33.0" mnemonicParsing="false" onAction="#openCookbook" prefHeight="40.0" prefWidth="109.0" text="Cookbook" />
 
-                <Button layoutX="311.0" layoutY="33.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" text="Admin Panel" />
+                <Button fx:id="adminPanel" onAction="#goToAdminPanel" layoutX="311.0" layoutY="33.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" text="Admin Panel" />
 
 
 
@@ -128,7 +128,7 @@
                         <Button fx:id="addMembersButton" layoutX="89.0" layoutY="284.0" mnemonicParsing="false" onAction="#openViewMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="View Members" />
                     </children>
                 </Pane>
-                <Pane fx:id="addMembersPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+                <Pane fx:id="addMembersPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
                     <children>
                         <Label layoutX="74.0" layoutY="14.0" text="User Member">
                             <font>
@@ -155,7 +155,10 @@
 
 
 
-                <Pane fx:id="viewMembersInfoPane" prefHeight="550.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
+
+                <Pane fx:id="viewMembersInfoPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
+
+
 
                     <children>
                         <Label layoutX="74.0" layoutY="14.0" text="User Member">
@@ -163,8 +166,10 @@
                                 <Font name="System Bold" size="18.0" />
                             </font>
                         </Label>
+
                         <Button fx:id="openMembersPaneButton" layoutX="156.0" layoutY="360.0" mnemonicParsing="false" onAction="#openMembersPane" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Add Members" />
                         <Button fx:id="editMemberButton" layoutX="57.0" layoutY="360.0" mnemonicParsing="false" onAction="#editMember" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Edit Members" />
+
 
                         <ListView fx:id="userMembersListView" layoutX="31.0" layoutY="41.0" prefHeight="80.0" prefWidth="200.0" />
                         <Pane fx:id="umuserPane" layoutX="14.0" layoutY="131.0" prefHeight="96.0" prefWidth="234.0" visible="false">
@@ -200,8 +205,11 @@
                         </Pane>
                         <Pane fx:id="fitnessPane" layoutX="14.0" layoutY="219.0" prefHeight="129.0" prefWidth="234.0" visible="false">
                             <children>
+
                                 <Label layoutX="117.0" layoutY="6.0" text="Input Weight(lbs)" />
-                                <TextField layoutX="117.0" layoutY="22.0" prefHeight="25.0" prefWidth="107.0" />
+                                <TextField fx:id="weight" layoutX="117.0" layoutY="22.0" prefHeight="25.0" prefWidth="107.0" />
+
+
                                 <Label layoutX="14.0" layoutY="26.0" text="BMI">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
