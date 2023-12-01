@@ -180,14 +180,14 @@ public class LandingPageController extends MainApplication implements Initializa
     }
 
     public void openCookbook(ActionEvent event) throws IOException {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("cookbook-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            stage.setTitle("GitGrub - Cookbook");
-            stage.setScene(scene);
-            stage.show();
-            stage.centerOnScreen();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("cookbook-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("GitGrub - Cookbook");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
 
     }
 
@@ -199,8 +199,8 @@ public class LandingPageController extends MainApplication implements Initializa
             viewProfilePane.setVisible(true);
         }
 
-            editProfilePane.setVisible(false);
-            addMembersPane.setVisible(false);
+        editProfilePane.setVisible(false);
+        addMembersPane.setVisible(false);
         viewMembersInfoPane.setVisible(false);
     }
 
@@ -529,7 +529,6 @@ public class LandingPageController extends MainApplication implements Initializa
         return Period.between(dob, currentDate).getYears();
     }
 
-
     // Methods for AdminPanelGrid and Ban/Promote methods
     private void populateUserGridPane() {
         Label nameHeaderLabel = new Label("User's Full Name");
@@ -660,6 +659,5 @@ public class LandingPageController extends MainApplication implements Initializa
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 }
