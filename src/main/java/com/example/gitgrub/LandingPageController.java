@@ -11,12 +11,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
+import javafx.scene.layout.RowConstraints;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -49,9 +51,9 @@ public class LandingPageController extends MainApplication implements Initializa
     @FXML
     public Label usernameLabel,nameLabel,emailLabel,dobLabel,phoneLabel,addressLabel,MMCalcLabel,BFPCalcLabel,BMICalcLabel, randTitleLabel, randReadyInMinutesLabel, randServingsLabel, stepsLabel;
     @FXML
-    public Button editButton,confirmChangesButton,addMembersButton,openFitnessButton,openAllergiesButton;
+    public Button editButton,confirmChangesButton,addMembersButton,openFitnessButton,openAllergiesButton, adminPanelBtn;
     @FXML
-    public Pane viewProfilePane,addMembersPane,nutrtionLabelPane,viewMembersInfoPane,fitnessPane,allergiesPane,umuserPane;
+    public Pane viewProfilePane,addMembersPane,nutrtionLabelPane,viewMembersInfoPane,fitnessPane,allergiesPane,umuserPane, adminPanelPane;
     @FXML
     private ImageView profilePic, randImageView;
     @FXML
@@ -62,6 +64,10 @@ public class LandingPageController extends MainApplication implements Initializa
     private CheckBox dairy, peanuts, shellfish, egg, gluten, grain, seafood, sesame, soy, sulfite, treenuts, wheat;
     @FXML
     public WebView randDescriptionPane;
+    @FXML
+    private GridPane userGridPane;
+    @FXML
+    private ScrollPane adminScrollPane;
 
     private int selectedUserHeight = 0;
     private String selectedUserDOB = "";
@@ -113,6 +119,18 @@ public class LandingPageController extends MainApplication implements Initializa
                 umuserPane.setVisible(false);
             }
         });
+
+        String adminValue = User.getInstance().adminProperty().get();
+        if ("Yes".equals(adminValue)) {
+            adminPanelBtn.setVisible(true);
+        }
+    }
+
+    public void showAdminPanel(){
+        newsPane.setVisible(false);
+        adminPanelPane.setVisible(true);
+
+        populateUserGridPane();
     }
 
     public void openNews() {
@@ -509,5 +527,137 @@ public class LandingPageController extends MainApplication implements Initializa
         LocalDate currentDate = LocalDate.now();
 
         return Period.between(dob, currentDate).getYears();
+    }
+
+    // Methods for AdminPanelGrid and Ban/Promote methods
+    private void populateUserGridPane() {
+        Label nameHeaderLabel = new Label("User's Full Name");
+        Label userPhonenumHeaderLabel = new Label("Phone #");
+        Label editHeaderLabel = new Label("Edit");
+        Label deleteHeaderLabel = new Label("Ban");
+        Label viewHeaderLabel = new Label("Promote");
+
+        userGridPane.add(nameHeaderLabel, 0, 0);
+        userGridPane.add(userPhonenumHeaderLabel, 1, 0);
+        userGridPane.add(editHeaderLabel, 2, 0);
+        userGridPane.add(deleteHeaderLabel, 3, 0);
+        userGridPane.add(viewHeaderLabel, 4, 0);
+
+        userGridPane.setHgap(10);
+        userGridPane.setVgap(10);
+
+        try {
+            Connection connection = DBConn.connectDB();
+            String sql = "SELECT user_id, user_firstName, user_lastName, user_phonenum FROM users";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+
+
+            int row = 1;
+
+            while (resultSet.next()) {
+                String userId = resultSet.getString("user_id");
+                String firstName = resultSet.getString("user_firstName");
+                String lastName = resultSet.getString("user_lastName");
+                String phonenum = resultSet.getString("user_phonenum");
+
+                Label nameLabel = new Label(firstName + " " + lastName);
+                Label phonenumLabel = new Label(phonenum);
+
+                // Create CRUD buttons
+                Button editButton = new Button("Edit");
+                Button banButton = new Button("Ban");
+                Button PromoteButton = new Button("Promote");
+
+                // Set actions for CRUD buttons (you can modify these actions accordingly)
+                editButton.setOnAction(e -> handleEditUser(userId));
+                banButton.setOnAction(e -> handleBanUser(userId));
+                PromoteButton.setOnAction(e -> handlePromoteUser(userId));
+
+                userGridPane.add(nameLabel, 0, row);
+                userGridPane.add(phonenumLabel, 1, row);
+                userGridPane.add(editButton, 2, row);
+                userGridPane.add(banButton, 3, row);
+                userGridPane.add(PromoteButton, 4, row);
+
+                // Increment row for the next user
+                row++;
+            }
+
+            adminScrollPane.setContent(userGridPane);
+
+            // Set up the ScrollPane
+            adminScrollPane.setFitToWidth(true);
+            adminScrollPane.setFitToHeight(true);
+
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void handleEditUser(String userId) {
+        // Handle edit user action
+        System.out.println("Edit user with ID: " + userId);
+    }
+
+    private void handleBanUser(String userId) {
+        try {
+            // Connect to the database
+            Connection connection = DBConn.connectDB();
+
+            // Prepare the SQL statement to delete the user
+            String sql = "DELETE FROM users WHERE user_id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, userId);
+
+            // Execute the deletion
+            int rowsDeleted = preparedStatement.executeUpdate();
+
+            // Check if the deletion was successful
+            if (rowsDeleted > 0) {
+                System.out.println("User banned and deleted successfully.");
+            } else {
+                System.out.println("Failed to ban and delete user.");
+            }
+
+            // Close resources
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void handlePromoteUser(String userId) {
+        try {
+            // Connect to the database
+            Connection connection = DBConn.connectDB();
+
+            // Prepare the SQL statement to update the role_id
+            String sql = "UPDATE users SET role_id = 2 WHERE user_id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, userId);
+
+            // Execute the update
+            int rowsUpdated = preparedStatement.executeUpdate();
+
+            // Check if the update was successful
+            if (rowsUpdated > 0) {
+                System.out.println("User promoted successfully.");
+            } else {
+                System.out.println("Failed to promote user.");
+            }
+
+            // Close resources
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
