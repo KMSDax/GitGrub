@@ -7,25 +7,25 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 
+
 <AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
 
-
     <children>
-      <Pane fx:id="adminPanelPane" layoutY="94.0" prefHeight="635.0" prefWidth="919.0" visible="false">
-         <children>
-            <ScrollPane fx:id="adminScrollPane" layoutX="25.0" layoutY="25.0">
-               <content>
-                  <GridPane fx:id="userGridPane" prefHeight="583.0" prefWidth="869.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="NEVER" minWidth="100.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="45.0" prefHeight="45.0" vgrow="NEVER" />
-                    </rowConstraints>
-                  </GridPane>
-               </content>
-            </ScrollPane>
-         </children></Pane>
+        <Pane fx:id="adminPanelPane" layoutY="94.0" prefHeight="635.0" prefWidth="919.0" visible="false">
+            <children>
+                <ScrollPane fx:id="adminScrollPane" layoutX="25.0" layoutY="25.0">
+                    <content>
+                        <GridPane fx:id="userGridPane" prefHeight="583.0" prefWidth="869.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="NEVER" minWidth="100.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="45.0" prefHeight="45.0" vgrow="NEVER" />
+                            </rowConstraints>
+                        </GridPane>
+                    </content>
+                </ScrollPane>
+            </children></Pane>
         <Pane prefHeight="95.0" prefWidth="1194.0">
             <children>
                 <Button fx:id="news" layoutX="31.0" layoutY="33.0" mnemonicParsing="false" onAction="#openNews" prefHeight="40.0" prefWidth="109.0" text="News" />
@@ -46,14 +46,14 @@
                     <tabs>
                         <Tab text="Recipe of the Day">
                             <Pane prefWidth="801.0">
-                        <children>
-                           <Label fx:id="randTitleLabel" layoutX="14.0" layoutY="14.0" text="Label" />
-                           <WebView fx:id="randDescriptionPane" layoutX="14.0" layoutY="34.0" prefHeight="196.0" prefWidth="321.0" />
-                           <Label fx:id="randReadyInMinutesLabel" layoutX="14.0" layoutY="237.0" text="Label" />
-                           <Label fx:id="randServingsLabel" layoutX="14.0" layoutY="257.0" text="Label" />
-                           <Label fx:id="stepsLabel" layoutX="14.0" layoutY="277.0" maxHeight="1.7976931348623157E308" maxWidth="800.0" text="Label" />
-                           <ImageView fx:id="randImageView" fitHeight="198.0" fitWidth="254.0" layoutX="347.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
-                        </children></Pane>
+                                <children>
+                                    <Label fx:id="randTitleLabel" layoutX="14.0" layoutY="14.0" text="Label" />
+                                    <WebView fx:id="randDescriptionPane" layoutX="14.0" layoutY="34.0" prefHeight="196.0" prefWidth="321.0" />
+                                    <Label fx:id="randReadyInMinutesLabel" layoutX="14.0" layoutY="237.0" text="Label" />
+                                    <Label fx:id="randServingsLabel" layoutX="14.0" layoutY="257.0" text="Label" />
+                                    <Label fx:id="stepsLabel" layoutX="14.0" layoutY="277.0" maxHeight="1.7976931348623157E308" maxWidth="800.0" text="Label" />
+                                    <ImageView fx:id="randImageView" fitHeight="198.0" fitWidth="254.0" layoutX="347.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+                                </children></Pane>
                         </Tab>
                         <Tab text="Recipe Randomizer" />
                         <Tab text="Fitness" />
@@ -67,7 +67,7 @@
 
         <Pane fx:id="nutrtionLabelPane" layoutX="908.0" layoutY="119.0" prefHeight="583.0" prefWidth="268.0">
             <children>
-                <Pane fx:id="editProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+                <Pane fx:id="editProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
                     <children>
                         <Label layoutX="45.0" layoutY="14.0" text="General Information">
 
@@ -101,7 +101,7 @@
                         <Button fx:id="confirmChangesButton" layoutX="89.0" layoutY="361.0" mnemonicParsing="false" onAction="#confirmProfileChanges" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Confirm Changes" />
                     </children>
                 </Pane>
-                <Pane fx:id="viewProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
+                <Pane fx:id="viewProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
                     <children>
                         <Label layoutX="45.0" layoutY="14.0" text="General Information">
                             <font>
@@ -250,6 +250,7 @@
                         </Pane>
                     </children>
                 </Pane>
+            <Button fx:id="logout" layoutX="98.0" layoutY="419.0" mnemonicParsing="false" onAction="#submitLogout" prefHeight="25.0" prefWidth="72.0" text="Logout" />
             </children></Pane>
 
     </children>

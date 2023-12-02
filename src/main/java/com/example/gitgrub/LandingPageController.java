@@ -139,6 +139,9 @@ public class LandingPageController extends MainApplication implements Initializa
 
     public void loadRandRecipe(){
         JSONObject randRecipe = getRandRecipe();
+        if(randRecipe == null) {
+            return;
+        }
         String title = randRecipe.getString("title");
         String description = "Description Unavailable: Please visit source link.";
         int readyInMinutes = randRecipe.getInt("readyInMinutes");
@@ -180,14 +183,14 @@ public class LandingPageController extends MainApplication implements Initializa
     }
 
     public void openCookbook(ActionEvent event) throws IOException {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("cookbook-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            stage.setTitle("GitGrub - Cookbook");
-            stage.setScene(scene);
-            stage.show();
-            stage.centerOnScreen();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("cookbook-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("GitGrub - Cookbook");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
 
     }
 
@@ -199,8 +202,8 @@ public class LandingPageController extends MainApplication implements Initializa
             viewProfilePane.setVisible(true);
         }
 
-            editProfilePane.setVisible(false);
-            addMembersPane.setVisible(false);
+        editProfilePane.setVisible(false);
+        addMembersPane.setVisible(false);
         viewMembersInfoPane.setVisible(false);
     }
 
@@ -531,6 +534,17 @@ public class LandingPageController extends MainApplication implements Initializa
         double MM = BFP - 100;
         String roundedMM = df.format(MM);
         MMCalcLabel.setText(roundedMM);
+    }
+    @FXML
+    public void submitLogout(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("log-in-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("GitGrub");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
     }
 
     private int calculateAge(String dobString) {

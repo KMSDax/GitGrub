@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8a12e5e-5304-416f-a20b-8f3217ed702d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/FridgeContents.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/FridgeItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/FridgeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/FridgeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/fridge-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/fridge-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +41,11 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
+    &quot;associatedIndex&quot;: 2
+    }</component>
   <component name="ProjectId" id="2WSKbfCEN6vZ04USNmkAk2lDaOq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -52,7 +54,24 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "Dax"
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Merging Dax",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_directory_selection": "/Users/hakimel-mobasher/Documents/GitHub/csc325_oop_designreview_lab/GitGrub/src/main/java/com/example/gitgrub",
+    "last_opened_file_path": "C:/Users/aalbe/IdeaProjects/GitGrub/src/main/resources/com/example/gitgrub/sign-up-view.fxml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">

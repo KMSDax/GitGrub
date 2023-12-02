@@ -171,9 +171,13 @@ public class User {
 
         return null; // Return null if no UID found or on exception
     }
+
     public void promoteToAdministrator() {
     }
 
     public void banUser(User userToBan) {
     }
 }
+
+
+
