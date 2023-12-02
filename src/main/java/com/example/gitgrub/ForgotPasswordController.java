@@ -19,6 +19,10 @@ import javafx.stage.Stage;
 import java.awt.*;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 //<TextField fx:id="userField" layoutX="25.0" layoutY="129.0" prefHeight="35.0" prefWidth="250.0" promptText="Username" />
@@ -30,11 +34,10 @@ import java.io.IOException;
 
 public class ForgotPasswordController {
     @FXML
-    private TextField userField, userEmail;
+    private TextField emailTF, userNameTF;
     @FXML
-    private PasswordField passwordResetField, passwordResetConfirmField;
-    @FXML
-    private Button resetButton;
+    private PasswordField newPasswordTF, confirmNewPasswordTF;
+
     @FXML
     public void goToLogin(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Log-in-view.fxml"));
@@ -46,42 +49,56 @@ public class ForgotPasswordController {
         stage.show();
         stage.centerOnScreen();
     }
+
     @FXML
     public void updatePassword(ActionEvent actionEvent) {
-        // Get the new password from the password field
-        String newPassword = passwordResetField.getText();
+        String username = userNameTF.getText();
+        String email = emailTF.getText();
+        if(newPasswordTF.getText().equals(confirmNewPasswordTF.getText())) {
+            String newPassword = newPasswordTF.getText();
+            try {
+                Connection connection = DBConn.connectDB();
+                String checkUserSql = "SELECT uid FROM users WHERE user_id = ? AND user_email = ?";
+                PreparedStatement checkUserStatement = connection.prepareStatement(checkUserSql);
 
-        // Get the username from the UI (assuming you have a TextField named usernameField)
-        Label usernameField = new Label();
-        String username = usernameField.getText(); // Assuming usernameField is a TextField for username input
+                checkUserStatement.setString(1, username);
+                checkUserStatement.setString(2, email);
 
-        // Assuming you have a User object representing the current user
-        User currentUser = getCurrentUser(username); // Pass the username to the method
+                ResultSet checkUserResult = checkUserStatement.executeQuery();
 
-        // Update the user's password
-        if (currentUser != null) {
+                if (checkUserResult.next()) {
+                    // User exists, proceed with updating the password
+                    String updatePasswordSql = "UPDATE users SET user_password = ? WHERE user_id = ?";
+                    PreparedStatement updatePasswordStatement = connection.prepareStatement(updatePasswordSql);
 
-            currentUser.setUser_password(newPassword);
+                    updatePasswordStatement.setString(1, newPassword);
+                    updatePasswordStatement.setString(2, username);
 
-            System.out.println("Password updated successfully!");
-        } else {
-            System.out.println("User not found!");
-        }
-    }
+                    // Execute the update
+                    int rowsAffected = updatePasswordStatement.executeUpdate();
 
-    private User getCurrentUser(String username) {
-        // Implement this method to retrieve the current user based on the provided username
-        // Search the users list, database, or any other data source to find the user
-        User[] users = new User[0];
-        for (User user : users) {
+                    if (rowsAffected > 0) {
+                        System.out.println("Password updated successfully!");
+                    } else {
+                        System.out.println("Failed to update password.");
+                    }
 
-            if (user.getUser_id().equals(username)) {
+                    // Close resources
+                    updatePasswordStatement.close();
+                } else {
+                    System.out.println("User not found.");
+                }
 
-                return user;
+                // Close resources
+                checkUserResult.close();
+                checkUserStatement.close();
+                connection.close();
+
+            } catch (SQLException e) {
+                e.printStackTrace(); // Handle SQL exceptions appropriately
             }
+        } else {
+            System.out.println("New passwords do not match.");
         }
-        return null; // User not found
     }
-
-
 }
