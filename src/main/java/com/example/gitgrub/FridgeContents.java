@@ -137,7 +137,7 @@ class FridgeManager {
     }
 
     private void sendNotification(String item, long daysUntilExpiration) {
-        // Implement your notification logic here.
+
         System.out.println("Item '" + item + "' is close to expiration in " + daysUntilExpiration + " days.");
     }
 
