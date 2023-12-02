@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="Merging with Dax/Richard">
+      <changelist_data name="Richard" email="116584232+csxrp2009@users.noreply.github.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +198,8 @@
     <MESSAGE value="Edited getRandRecipe to return a JSONObject which is used in loadRandRecipe (created inside LandPageController) to output in the &quot;Recipe of the Day&quot; TabPane view instead of in the console. Styling still needs to be added.&#10;&#10;Removed unused/relocated fxml declarations in LandingPageController." />
     <MESSAGE value="Removed redundant forgot my password controllers and fxml files. Completed Password Reset feature." />
     <MESSAGE value="Merging with Dax/Richard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merging with Dax/Richard" />
+    <MESSAGE value="My program" />
+    <option name="LAST_COMMIT_MESSAGE" value="My program" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
