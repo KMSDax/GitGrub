@@ -139,6 +139,9 @@ public class LandingPageController extends MainApplication implements Initializa
 
     public void loadRandRecipe(){
         JSONObject randRecipe = getRandRecipe();
+        if(randRecipe == null) {
+            return;
+        }
         String title = randRecipe.getString("title");
         String description = "Description Unavailable: Please visit source link.";
         int readyInMinutes = randRecipe.getInt("readyInMinutes");
@@ -520,6 +523,17 @@ public class LandingPageController extends MainApplication implements Initializa
         double MM = BFP - 100;
         String roundedMM = df.format(MM);
         MMCalcLabel.setText(roundedMM);
+    }
+    @FXML
+    public void submitLogout(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("log-in-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("GitGrub");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
     }
 
     private int calculateAge(String dobString) {
