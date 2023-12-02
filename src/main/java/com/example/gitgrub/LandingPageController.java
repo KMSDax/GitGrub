@@ -418,6 +418,17 @@ public class LandingPageController extends MainApplication implements Initializa
         stage.centerOnScreen();
     }
     @FXML
+    public void openMealPlanner(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("MealPlanner.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("GitGrub - Sign up");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
+    }
+    @FXML
     public void populateListView() {
         int UID = Integer.parseInt(User.getUser_Uid());
 
