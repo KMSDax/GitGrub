@@ -4,29 +4,237 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="">
-      <!-- Your existing changes from Dax branch -->
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_20_2023_10_43_AM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_20_2023_10_43_AM_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_20_2023_10_43_AM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_24_2023_5_33_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_24_2023_5_33_PM_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_24_2023_5_33_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CookbookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/JavaforDummies.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/cookbook-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/forgot-my-password-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/images/Exam 2 Shethia.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/images/JohnDoe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/images/ProfileUI.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/images/Review 2_ Review for Exam 2 (0 points) - MTH 130, section J01, Fall 2023 _ WebAssign.pdf" afterDir="false" />
-      <!-- Your existing changes from HEAD -->
+    <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="added user role manger , changed bookmarks button to admin panel, and deleted my old admin controller and login.fxml that i created">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CalorieCountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/FridgeItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/FridgeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/Meal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/MealPlanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/MealPlannerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/UserRoleManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/CalorieCount.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/MealPlanner.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <!-- Merge conflicted changes -->
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CookbookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CookbookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/ForgotPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/ForgotPasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/FridgeContents.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/FridgeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/FridgeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/PasswordResetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/PasswordResetController.java
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/PasswordResetController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/Spoonacular.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/Spoonacular.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/cookbook-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/cookbook-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/forgot-my-password-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/forgot-my-password-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/forgot-my-password.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/fridge-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/fridge-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/landing-page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+    &quot;associatedIndex&quot;: 2
+    }</component>
+  <component name="ProjectId" id="2WSKbfCEN6vZ04USNmkAk2lDaOq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Merging Jonathon",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_directory_selection": "/Users/hakimel-mobasher/Documents/GitHub/csc325_oop_designreview_lab/GitGrub/src/main/java/com/example/gitgrub",
+    "last_opened_file_path": "C:/Users/aalbe/IdeaProjects/GitGrub/src/main/resources/com/example/gitgrub/sign-up-view.fxml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.gitgrub" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GitHubProjects\GitGrub\src\main\java\com\example\gitgrub" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.gitgrub" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.example.gitgrub.MainApplication" />
+      <module name="GitGrub" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="" />
+      <created>1697905206297</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697905206297</updated>
+      <workItem from="1697141475766" duration="9408000" />
+      <workItem from="1697153089355" duration="43000" />
+      <workItem from="1701346215322" duration="598000" />
+      <workItem from="1701389751262" duration="9822000" />
+      <workItem from="1701417394310" duration="11509000" />
+    </task>
+    <task id="LOCAL-00001" summary="Adding Landing Page styling &amp; John Doe Profile Page">
+      <option name="closed" value="true" />
+      <created>1697149384324</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697149384324</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added Profile Pane">
+      <option name="closed" value="true" />
+      <created>1698183911931</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698183911931</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Profile Pane">
+      <option name="closed" value="true" />
+      <created>1698184057245</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698184057245</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added viewProfilePane &amp; editProfileButton to change view to editProfilePane">
+      <option name="closed" value="true" />
+      <created>1698193018041</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698193018041</updated>
+    </task>
+    <task id="LOCAL-00005" summary="calorie counter">
+      <created>1700106826819</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700106826819</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed calorie counter , added Meal, MealPlanner, MealPlannerController, and Mealpalnnerfxml to get the users total nutrition">
+      <created>1700613989987</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700613989987</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Edited getRandRecipe to return a JSONObject which is used in loadRandRecipe (created inside LandPageController) to output in the &quot;Recipe of the Day&quot; TabPane view instead of in the console. Styling still needs to be added.&#10;&#10;Removed unused/relocated fxml declarations in LandingPageController.">
+      <option name="closed" value="true" />
+      <created>1701341594135</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701341594135</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Removed redundant forgot my password controllers and fxml files. Completed Password Reset feature.">
+      <option name="closed" value="true" />
+      <created>1701344180031</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701344180031</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Merging with Dax/Richard">
+      <option name="closed" value="true" />
+      <created>1701397597829</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701397597829</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adding Landing Page styling &amp; John Doe Profile Page" />
+    <MESSAGE value="Added Profile Pane" />
+    <MESSAGE value="Added viewProfilePane &amp; editProfileButton to change view to editProfilePane" />
+    <MESSAGE value="My changes adding more checkboxes for allergies" />
+    <MESSAGE value="calorie counter" />
+    <MESSAGE value="fixed calorie counter , added Meal, MealPlanner, MealPlannerController, and Mealpalnnerfxml to get the users total nutrition" />
+    <MESSAGE value="Edited getRandRecipe to return a JSONObject which is used in loadRandRecipe (created inside LandPageController) to output in the &quot;Recipe of the Day&quot; TabPane view instead of in the console. Styling still needs to be added.&#10;&#10;Removed unused/relocated fxml declarations in LandingPageController." />
+    <MESSAGE value="Removed redundant forgot my password controllers and fxml files. Completed Password Reset feature." />
+    <MESSAGE value="Merging with Dax/Richard" />
+    <MESSAGE value="Admin controller and login.fxml" />
+    <MESSAGE value="added user role manger , changed bookmarks button to admin panel, and deleted my old admin controller and login.fxml that i created" />
+    <option name="LAST_COMMIT_MESSAGE" value="added user role manger , changed bookmarks button to admin panel, and deleted my old admin controller and login.fxml that i created" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
