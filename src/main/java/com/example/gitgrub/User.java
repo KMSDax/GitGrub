@@ -26,7 +26,7 @@ public class User {
     private int user_zipcode;
     private String user_profile;
     private ArrayList <String> allergies;
-    private User(int roleID, String userId, String userPassword, String userFirstname, String userLastname, String userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, String stateId, int userZipcode, String userProfilePic){
+    User(int roleID, String userId, String userPassword, String userFirstname, String userLastname, String userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, String stateId, int userZipcode, String userProfilePic){
         role_id = roleID;
         user_id = userId;
         user_password = userPassword;
@@ -47,6 +47,10 @@ public class User {
         if (user == null) {
             user = new User(roleID,userId, userPassword, userFirstname, userLastname, userDob, userPhonenumber, userEmail, userStreet, userCity, stateId, userZipcode, userProfilePic);
         }
+    }
+
+    public static User getUser() {
+        return user;
     }
 
     public static void logOut() {
@@ -129,6 +133,23 @@ public class User {
 
     public void setAllergies(ArrayList<String> allergies) {
         this.allergies = allergies;
+        try {
+            System.out.println("Enter Try Block");
+            Connection connection = DBConn.connectDB();
+            String sql = "INSERT INTO user_member_allergy(user_member_allergy_id, user_member_id, intolerance_list) VALUES (?, ?, ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1 ,"0");
+            preparedStatement.setString(2, "1");
+            preparedStatement.setString(3, allergies.toString());
+
+           preparedStatement.executeUpdate();
+
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
     public static String getUser_Uid() {
@@ -171,4 +192,13 @@ public class User {
 
         return null; // Return null if no UID found or on exception
     }
+
+
+
+    public void promoteToAdministrator() {
+    }
+
+    public void banUser(User userToBan) {
+    }
 }
+

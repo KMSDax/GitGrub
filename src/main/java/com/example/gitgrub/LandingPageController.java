@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -335,7 +336,7 @@ public class LandingPageController extends MainApplication implements Initializa
             allergies.add("sesame");
         }
         System.out.println(allergies);
-
+        User.getUser().setAllergies(allergies);
     }
 
     @FXML
@@ -412,6 +413,17 @@ public class LandingPageController extends MainApplication implements Initializa
     @FXML
     public void openRefrigeratorPane(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("fridge-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("GitGrub - Sign up");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
+    }
+    @FXML
+    public void openMealPlanner(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("MealPlanner.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -674,4 +686,7 @@ public class LandingPageController extends MainApplication implements Initializa
             e.printStackTrace();
         }
     }
+
+
+
 }

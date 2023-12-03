@@ -7,13 +7,13 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 
-<AnchorPane prefHeight="388.0" prefWidth="443.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.FridgeController">
+<AnchorPane prefHeight="388.0" prefWidth="443.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.FridgeManager">
     <children>
         <Label alignment="CENTER" layoutX="14.0" layoutY="12.0" text="Fridge Contents">
          <font>
             <Font name="Book Antiqua" size="18.0" />
          </font></Label>
-        <Button layoutX="293.0" layoutY="276.0" onAction="#addItem" prefHeight="26.0" prefWidth="104.0" text="Add Item" />
+        <Button layoutX="293.0" layoutY="276.0" onAction="#addItemToFridge" prefHeight="26.0" prefWidth="104.0" text="Add Item" />
         <Button layoutX="293.0" layoutY="312.0" onAction="#removeItem" prefHeight="26.0" prefWidth="104.0" text="Remove Item" />
         <Button layoutX="293.0" layoutY="348.0" onAction="#checkExpiration" prefHeight="25.0" prefWidth="104.0" text="Check Expiration" />
       <WebView layoutX="14.0" layoutY="41.0" prefHeight="332.0" prefWidth="231.0">
