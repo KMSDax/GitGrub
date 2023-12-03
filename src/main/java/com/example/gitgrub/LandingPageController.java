@@ -30,6 +30,7 @@ import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -72,6 +73,9 @@ public class LandingPageController extends MainApplication implements Initializa
 
     private int selectedUserHeight = 0;
     private String selectedUserDOB = "";
+
+    private String selectedUserFirstname = "";
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image picture = new Image(User.getInstance().getUser_profile());
@@ -335,8 +339,8 @@ public class LandingPageController extends MainApplication implements Initializa
         if(sesame.isSelected()){
             allergies.add("sesame");
         }
-        System.out.println(allergies);
-        User.getUser().setAllergies(allergies);
+
+        User.getUser().setAllergies(allergies, selectedUserFirstname);
     }
 
     @FXML
@@ -466,13 +470,14 @@ public class LandingPageController extends MainApplication implements Initializa
 
     private void updateLabelsForSelectedUserMember(String selectedUserMember) {
         String UID = User.getUser_Uid(); // Assuming this gets the active user's ID
-
+        selectedUserFirstname = selectedUserMember;
         try {
             Connection connection = DBConn.connectDB(); // Assuming connectDB() establishes and returns a Connection
             String sql = "SELECT user_member_firstname, user_member_lastname, user_member_height, user_member_DOB, dietValue FROM user_member_specs WHERE UID = ? AND user_member_firstname = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, UID);
             preparedStatement.setString(2, selectedUserMember);
+            System.out.println(selectedUserMember);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -502,6 +507,52 @@ public class LandingPageController extends MainApplication implements Initializa
                 umheightLabel.setText(convertedHeight);
                 umdobLabel.setText(String.valueOf(calculateAge(dob)));
                 umdietLabel.setText(diet);
+
+                allergiesPane.getChildren().get(0);
+            }
+
+            sql = "SELECT intolerance_list FROM user_member_allergy WHERE user_member_id = ? AND user_member_firstname = ?";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, User.getUser_Uid());
+            stmt.setString(2, selectedUserMember);
+
+            resultSet = stmt.executeQuery();
+
+            if (resultSet.next()) {
+                // Retrieve the UID from the database
+                // Close resources
+                while (resultSet.next()) {
+                    System.out.println(resultSet.getString("intolerance_list"));
+
+                    String list = resultSet.getString("intolerance_list");
+
+                    dairy.setSelected(list.contains("dairy"));
+                    peanuts.setSelected(list.contains("peanuts"));
+                    shellfish.setSelected(list.contains("shellfish"));
+                    egg.setSelected(list.contains("egg"));
+                    gluten.setSelected(list.contains("gluten"));
+                    grain.setSelected(list.contains("grain"));
+                    seafood.setSelected(list.contains("seafood"));
+                    soy.setSelected(list.contains("soy"));
+                    sulfite.setSelected(list.contains("sulfite"));
+                    treenuts.setSelected(list.contains("treenuts"));
+                    wheat.setSelected(list.contains("wheat"));
+                    sesame.setSelected(list.contains("sesame"));
+                }
+            } else {
+                dairy.setSelected(false);
+                peanuts.setSelected(false);
+                shellfish.setSelected(false);
+                egg.setSelected(false);
+                gluten.setSelected(false);
+                grain.setSelected(false);
+                seafood.setSelected(false);
+                soy.setSelected(false);
+                sulfite.setSelected(false);
+                treenuts.setSelected(false);
+                wheat.setSelected(false);
+                sesame.setSelected(false);
+
             }
 
             resultSet.close();

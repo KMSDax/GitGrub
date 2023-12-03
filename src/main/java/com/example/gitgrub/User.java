@@ -128,22 +128,47 @@ public class User {
 
 
     public ArrayList<String> getAllergies() {
-        return allergies;
+        try {
+            Connection connection = DBConn.connectDB();
+            String sql = "SELECT intolerance_list FROM user_member_allergy WHERE user_member_id = ?";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, User.getUser_Uid());
+
+            ResultSet resultSet = stmt.executeQuery();
+
+            while (resultSet.next()) {
+                // Retrieve the UID from the database
+                String userID = resultSet.getString("UID");
+
+                // Close resources
+                resultSet.close();
+                stmt.close();
+                connection.close();
+
+                System.out.println(resultSet.getString("intolerance_list"));
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+            return allergies;
     }
 
-    public void setAllergies(ArrayList<String> allergies) {
+    public void setAllergies(ArrayList<String> allergies, String name) {
         this.allergies = allergies;
         try {
             System.out.println("Enter Try Block");
             Connection connection = DBConn.connectDB();
-            String sql = "INSERT INTO user_member_allergy(user_member_allergy_id, user_member_id, intolerance_list) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO user_member_allergy(user_member_allergy_id, user_member_id, intolerance_list, user_member_firstname) VALUES (?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setString(1 ,"0");
-            preparedStatement.setString(2, "1");
+            preparedStatement.setString(2, User.getUser_Uid());
             preparedStatement.setString(3, allergies.toString());
+            preparedStatement.setString(4, name);
 
-           preparedStatement.executeUpdate();
+            preparedStatement.executeUpdate();
 
 
 
