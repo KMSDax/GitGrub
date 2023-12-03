@@ -477,7 +477,6 @@ public class LandingPageController extends MainApplication implements Initializa
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, UID);
             preparedStatement.setString(2, selectedUserMember);
-            System.out.println(selectedUserMember);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -553,6 +552,16 @@ public class LandingPageController extends MainApplication implements Initializa
                 wheat.setSelected(false);
                 sesame.setSelected(false);
 
+            }
+
+            sql = "SELECT user_weight FROM user_member_health WHERE user_member_id = ? AND user_member_firstname = ?";
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, User.getUser_Uid());
+            stmt.setString(2, selectedUserMember);
+            resultSet = stmt.executeQuery();
+            if (resultSet.next()) {
+                weight.setText(resultSet.getString("user_weight"));
+                calcFitness();
             }
 
             resultSet.close();
