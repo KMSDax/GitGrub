@@ -7,8 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 
-
-<AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
+<AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
 
     <children>
         <Pane fx:id="adminPanelPane" layoutY="94.0" prefHeight="635.0" prefWidth="919.0" visible="false">
@@ -251,6 +250,7 @@
                     </children>
                 </Pane>
             <Button fx:id="logout" layoutX="98.0" layoutY="419.0" mnemonicParsing="false" onAction="#submitLogout" prefHeight="25.0" prefWidth="72.0" text="Logout" />
+            <Button layoutX="108.0" layoutY="503.0" mnemonicParsing="false" onAction="#fridgeButtonClicked" text="Frdige" />
             </children></Pane>
 
     </children>

@@ -685,4 +685,8 @@ public class LandingPageController extends MainApplication implements Initializa
             e.printStackTrace();
         }
     }
+
+    public void fridgeButtonClicked(ActionEvent actionEvent) throws IOException {
+        openRefrigeratorPane(actionEvent);
+    }
 }

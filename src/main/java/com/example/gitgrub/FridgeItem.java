@@ -29,4 +29,9 @@ class FridgeItem {
     StringProperty expirationDateProperty() {
         return expirationDate;
     }
+
+    @Override
+    public String toString() {
+        return getName()+" "+getExpirationDate();
+    }
 }
