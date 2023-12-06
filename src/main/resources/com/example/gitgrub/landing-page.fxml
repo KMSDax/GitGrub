@@ -7,8 +7,9 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 
-
 <AnchorPane prefHeight="729.0" prefWidth="1193.0" styleClass="backgroundPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.LandingPageController">
+
+
 
     <children>
         <Pane fx:id="adminPanelPane" layoutY="94.0" prefHeight="635.0" prefWidth="919.0" visible="false">
