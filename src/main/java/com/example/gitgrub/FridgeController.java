@@ -13,6 +13,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -34,6 +38,7 @@ public class FridgeController extends MainApplication implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String>itemNames= FXCollections.observableArrayList("Milk", "Cheese", "Bacon", "Eggs", "Tuna", "Anchovies");
         searchListView.setItems(itemNames);
+        fridgeContentsListView.setItems(getFridgeContentsFromDB());
 
     }
 
@@ -44,42 +49,6 @@ public class FridgeController extends MainApplication implements Initializable {
         VBox root = new VBox();
         root.setSpacing(10);
 
-        Label titleLabel = new Label("Fridge Contents");
-        //ListView<FridgeItem> listView = new ListView<>();
-       // listView.setPrefSize(300, 200);
-
-//        Button addButton = new Button("Add Item");
-//        addButton.setOnAction(e -> {
-//            // Show a dialog to add an item to the fridge
-//            TextInputDialog dialog = new TextInputDialog();
-//            dialog.setTitle("Add Item");
-//            dialog.setHeaderText(null);
-//            dialog.setContentText("Enter item name:");
-//            Optional<String> result = dialog.showAndWait();
-//            result.ifPresent(itemName -> {
-//                // Add the item to the fridge with today's date as expiration
-//                fridgeManager.addItemToFridge(itemName, LocalDate.now());
-//                updateListView(fridgeContentsListView, fridgeManager.getFridgeContents());
-//            });
-     //   });
-
-//        Button removeButton = new Button("Remove Item");
-//        removeButton.setOnAction(e -> {
-//            // Remove the selected item from the fridge
-//            FridgeItem selectedItem = fridgeContentsListView.getSelectionModel().getSelectedItem();
-//            if (selectedItem != null) {
-//                fridgeManager.removeItemFromFridge(selectedItem);
-//                updateListView(fridgeContentsListView, fridgeManager.getFridgeContents());
-//            }
-//        });
-
-//        Button checkButton = new Button("Check Expiration");
-//        checkButton.setOnAction(e -> {
-//            // Check and notify about items close to expiration
-//            fridgeManager.checkFridgeContents();
-//        });
-
-      //  root.getChildren().addAll(titleLabel, fridgeContentsListView, checkButton);
 
         // Set up the JavaFX scene
         Scene scene = new Scene(root, 320, 350);
@@ -88,10 +57,6 @@ public class FridgeController extends MainApplication implements Initializable {
         primaryStage.show();
     }
 
-//    private void updateListView(ListView<FridgeItem> listView, ArrayList<FridgeItem> fridgeContents) {
-//        listView.getItems().clear();
-//        fridgeContents.forEach((item) -> listView.getItems().add(item));
-//    }
 
     public void removeItemAction(ActionEvent actionEvent) {
         fridgeManager.removeItemFromFridge(fridgeContentsListView.getSelectionModel().getSelectedItem());
@@ -101,9 +66,93 @@ public class FridgeController extends MainApplication implements Initializable {
 
 
     public void addItemAction(ActionEvent actionEvent) {
-        fridgeManager.addItemToFridge(searchListView.getSelectionModel().getSelectedItem(), expirationDatePicker.getValue());
-        fridgeContentsListView.setItems(FXCollections.observableArrayList(fridgeManager.getFridgeContents()));
+        try {
+            FridgeItem fridgeItem = addFridgeItemToDB(new FridgeItem(searchListView.getSelectionModel().getSelectedItem(), expirationDatePicker.getValue()));
+            fridgeManager.addItemToFridge(fridgeItem);
+            fridgeContentsListView.setItems(FXCollections.observableArrayList(fridgeManager.getFridgeContents()));
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
 
+    }
+
+    public ObservableList<FridgeItem>getFridgeContentsFromDB() {
+        int UID=Integer.parseInt(User.getUser_Uid());
+        ObservableList<FridgeItem> fridgeItems = FXCollections.observableArrayList();
+
+        try {
+            Connection connection = DBConn.connectDB();
+            String sql = "SELECT * FROM fridge_contents WHERE UID = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1,UID);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+               String name = resultSet.getString("ingredientName");
+               String expirationDate = resultSet.getString("expirationDate");
+                fridgeItems.add(new FridgeItem(name, LocalDate.parse(expirationDate)));
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return fridgeItems;
+    }
+    public FridgeItem addFridgeItemToDB(FridgeItem fridgeItem) throws SQLException {
+        int UID=Integer.parseInt(User.getUser_Uid());
+        String sql = "INSERT INTO fridge_contents (uid,ingredientName,expirationDate) VALUES (?,?,?)";
+        String sql2 = "SELECT * FROM fridge_contents ORDER BY fridge_contents_id LIMIT 1";
+        Connection connection = DBConn.connectDB();
+        Connection connection2 = DBConn.connectDB();
+        FridgeItem newFridgeItem = fridgeItem;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement ps2 = connection2.prepareStatement(sql2);
+            preparedStatement.setInt(1,UID);
+            preparedStatement.setString(2,fridgeItem.getName());
+            preparedStatement.setString(3, fridgeItem.getExpirationDate());
+            preparedStatement.executeUpdate();
+            ResultSet rs = ps2.executeQuery();
+            rs.next();
+            int fridgeContentsID = rs.getInt("fridge_contents_id");
+            newFridgeItem.setFridgeContentsID(fridgeContentsID);
+            preparedStatement.close();
+
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            connection.close();
+            connection2.close();
+        }
+            return newFridgeItem;
+        }
+    public FridgeItem removeFridgeItemToDB(FridgeItem fridgeItem) throws SQLException {
+        int UID=Integer.parseInt(User.getUser_Uid());
+        String sql = "DELETE FROM fridge_contents WHERE fridge_contents_id = ?";
+        Connection connection = DBConn.connectDB();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1,UID);
+            preparedStatement.setString(2,fridgeItem.getName());
+            preparedStatement.setString(3, fridgeItem.getExpirationDate());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            connection.close();
+        }
+        return fridgeItem;
     }
 
 

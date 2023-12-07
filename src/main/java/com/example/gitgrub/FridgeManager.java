@@ -14,8 +14,8 @@ public class FridgeManager {
         fridgeContents = new ArrayList<>();
     }
 
-    public void addItemToFridge(String item, LocalDate expirationDate) {
-        fridgeContents.add(new FridgeItem(item, expirationDate));
+    public void addItemToFridge(FridgeItem fridgeItem) {
+        fridgeContents.add(fridgeItem);
     }
 
     public void removeItemFromFridge(FridgeItem item) {
