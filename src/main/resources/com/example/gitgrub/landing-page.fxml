@@ -37,6 +37,7 @@
 
                 <ImageView fx:id="profilePic" fitHeight="66.0" fitWidth="61.0" layoutX="1119.0" layoutY="5.0" onMouseClicked="#openProfile" pickOnBounds="true" preserveRatio="true" />
                 <Label fx:id="usernameLabel" layoutX="1123.0" layoutY="73.0" text="Username" textFill="#bebebe" />
+            <Button fx:id="logout" layoutX="1015.0" layoutY="41.0" mnemonicParsing="false" onAction="#submitLogout" prefHeight="25.0" prefWidth="72.0" text="Logout" />
 
 
             </children>
@@ -48,12 +49,32 @@
                         <Tab text="Recipe of the Day">
                             <Pane prefWidth="801.0">
                                 <children>
-                                    <Label fx:id="randTitleLabel" layoutX="14.0" layoutY="14.0" text="Label" />
-                                    <WebView fx:id="randDescriptionPane" layoutX="14.0" layoutY="34.0" prefHeight="196.0" prefWidth="321.0" />
-                                    <Label fx:id="randReadyInMinutesLabel" layoutX="14.0" layoutY="237.0" text="Label" />
-                                    <Label fx:id="randServingsLabel" layoutX="14.0" layoutY="257.0" text="Label" />
-                                    <Label fx:id="stepsLabel" layoutX="14.0" layoutY="277.0" maxHeight="1.7976931348623157E308" maxWidth="800.0" text="Label" />
-                                    <ImageView fx:id="randImageView" fitHeight="198.0" fitWidth="254.0" layoutX="347.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="randTitleLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="562.0" text="randTitleLabel" wrapText="true">
+                              <font>
+                                 <Font name="Bell MT Bold" size="20.0" />
+                              </font></Label>
+                                    <WebView fx:id="randDescriptionPane" layoutX="14.0" layoutY="43.0" prefHeight="251.0" prefWidth="562.0">
+                              <effect>
+                                 <DropShadow />
+                              </effect></WebView>
+                                    <Label fx:id="randReadyInMinutesLabel" alignment="CENTER_RIGHT" layoutX="595.0" layoutY="245.0" prefHeight="17.0" prefWidth="253.0" text="randReadyInMinutesLabel">
+                              <font>
+                                 <Font name="Bell MT" size="14.0" />
+                              </font></Label>
+                                    <Label fx:id="randServingsLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="596.0" layoutY="264.0" prefHeight="17.0" prefWidth="252.0" text="randServingsLabel">
+                              <font>
+                                 <Font name="Bell MT" size="14.0" />
+                              </font></Label>
+                                    <ImageView fx:id="randImageView" fitHeight="168.0" fitWidth="254.0" layoutX="595.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" />
+                           <TextArea fx:id="stepsTextArea" layoutX="14.0" layoutY="309.0" prefHeight="223.0" prefWidth="562.0">
+                              <effect>
+                                 <DropShadow />
+                              </effect></TextArea>
+                           <TextArea fx:id="ingredientsTextArea" layoutX="596.0" layoutY="309.0" prefHeight="223.0" prefWidth="253.0">
+                              <effect>
+                                 <DropShadow />
+                              </effect>
+                           </TextArea>
                                 </children></Pane>
                         </Tab>
                         <Tab text="Recipe Randomizer" />
@@ -68,7 +89,7 @@
 
         <Pane fx:id="nutrtionLabelPane" layoutX="908.0" layoutY="119.0" prefHeight="583.0" prefWidth="268.0">
             <children>
-                <Pane fx:id="editProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
+                <Pane fx:id="editProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
                     <children>
                         <Label layoutX="45.0" layoutY="14.0" text="General Information">
 
@@ -102,7 +123,7 @@
                         <Button fx:id="confirmChangesButton" layoutX="89.0" layoutY="361.0" mnemonicParsing="false" onAction="#confirmProfileChanges" style="-fx-background-color: #7289DA; -fx-background-radius: 10px;" text="Confirm Changes" />
                     </children>
                 </Pane>
-                <Pane fx:id="viewProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
+                <Pane fx:id="viewProfilePane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
                     <children>
                         <Label layoutX="45.0" layoutY="14.0" text="General Information">
                             <font>
@@ -170,7 +191,7 @@
                     </children>
                 </Pane>
 
-                <Pane fx:id="viewMembersInfoPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;">
+                <Pane fx:id="viewMembersInfoPane" prefHeight="399.0" prefWidth="262.0" style="-fx-background-color: #e7b65a; -fx-background-radius: 20px;" visible="false">
                     <children>
                         <Label layoutX="74.0" layoutY="14.0" text="User Member">
                             <font>
@@ -251,7 +272,6 @@
                         </Pane>
                     </children>
                 </Pane>
-            <Button fx:id="logout" layoutX="98.0" layoutY="419.0" mnemonicParsing="false" onAction="#submitLogout" prefHeight="25.0" prefWidth="72.0" text="Logout" />
             </children></Pane>
 
     </children>

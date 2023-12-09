@@ -42,6 +42,7 @@ public class LandingPageController extends MainApplication implements Initializa
     public ListView<String> userMembersListView,viewCurrentMembersInfoPane;
     @FXML
     public Label umdietLabel,umfullnameLabel,umdobLabel,umheightLabel;
+    public TextArea stepsTextArea;
     @FXML
     private DatePicker umDOBDatePicker;
     @FXML
@@ -179,7 +180,10 @@ public class LandingPageController extends MainApplication implements Initializa
                 stepsText.append("Step ").append(stepNumber).append(": ").append(stepDescription).append("\n");
             }
         }
-        stepsLabel.setText(stepsText.toString());
+
+        stepsTextArea.setWrapText(true);;
+        stepsTextArea.setText(stepsText.toString());
+
     }
 
     public void openCookbook(ActionEvent event) throws IOException {
