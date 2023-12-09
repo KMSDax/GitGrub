@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.web.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="783.0" prefWidth="1250.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.CookbookController">
+<AnchorPane prefHeight="783.0" prefWidth="1250.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.CookbookController">
     <Pane fx:id="cookbookPane" layoutY="8.0" prefHeight="765.0" prefWidth="1250.0">
         <children>
             <Pane layoutX="10.0" layoutY="10.0" prefHeight="710.0" prefWidth="1230.0" style="-fx-background-color: linear-gradient(to top left,#ba2557, #b81a4f,  #802040, #8c0f39, #ba2557);">
@@ -65,6 +70,7 @@
                               </items>
                            </ToolBar>
                            <ImageView fx:id="imageView3" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                           <Button fx:id="bookmarkButton3" layoutX="429.0" layoutY="177.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Bookmark" />
                         </children>
                      </Pane>
                      <Pane layoutX="27.0" layoutY="352.0" prefHeight="320.0" prefWidth="540.0" style="-fx-background-color: linear-gradient(to right, #69675c1F, #a8a6971F,#bdbbac1F,#bdbbac1F,#ccc9b81F,#dbd8c51F,#fffced1F);">
@@ -91,6 +97,7 @@
                               </items>
                            </ToolBar>
                            <ImageView fx:id="imageView4" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                           <Button fx:id="bookmarkButton4" layoutX="428.0" layoutY="178.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Bookmark" />
                         </children>
                      </Pane>
                   </children>
@@ -128,6 +135,7 @@
                                         </items>
                                     </ToolBar>
                            <ImageView fx:id="imageView1" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                           <Button fx:id="bookmarkButton1" layoutX="433.0" layoutY="178.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Bookmark" />
                                 </children>
                             </Pane>
                      <Pane layoutX="19.0" layoutY="352.0" prefHeight="320.0" prefWidth="540.0" style="-fx-background-color: linear-gradient(to left, #69675c1F, #a8a6971F,#bdbbac1F,#bdbbac1F,#ccc9b81F,#dbd8c51F,#fffced1F);">
@@ -154,6 +162,7 @@
                               </items>
                            </ToolBar>
                            <ImageView fx:id="imageView2" fitHeight="94.0" fitWidth="125.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                           <Button fx:id="bookmarkButton2" layoutX="433.0" layoutY="178.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="85.0" text="Bookmark" />
                         </children>
                      </Pane>
                         </children>
