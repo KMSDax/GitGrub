@@ -53,13 +53,11 @@ public class MealPlannerController {
 
     @FXML
     public void displayMeals() {
-        mealPlanner.displayMeals();
         updateMealListView();
     }
 
     @FXML
     public void calculateTotalNutrition() {
-        mealPlanner.calculateTotalNutrition();
         updateTotalNutritionLabel();
     }
 
@@ -71,6 +69,7 @@ public class MealPlannerController {
     }
 
     private void updateTotalNutritionLabel() {
+        mealPlanner.calculateTotalNutrition();
         totalNutritionLabel.setText("Total Nutrition for the Day:\n" +
                 "Total Calories: " + mealPlanner.getTotalCalories() + "\n" +
                 "Total Protein: " + mealPlanner.getTotalProtein() + " grams\n" +
