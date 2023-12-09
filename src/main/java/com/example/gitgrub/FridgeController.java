@@ -36,9 +36,16 @@ public class FridgeController extends MainApplication implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ObservableList<String>itemNames= FXCollections.observableArrayList("Milk", "Cheese", "Bacon", "Eggs", "Tuna", "Anchovies");
+        ObservableList<String>itemNames= FXCollections.observableArrayList("Milk", "Cheese", "Bacon", "Eggs", "Tuna", "Anchovies", "Ice Cream", "Bananas", "Iced Tea", "Lemonade", "Butter", "Cream Cheese");
         searchListView.setItems(itemNames);
-        fridgeContentsListView.setItems(getFridgeContentsFromDB());
+        ObservableList<FridgeItem> fridgeItems = getFridgeContentsFromDB();
+        fridgeContentsListView.setItems(fridgeItems);
+        ArrayList<FridgeItem> fridgeItems1 = new ArrayList<>();
+        for (FridgeItem item:fridgeItems
+             ) {fridgeItems1.add(item);
+
+        }
+        fridgeManager.setFridgeContents(fridgeItems1);
 
     }
 
@@ -58,9 +65,16 @@ public class FridgeController extends MainApplication implements Initializable {
     }
 
 
-    public void removeItemAction(ActionEvent actionEvent) {
-        fridgeManager.removeItemFromFridge(fridgeContentsListView.getSelectionModel().getSelectedItem());
-        fridgeContentsListView.setItems(FXCollections.observableArrayList(fridgeManager.getFridgeContents()));
+    public void removeItemAction(ActionEvent actionEvent) throws SQLException {
+        try {
+            FridgeItem fridgeItem = removeFridgeItemToDB(fridgeContentsListView.getSelectionModel().getSelectedItem());
+            fridgeManager.removeItemFromFridge(fridgeItem);
+            fridgeContentsListView.setItems(FXCollections.observableArrayList(fridgeManager.getFridgeContents()));
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
@@ -134,14 +148,13 @@ public class FridgeController extends MainApplication implements Initializable {
             return newFridgeItem;
         }
     public FridgeItem removeFridgeItemToDB(FridgeItem fridgeItem) throws SQLException {
-        int UID=Integer.parseInt(User.getUser_Uid());
+        int UID=fridgeItem.getFridgeContentsID();
+       // String sql = "DELETE FROM fridge_contents";
         String sql = "DELETE FROM fridge_contents WHERE fridge_contents_id = ?";
         Connection connection = DBConn.connectDB();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1,UID);
-            preparedStatement.setString(2,fridgeItem.getName());
-            preparedStatement.setString(3, fridgeItem.getExpirationDate());
             preparedStatement.executeUpdate();
             preparedStatement.close();
 

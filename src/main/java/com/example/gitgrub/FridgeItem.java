@@ -9,6 +9,7 @@ class FridgeItem {
     private final StringProperty name;
     private final StringProperty expirationDate;
     private int fridgeContentsID;
+    
 
     FridgeItem(String name, LocalDate expirationDate) {
         this.fridgeContentsID = -1;

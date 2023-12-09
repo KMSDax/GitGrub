@@ -18,6 +18,10 @@ public class FridgeManager {
         fridgeContents.add(fridgeItem);
     }
 
+    public void setFridgeContents(ArrayList<FridgeItem> fridgeContents) {
+        this.fridgeContents = fridgeContents;
+    }
+
     public void removeItemFromFridge(FridgeItem item) {
         fridgeContents.remove(item);
     }
