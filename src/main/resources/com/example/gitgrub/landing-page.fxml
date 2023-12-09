@@ -64,15 +64,10 @@
                                  <Font name="Bell MT" size="14.0" />
                               </font></Label>
                                     <ImageView fx:id="randImageView" fitHeight="168.0" fitWidth="254.0" layoutX="595.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" />
-                           <TextArea fx:id="stepsTextArea" layoutX="14.0" layoutY="309.0" prefHeight="223.0" prefWidth="562.0">
+                           <TextArea fx:id="stepsTextArea" editable="false" layoutX="14.0" layoutY="309.0" prefHeight="223.0" prefWidth="562.0">
                               <effect>
                                  <DropShadow />
                               </effect></TextArea>
-                           <TextArea fx:id="ingredientsTextArea" layoutX="596.0" layoutY="309.0" prefHeight="223.0" prefWidth="253.0">
-                              <effect>
-                                 <DropShadow />
-                              </effect>
-                           </TextArea>
                                 </children></Pane>
                         </Tab>
                         <Tab text="Recipe Randomizer" />
