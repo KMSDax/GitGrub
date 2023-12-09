@@ -55,11 +55,11 @@
                               <effect>
                                  <DropShadow />
                               </effect></WebView>
-                                    <Label fx:id="randReadyInMinutesLabel" alignment="CENTER_RIGHT" layoutX="595.0" layoutY="245.0" prefHeight="17.0" prefWidth="253.0" text="randReadyInMinutesLabel">
+                                    <Label fx:id="randReadyInMinutesLabel" alignment="CENTER_RIGHT" layoutX="596.0" layoutY="223.0" prefHeight="17.0" prefWidth="253.0" text="randReadyInMinutesLabel">
                               <font>
                                  <Font name="Bell MT" size="14.0" />
                               </font></Label>
-                                    <Label fx:id="randServingsLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="596.0" layoutY="264.0" prefHeight="17.0" prefWidth="252.0" text="randServingsLabel">
+                                    <Label fx:id="randServingsLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="597.0" layoutY="242.0" prefHeight="17.0" prefWidth="252.0" text="randServingsLabel">
                               <font>
                                  <Font name="Bell MT" size="14.0" />
                               </font></Label>
@@ -70,8 +70,6 @@
                               </effect></TextArea>
                                 </children></Pane>
                         </Tab>
-                        <Tab text="Recipe Randomizer" />
-                        <Tab text="Fitness" />
                     </tabs>
                 </TabPane>
             </children>
