@@ -3,45 +3,49 @@ package com.example.gitgrub;
 import javafx.event.ActionEvent;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class FridgeManager {
-    private Map<String, LocalDate> fridgeContents;
+    private ArrayList<FridgeItem>fridgeContents;
 
     public FridgeManager() {
-        fridgeContents = new HashMap<>();
+        fridgeContents = new ArrayList<>();
     }
 
-    public void addItemToFridge(String item, LocalDate expirationDate) {
-        fridgeContents.put(item, expirationDate);
+    public void addItemToFridge(FridgeItem fridgeItem) {
+        fridgeContents.add(fridgeItem);
     }
 
-    public void removeItemFromFridge(String item) {
+    public void setFridgeContents(ArrayList<FridgeItem> fridgeContents) {
+        this.fridgeContents = fridgeContents;
+    }
+
+    public void removeItemFromFridge(FridgeItem item) {
         fridgeContents.remove(item);
     }
 
     public void checkFridgeContents() {
         LocalDate today = LocalDate.now();
-        for (Map.Entry<String, LocalDate> entry : fridgeContents.entrySet()) {
-            String item = entry.getKey();
-            LocalDate expirationDate = entry.getValue();
+        for (FridgeItem entry : fridgeContents)
+        {
+            LocalDate expirationDate = LocalDate.parse(entry.getExpirationDate());
             long daysUntilExpiration = today.until(expirationDate).getDays();
 
             if (daysUntilExpiration <= 3) {
                 // Notify the user about the item close to expiration
-                sendNotification(item, daysUntilExpiration);
+                sendNotification(entry.getName(), daysUntilExpiration);
             }
         }
     }
 
     private void sendNotification(String item, long daysUntilExpiration) {
-        // Implement your notification logic here.
+
         System.out.println("Item '" + item + "' is close to expiration in " + daysUntilExpiration + " days.");
     }
 
-    public Map<String, LocalDate> getFridgeContents() {
+    public ArrayList<FridgeItem>getFridgeContents() {
         return fridgeContents;
     }
-
 }

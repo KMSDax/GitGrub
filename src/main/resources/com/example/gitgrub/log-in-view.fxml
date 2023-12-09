@@ -30,11 +30,7 @@
          </font>
       </Label>
 
-      <Hyperlink layoutX="90.0" layoutY="313.0" onAction="#goToForgotPassword" text="Forgot my password" />
-
-
-
-
+      <Hyperlink layoutX="92.0" layoutY="336.0" onAction="#goToForgotPassword" text="Forgot my password" />
 
 
    </children>
