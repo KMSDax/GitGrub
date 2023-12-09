@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="added user role manger , changed bookmarks button to admin panel, and deleted my old admin controller and login.fxml that i created">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/ForgotPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/ForgotPasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/PasswordResetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/PasswordResetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/forgot-my-password.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/forgot-my-password.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/log-in-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CookbookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/CookbookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/JavaforDummies.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/LandingPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/Spoonacular.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gitgrub/Spoonacular.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/cookbook-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/cookbook-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/images/Declaration of Fraud for Identity Theft.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/images/Declaration of Fraud for Identity Theft2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gitgrub/images/death_stars_final_battle_rg_2a1abe43-54fa-488b-b9ae-2aafd5c7ee86.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +45,8 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
+    &quot;associatedIndex&quot;: 2
+    }</component>
   <component name="ProjectId" id="2WSKbfCEN6vZ04USNmkAk2lDaOq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -64,7 +62,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "Merging Dax",
     "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "C:/GitHubProjects/GitGrub/src/main/java/com/example/gitgrub",
+    "last_directory_selection": "/Users/hakimel-mobasher/Documents/GitHub/csc325_oop_designreview_lab/GitGrub/src/main/java/com/example/gitgrub",
     "last_opened_file_path": "C:/Users/aalbe/IdeaProjects/GitGrub/src/main/resources/com/example/gitgrub/sign-up-view.fxml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -78,8 +76,14 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.gitgrub" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\GitHubProjects\GitGrub\src\main\java\com\example\gitgrub" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.gitgrub" />
     </key>
   </component>
   <component name="RunManager">
@@ -96,13 +100,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="" />
+      <changelist id="c71fdbc3-5bb4-4c36-b1b0-31d366cd4994" name="Changes" comment="added user role manger , changed bookmarks button to admin panel, and deleted my old admin controller and login.fxml that i created" />
       <created>1697905206297</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697905206297</updated>
       <workItem from="1697141475766" duration="9408000" />
       <workItem from="1697153089355" duration="43000" />
+      <workItem from="1701346215322" duration="598000" />
+      <workItem from="1701389751262" duration="9822000" />
+      <workItem from="1701417394310" duration="11509000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Landing Page styling &amp; John Doe Profile Page">
       <option name="closed" value="true" />
@@ -136,7 +143,52 @@
       <option name="project" value="LOCAL" />
       <updated>1698193018041</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="calorie counter">
+      <created>1700106826819</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700106826819</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed calorie counter , added Meal, MealPlanner, MealPlannerController, and Mealpalnnerfxml to get the users total nutrition">
+      <created>1700613989987</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700613989987</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Edited getRandRecipe to return a JSONObject which is used in loadRandRecipe (created inside LandPageController) to output in the &quot;Recipe of the Day&quot; TabPane view instead of in the console. Styling still needs to be added.&#10;&#10;Removed unused/relocated fxml declarations in LandingPageController.">
+      <option name="closed" value="true" />
+      <created>1701341594135</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701341594135</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Removed redundant forgot my password controllers and fxml files. Completed Password Reset feature.">
+      <option name="closed" value="true" />
+      <created>1701344180031</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701344180031</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Merging with Dax/Richard">
+      <option name="closed" value="true" />
+      <created>1701397597829</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701397597829</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added user role manger , changed bookmarks button to admin panel, and deleted my old admin controller and login.fxml that i created">
+      <created>1701392874671</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701392874671</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,22 +210,14 @@
     <MESSAGE value="Added Profile Pane" />
     <MESSAGE value="Added viewProfilePane &amp; editProfileButton to change view to editProfilePane" />
     <MESSAGE value="My changes adding more checkboxes for allergies" />
-    <option name="LAST_COMMIT_MESSAGE" value="My changes adding more checkboxes for allergies" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/gitgrub/User.java</url>
-          <line>113</line>
-          <properties class="com.example.gitgrub.User" method="getRole_id">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="calorie counter" />
+    <MESSAGE value="fixed calorie counter , added Meal, MealPlanner, MealPlannerController, and Mealpalnnerfxml to get the users total nutrition" />
+    <MESSAGE value="Edited getRandRecipe to return a JSONObject which is used in loadRandRecipe (created inside LandPageController) to output in the &quot;Recipe of the Day&quot; TabPane view instead of in the console. Styling still needs to be added.&#10;&#10;Removed unused/relocated fxml declarations in LandingPageController." />
+    <MESSAGE value="Removed redundant forgot my password controllers and fxml files. Completed Password Reset feature." />
+    <MESSAGE value="Merging with Dax/Richard" />
+    <MESSAGE value="Admin controller and login.fxml" />
+    <MESSAGE value="added user role manger , changed bookmarks button to admin panel, and deleted my old admin controller and login.fxml that i created" />
+    <option name="LAST_COMMIT_MESSAGE" value="added user role manger , changed bookmarks button to admin panel, and deleted my old admin controller and login.fxml that i created" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -29,14 +29,14 @@ public class LogInController {
 
     @FXML
     public void login(ActionEvent event) throws IOException {
-        Window owner = loginButton.getScene().getWindow();
+       // Window owner = loginButton.getScene().getWindow();
 
         if (userField.getText().isEmpty()) {
-            showAlert(owner, "Please enter your username");
+            showAlert(null, "Please enter your username");
             return;
         }
         if (passwordField.getText().isEmpty()) {
-            showAlert(owner, "Please enter a password");
+            showAlert(null, "Please enter a password");
             return;
         }
 
@@ -83,6 +83,8 @@ public class LogInController {
         stage.show();
         stage.centerOnScreen();
     }
+    @FXML
+    private Button adminlogin;
     public static void infoBox(String infoMessage, String headerText, String title) {
         Platform.runLater(() -> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -98,7 +100,7 @@ public class LogInController {
         alert.setTitle("Form Error!");
         alert.setHeaderText(null);
         alert.setContentText(message);
-        alert.initOwner(owner);
+      //  alert.initOwner(owner);
         alert.show();
     }
     public static boolean validate(String userId, String password){

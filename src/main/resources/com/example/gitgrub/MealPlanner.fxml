@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="483.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gitgrub.MealPlannerController">
+
+    <children>
+        <Label prefHeight="30.0" prefWidth="166.0" text="Meal Planner">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <font>
+            <Font size="23.0" />
+         </font></Label>
+
+        <HBox prefHeight="34.0" prefWidth="898.0" spacing="10">
+            <TextField fx:id="mealNameField" promptText="Meal Name" />
+            <TextField fx:id="caloriesField" promptText="Calories" />
+            <TextField fx:id="proteinField" promptText="Protein" />
+            <TextField fx:id="carbsField" promptText="Carbs" />
+            <TextField fx:id="fatField" promptText="Fat" />
+            <Button onAction="#addMeal" text="Add Meal" />
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+        </HBox>
+
+        <ListView fx:id="mealListView" prefHeight="269.0" prefWidth="877.0">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin></ListView>
+
+        <Label fx:id="totalNutritionLabel" prefHeight="102.0" prefWidth="255.0">
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin></Label>
+      <Button onAction="#goBackToMain" mnemonicParsing="false" text="Landing Page">
+         <VBox.margin>
+            <Insets bottom="10.0" left="800.0" />
+         </VBox.margin></Button>
+
+    </children>
+</VBox>

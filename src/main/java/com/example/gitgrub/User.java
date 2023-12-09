@@ -3,7 +3,11 @@ package com.example.gitgrub;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.sql.PreparedStatement;
 
 public class User {
     private static User user = null;
@@ -22,7 +26,7 @@ public class User {
     private int user_zipcode;
     private String user_profile;
     private ArrayList <String> allergies;
-    private User(int roleID, String userId, String userPassword, String userFirstname, String userLastname, String userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, String stateId, int userZipcode, String userProfilePic){
+    User(int roleID, String userId, String userPassword, String userFirstname, String userLastname, String userDob, String userPhonenumber, String userEmail, String userStreet, String userCity, String stateId, int userZipcode, String userProfilePic){
         role_id = roleID;
         user_id = userId;
         user_password = userPassword;
@@ -110,7 +114,6 @@ public class User {
         }
         return new SimpleStringProperty(admin);
     }
-
     public int getRole_id() {
         return role_id;
     }
@@ -128,5 +131,53 @@ public class User {
         this.allergies = allergies;
 
     }
+    public static String getUser_Uid() {
+        if (user == null) {
+            return null; // No user logged in
+        }
 
+        // Establish your database connection here (you can use your DBConn class)
+        try {
+            Connection connection = DBConn.connectDB();
+            String sql = "SELECT uid FROM users WHERE user_firstName = ? AND user_lastName = ? AND user_email = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, user.getUser_firstname());
+            preparedStatement.setString(2, user.getUser_lastname());
+            preparedStatement.setString(3, user.getUser_email());
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                // Retrieve the UID from the database
+                String userID = resultSet.getString("UID");
+
+                // Close resources
+                resultSet.close();
+                preparedStatement.close();
+                connection.close();
+
+                return userID;
+            }
+
+            // Close resources if no UID found
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle SQL exceptions appropriately
+        }
+
+        return null; // Return null if no UID found or on exception
+    }
+
+    public void promoteToAdministrator() {
+    }
+
+    public void banUser(User userToBan) {
+    }
 }
+
+
+
