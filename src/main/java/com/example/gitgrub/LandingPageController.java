@@ -77,7 +77,7 @@ public class LandingPageController extends MainApplication implements Initializa
         Image picture = new Image(User.getInstance().getUser_profile());
         profilePic.setImage(picture);
         usernameLabel.setText(User.getInstance().getUser_id());
-        umdietChoiceBox.setItems(FXCollections.observableArrayList("Keto","Vegetarian","Gluten Free"));
+        umdietChoiceBox.setItems(FXCollections.observableArrayList("Ketogenic","Lacto-Vegetarian","Ovo-Vegetarian","Vegan","Pescetarian","Paleo","Primal","Low FODMAP","Whole30","Vegetarian","Gluten Free"));
 
         loadRandRecipe();
 

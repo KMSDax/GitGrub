@@ -46,7 +46,7 @@ public class CookbookController extends MainApplication implements Initializable
     @FXML
     public ImageView imageView1, imageView2, imageView3, imageView4;
     @FXML
-    public Button back,next, nutritionButton1, nutritionButton2, nutritionButton3, nutritionButton4, ViewBookmarksBtn;
+    public Button back,next, nutritionButton1, nutritionButton2, nutritionButton3, nutritionButton4, ViewBookmarksBtn, bookmarkButton1, bookmarkButton2, bookmarkButton3, bookmarkButton4;
     public TextField search;
     @FXML
     public Pane nutrtionLabelPane;
@@ -99,6 +99,9 @@ public class CookbookController extends MainApplication implements Initializable
                 doc.select("a").remove();
                 webEngine.loadContent(String.valueOf(doc));
 
+                Button bookmarkButton = getBookmarksButton(i + 1);
+                bookmarkButton.setOnAction(event -> addToFavorites(recipeId));
+
                 // Fetch and display nutrition label content when nutrition button is clicked
                 nutritionButton.setOnAction(event -> getRecipeNutrition(recipeId, descriptionPane));
 
@@ -112,6 +115,27 @@ public class CookbookController extends MainApplication implements Initializable
             }
         }
     }
+
+    public void addToFavorites(int recipeId) {
+        int UID = Integer.parseInt(User.getUser_Uid());
+
+        try {
+            Connection connection = DBConn.connectDB();
+            String sql = "INSERT INTO user_bookmark (UID, bookmark_recipe_id) VALUES (?, ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, UID);
+            preparedStatement.setInt(2, recipeId);
+
+            preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void getRecipeInstructions(int recipeId, WebView descriptionPane) {
         // Fetch recipe information including instructions, ingredients, appliances, etc.
         JSONObject recipeInfo = fetchRecipeInformation(recipeId);
@@ -263,6 +287,21 @@ public class CookbookController extends MainApplication implements Initializable
             e.printStackTrace();
         }
         return userBookmarks;
+    }
+
+    private Button getBookmarksButton(int index) {
+        switch (index) {
+            case 1:
+                return bookmarkButton1;
+            case 2:
+                return bookmarkButton2;
+            case 3:
+                return bookmarkButton3;
+            case 4:
+                return bookmarkButton4;
+            default:
+                return null;
+        }
     }
     private Button getDescriptionButton(int index) {
         switch (index) {
